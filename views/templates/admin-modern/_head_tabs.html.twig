@@ -1,0 +1,22 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a
+            href="{{ path('prestashop_inventory_warehouse') }}"
+            class="{% if currentRoute == 'prestashop_inventory_warehouse' %}nav-link active{% else %}nav-link{% endif %}"
+            {% if currentRoute == 'prestashop_inventory_warehouse' %}aria-current="page"{% endif %}
+            role="tab"
+        >
+            {{ inventoryTexts.warehouse_tab }}
+        </a>
+    </li>
+    <li class="nav-item">
+        <a
+            href="{{ path('prestashop_inventory_settings') }}"
+            class="{% if currentRoute == 'prestashop_inventory_settings' %}nav-link active{% else %}nav-link{% endif %}"
+            {% if currentRoute == 'prestashop_inventory_settings' %}aria-current="page"{% endif %}
+            role="tab"
+        >
+            {{ inventoryTexts.settings_tab }}
+        </a>
+    </li>
+</ul>

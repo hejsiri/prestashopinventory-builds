@@ -1,0 +1,14 @@
+{
+    "require": {
+        "mpdf/mpdf": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "PrestaShop\\Module\\PrestashopInventory\\": "src/"
+        }
+    },
+    "config": {
+        "prepend-autoloader": false
+    },
+    "type": "prestashop-module"
+}

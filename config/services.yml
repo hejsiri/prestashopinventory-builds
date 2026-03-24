@@ -1,0 +1,8 @@
+services:
+  PrestaShop\Module\PrestashopInventory\Controller\Admin\WarehouseController:
+    autowire: true
+    autoconfigure: true
+
+  PrestaShop\Module\PrestashopInventory\Controller\Admin\SettingsController:
+    autowire: true
+    autoconfigure: true

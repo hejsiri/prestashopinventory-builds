@@ -1,0 +1,58 @@
+{% extends '@!PrestaShop/Admin/layout.html.twig' %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="card">
+                <div class="card-body card-block">
+                    <div class="form-wrapper card-text">
+                        {% block inventoryContent %}
+                        {% endblock %}
+                    </div>
+                </div>
+                <div class="card-footer text-muted text-right">
+                    v{{ moduleVersion|default('0.0.0') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% if inventoryCurrentSectionLabel is defined and inventoryCurrentSectionLabel %}
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var breadcrumb = document.querySelector('.header-toolbar .breadcrumb');
+                if (!breadcrumb) {
+                    return;
+                }
+
+                var items = breadcrumb.querySelectorAll('.breadcrumb-item');
+                if (!items.length) {
+                    return;
+                }
+
+                var currentSection = {{ inventoryCurrentSectionLabel|json_encode|raw }};
+                var existingCurrent = breadcrumb.querySelector('.breadcrumb-item.breadcrumb-item--inventory-current');
+                if (existingCurrent) {
+                    existingCurrent.remove();
+                }
+
+                var lastItem = items[items.length - 1];
+                if (lastItem && lastItem.classList.contains('active')) {
+                    lastItem.classList.remove('active');
+                }
+
+                var currentItem = document.createElement('li');
+                currentItem.className = 'breadcrumb-item active breadcrumb-item--inventory-current';
+
+                var currentText = document.createElement('span');
+                currentText.textContent = currentSection;
+                currentItem.appendChild(currentText);
+
+                breadcrumb.appendChild(currentItem);
+            });
+        </script>
+    {% endif %}
+{% endblock %}

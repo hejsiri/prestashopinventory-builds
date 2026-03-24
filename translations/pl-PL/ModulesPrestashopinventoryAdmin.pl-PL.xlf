@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="pl-PL" datatype="plaintext" original="ModulesPrestashopinventoryAdmin">
+    <body>
+      <trans-unit id="Inventory Report">
+        <source>Inventory Report</source>
+        <target>Raport magazynowy</target>
+      </trans-unit>
+      <trans-unit id="Back Office inventory view with purchase price editing and PDF export.">
+        <source>Back Office inventory view with purchase price editing and PDF export.</source>
+        <target>Widok magazynowy w Back Office z edycją cen zakupu i eksportem PDF.</target>
+      </trans-unit>
+      <trans-unit id="Warehouse">
+        <source>Warehouse</source>
+        <target>Magazyn</target>
+      </trans-unit>
+      <trans-unit id="Settings">
+        <source>Settings</source>
+        <target>Ustawienia</target>
+      </trans-unit>
+      <trans-unit id="Inventory report">
+        <source>Inventory report</source>
+        <target>Raport magazynowy</target>
+      </trans-unit>
+      <trans-unit id="New Warehouse view scaffold for the Inventory module.">
+        <source>New Warehouse view scaffold for the Inventory module.</source>
+        <target>Szkielet nowego widoku Magazyn dla modułu Inventory.</target>
+      </trans-unit>
+      <trans-unit id="New Settings view scaffold for the Inventory module.">
+        <source>New Settings view scaffold for the Inventory module.</source>
+        <target>Szkielet nowego widoku Ustawienia dla modułu Inventory.</target>
+      </trans-unit>
+      <trans-unit id="This tab will become the new place for the inventory table after the migration to the PrestaShop 8.2+ / 9.x compatible architecture is completed.">
+        <source>This tab will become the new place for the inventory table after the migration to the PrestaShop 8.2+ / 9.x compatible architecture is completed.</source>
+        <target>Ta zakładka będzie nowym miejscem na tabelę magazynową po zakończeniu migracji do architektury zgodnej z PrestaShop 8.2+ / 9.x.</target>
+      </trans-unit>
+      <trans-unit id="This tab will become the new place for hidden products configuration and module settings after the migration is completed.">
+        <source>This tab will become the new place for hidden products configuration and module settings after the migration is completed.</source>
+        <target>Ta zakładka będzie nowym miejscem na konfigurację ukrytych produktów i ustawienia modułu po zakończeniu migracji.</target>
+      </trans-unit>
+      <trans-unit id="None">
+        <source>None</source>
+        <target>Brak</target>
+      </trans-unit>
+      <trans-unit id="No data">
+        <source>No data</source>
+        <target>Brak danych</target>
+      </trans-unit>
+      <trans-unit id="Combination ID: %id%">
+        <source>Combination ID: %id%</source>
+        <target>ID kombinacji: %id%</target>
+      </trans-unit>
+      <trans-unit id="Actions">
+        <source>Actions</source>
+        <target>Akcje</target>
+      </trans-unit>
+      <trans-unit id="Hide permanently">
+        <source>Hide permanently</source>
+        <target>Ukryj na stałe</target>
+      </trans-unit>
+      <trans-unit id="Total net purchase value:">
+        <source>Total net purchase value:</source>
+        <target>Suma wartości zakupu netto:</target>
+      </trans-unit>
+      <trans-unit id="Total gross retail value:">
+        <source>Total gross retail value:</source>
+        <target>Suma wartości detalicznej brutto:</target>
+      </trans-unit>
+      <trans-unit id="No results.">
+        <source>No results.</source>
+        <target>Brak wyników.</target>
+      </trans-unit>
+      <trans-unit id="Inventory status">
+        <source>Inventory status</source>
+        <target>Stan magazynowy</target>
+      </trans-unit>
+      <trans-unit id="Show only active products">
+        <source>Show only active products</source>
+        <target>Pokazuj tylko aktywne produkty</target>
+      </trans-unit>
+      <trans-unit id="Show only available in stock">
+        <source>Show only available in stock</source>
+        <target>Pokazuj tylko dostępne w magazynie</target>
+      </trans-unit>
+      <trans-unit id="Show only with missing purchase price">
+        <source>Show only with missing purchase price</source>
+        <target>Pokazuj tylko z brakującą ceną zakupu</target>
+      </trans-unit>
+      <trans-unit id="Show product weight">
+        <source>Show product weight</source>
+        <target>Pokazuj wagę produktu</target>
+      </trans-unit>
+      <trans-unit id="Show products without weight">
+        <source>Show products without weight</source>
+        <target>Pokaż tylko produkty bez wagi</target>
+      </trans-unit>
+      <trans-unit id="Show retail gross prices">
+        <source>Show retail gross prices</source>
+        <target>Pokazuj ceny detaliczne brutto</target>
+      </trans-unit>
+      <trans-unit id="No.">
+        <source>No.</source>
+        <target>Lp.</target>
+      </trans-unit>
+      <trans-unit id="Image">
+        <source>Image</source>
+        <target>Zdjęcie</target>
+      </trans-unit>
+      <trans-unit id="Name">
+        <source>Name</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="Product name">
+        <source>Product name</source>
+        <target>Nazwa produktu</target>
+      </trans-unit>
+      <trans-unit id="Product weight">
+        <source>Product weight</source>
+        <target>Waga produktu</target>
+      </trans-unit>
+      <trans-unit id="Active">
+        <source>Active</source>
+        <target>Aktywny</target>
+      </trans-unit>
+      <trans-unit id="Purchase price (net)">
+        <source>Purchase price (net)</source>
+        <target>Cena zakupu (netto)</target>
+      </trans-unit>
+      <trans-unit id="Purchase price (gross)">
+        <source>Purchase price (gross)</source>
+        <target>Cena zakupu (brutto)</target>
+      </trans-unit>
+      <trans-unit id="Retail price (gross)">
+        <source>Retail price (gross)</source>
+        <target>Cena detaliczna (brutto)</target>
+      </trans-unit>
+      <trans-unit id="Quantity">
+        <source>Quantity</source>
+        <target>Ilość</target>
+      </trans-unit>
+      <trans-unit id="Available quantity">
+        <source>Available quantity</source>
+        <target>Dostępna ilość</target>
+      </trans-unit>
+      <trans-unit id="Purchase value (net)">
+        <source>Purchase value (net)</source>
+        <target>Wartość zakupu (netto)</target>
+      </trans-unit>
+      <trans-unit id="Retail value (gross)">
+        <source>Retail value (gross)</source>
+        <target>Wartość detaliczna (brutto)</target>
+      </trans-unit>
+      <trans-unit id="Products per page:">
+        <source>Products per page:</source>
+        <target>Produktów na stronie:</target>
+      </trans-unit>
+      <trans-unit id="Showing %from%-%to% of %total% (page %page% / %total_pages%)">
+        <source>Showing %from%-%to% of %total% (page %page% / %total_pages%)</source>
+        <target>Widoczne %from%-%to% z %total% (strona %page% / %total_pages%)</target>
+      </trans-unit>
+      <trans-unit id="Current page">
+        <source>Current page</source>
+        <target>Aktualna strona</target>
+      </trans-unit>
+      <trans-unit id="Previous">
+        <source>Previous</source>
+        <target>Poprzednia</target>
+      </trans-unit>
+      <trans-unit id="Next">
+        <source>Next</source>
+        <target>Następna</target>
+      </trans-unit>
+      <trans-unit id="ID">
+        <source>ID</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="EAN13">
+        <source>EAN13</source>
+        <target>EAN13</target>
+      </trans-unit>
+      <trans-unit id="Module navigation">
+        <source>Module navigation</source>
+        <target>Nawigacja modułu</target>
+      </trans-unit>
+      <trans-unit id="Filters">
+        <source>Filters</source>
+        <target>Filtry</target>
+      </trans-unit>
+      <trans-unit id="Clear">
+        <source>Clear</source>
+        <target>Wyczyść</target>
+      </trans-unit>
+      <trans-unit id="Search table...">
+        <source>Search table...</source>
+        <target>Szukaj w tabeli...</target>
+      </trans-unit>
+      <trans-unit id="Save">
+        <source>Save</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit id="Cancel">
+        <source>Cancel</source>
+        <target>Anuluj</target>
+      </trans-unit>
+      <trans-unit id="e.g. 12">
+        <source>e.g. 12</source>
+        <target>np. 12</target>
+      </trans-unit>
+      <trans-unit id="e.g. 12.34">
+        <source>e.g. 12.34</source>
+        <target>np. 12,34</target>
+      </trans-unit>
+      <trans-unit id="e.g. 99.99">
+        <source>e.g. 99.99</source>
+        <target>np. 99,99</target>
+      </trans-unit>
+      <trans-unit id="e.g. 1.250">
+        <source>e.g. 1.250</source>
+        <target>np. 1,250</target>
+      </trans-unit>
+      <trans-unit id="Save error">
+        <source>Save error</source>
+        <target>Błąd zapisu</target>
+      </trans-unit>
+      <trans-unit id="Connection / server error while saving.">
+        <source>Connection / server error while saving.</source>
+        <target>Błąd połączenia / serwera przy zapisie.</target>
+      </trans-unit>
+      <trans-unit id="Could not save quantity.">
+        <source>Could not save quantity.</source>
+        <target>Nie udało się zapisać ilości.</target>
+      </trans-unit>
+      <trans-unit id="Could not save weight.">
+        <source>Could not save weight.</source>
+        <target>Nie udało się zapisać wagi.</target>
+      </trans-unit>
+      <trans-unit id="Could not hide the product.">
+        <source>Could not hide the product.</source>
+        <target>Nie udało się ukryć produktu.</target>
+      </trans-unit>
+      <trans-unit id="Enter an integer quantity.">
+        <source>Enter an integer quantity.</source>
+        <target>Wpisz ilość całkowitą.</target>
+      </trans-unit>
+      <trans-unit id="Enter a price.">
+        <source>Enter a price.</source>
+        <target>Wpisz cenę.</target>
+      </trans-unit>
+      <trans-unit id="Enter a valid weight.">
+        <source>Enter a valid weight.</source>
+        <target>Wpisz prawidłową wagę.</target>
+      </trans-unit>
+      <trans-unit id="Could not change product status.">
+        <source>Could not change product status.</source>
+        <target>Nie udało się zmienić statusu produktu.</target>
+      </trans-unit>
+      <trans-unit id="Copied">
+        <source>Copied</source>
+        <target>Skopiowano</target>
+      </trans-unit>
+      <trans-unit id="Could not copy EAN13.">
+        <source>Could not copy EAN13.</source>
+        <target>Nie udało się skopiować EAN13.</target>
+      </trans-unit>
+      <trans-unit id="Loading error.">
+        <source>Loading error.</source>
+        <target>Błąd ładowania danych.</target>
+      </trans-unit>
+      <trans-unit id="Sales chart">
+        <source>Sales chart</source>
+        <target>Wykres sprzedaży</target>
+      </trans-unit>
+      <trans-unit id="Monthly sales">
+        <source>Monthly sales</source>
+        <target>Sprzedaż miesięczna</target>
+      </trans-unit>
+      <trans-unit id="Loading sales statistics...">
+        <source>Loading sales statistics...</source>
+        <target>Ładowanie statystyk sprzedaży...</target>
+      </trans-unit>
+      <trans-unit id="No sales in selected period.">
+        <source>No sales in selected period.</source>
+        <target>Brak sprzedaży w wybranym okresie.</target>
+      </trans-unit>
+      <trans-unit id="Last 12 months">
+        <source>Last 12 months</source>
+        <target>Ostatnie 12 miesięcy</target>
+      </trans-unit>
+      <trans-unit id="Total sold">
+        <source>Total sold</source>
+        <target>Łącznie sprzedano</target>
+      </trans-unit>
+      <trans-unit id="Best month">
+        <source>Best month</source>
+        <target>Najlepszy miesiąc</target>
+      </trans-unit>
+      <trans-unit id="Months">
+        <source>Months</source>
+        <target>Miesięcy</target>
+      </trans-unit>
+      <trans-unit id="pcs">
+        <source>pcs</source>
+        <target>szt.</target>
+      </trans-unit>
+      <trans-unit id="Year">
+        <source>Year</source>
+        <target>Rok</target>
+      </trans-unit>
+      <trans-unit id="Could not load sales statistics.">
+        <source>Could not load sales statistics.</source>
+        <target>Nie udało się wczytać statystyk sprzedaży.</target>
+      </trans-unit>
+      <trans-unit id="Close">
+        <source>Close</source>
+        <target>Zamknij</target>
+      </trans-unit>
+      <trans-unit id="Previous year">
+        <source>Previous year</source>
+        <target>Poprzedni rok</target>
+      </trans-unit>
+      <trans-unit id="Next year">
+        <source>Next year</source>
+        <target>Następny rok</target>
+      </trans-unit>
+      <trans-unit id="Product restored to the list.">
+        <source>Product restored to the list.</source>
+        <target>Produkt przywrócony do listy.</target>
+      </trans-unit>
+      <trans-unit id="Could not restore the product.">
+        <source>Could not restore the product.</source>
+        <target>Nie udało się przywrócić produktu.</target>
+      </trans-unit>
+      <trans-unit id="Restore">
+        <source>Restore</source>
+        <target>Przywróć</target>
+      </trans-unit>
+      <trans-unit id="Displayed">
+        <source>Displayed</source>
+        <target>Wyświetlany</target>
+      </trans-unit>
+      <trans-unit id="No hidden products.">
+        <source>No hidden products.</source>
+        <target>Brak ukrytych produktów.</target>
+      </trans-unit>
+      <trans-unit id="Could not resolve the parent Back Office tab for Inventory.">
+        <source>Could not resolve the parent Back Office tab for Inventory.</source>
+        <target>Nie udało się ustalić nadrzędnej zakładki Back Office dla Inventory.</target>
+      </trans-unit>
+      <trans-unit id="Could not create the Inventory tab in Back Office.">
+        <source>Could not create the Inventory tab in Back Office.</source>
+        <target>Nie udało się utworzyć zakładki Inventory w Back Office.</target>
+      </trans-unit>
+      <trans-unit id="Access denied">
+        <source>Access denied</source>
+        <target>Brak dostępu</target>
+      </trans-unit>
+      <trans-unit id="Database update error">
+        <source>Database update error</source>
+        <target>Błąd aktualizacji bazy danych</target>
+      </trans-unit>
+      <trans-unit id="Stock update error">
+        <source>Stock update error</source>
+        <target>Błąd aktualizacji stanu magazynowego</target>
+      </trans-unit>
+      <trans-unit id="Hide product error">
+        <source>Hide product error</source>
+        <target>Błąd ukrywania produktu</target>
+      </trans-unit>
+      <trans-unit id="Missing product ID">
+        <source>Missing product ID</source>
+        <target>Brak identyfikatora produktu</target>
+      </trans-unit>
+      <trans-unit id="Invalid price">
+        <source>Invalid price</source>
+        <target>Nieprawidłowa cena</target>
+      </trans-unit>
+      <trans-unit id="Price must be greater than 0">
+        <source>Price must be greater than 0</source>
+        <target>Cena musi być większa od 0</target>
+      </trans-unit>
+      <trans-unit id="Invalid quantity">
+        <source>Invalid quantity</source>
+        <target>Nieprawidłowa ilość</target>
+      </trans-unit>
+      <trans-unit id="Invalid weight">
+        <source>Invalid weight</source>
+        <target>Nieprawidłowa waga</target>
+      </trans-unit>
+      <trans-unit id="Stock API is not available.">
+        <source>Stock API is not available.</source>
+        <target>API stanów magazynowych jest niedostępne.</target>
+      </trans-unit>
+      <trans-unit id="Product not found">
+        <source>Product not found</source>
+        <target>Nie znaleziono produktu</target>
+      </trans-unit>
+      <trans-unit id="Profitability">
+        <source>Profitability</source>
+        <target>Rentowność</target>
+      </trans-unit>
+      <trans-unit id="Store price">
+        <source>Store price</source>
+        <target>Cena sklepu</target>
+      </trans-unit>
+      <trans-unit id="Marketplace price">
+        <source>Marketplace price</source>
+        <target>Cena marketplace</target>
+      </trans-unit>
+      <trans-unit id="Store">
+        <source>Store</source>
+        <target>Sklep</target>
+      </trans-unit>
+      <trans-unit id="Marketplace">
+        <source>Marketplace</source>
+        <target>Marketplace</target>
+      </trans-unit>
+      <trans-unit id="Markup">
+        <source>Markup</source>
+        <target>Narzut</target>
+      </trans-unit>
+      <trans-unit id="Margin">
+        <source>Margin</source>
+        <target>Marża</target>
+      </trans-unit>
+      <trans-unit id="Profit (net)">
+        <source>Profit (net)</source>
+        <target>Zysk (netto)</target>
+      </trans-unit>
+      <trans-unit id="Marketplace markup">
+        <source>Marketplace markup</source>
+        <target>Narzut marketplace</target>
+      </trans-unit>
+      <trans-unit id="Enter the percentage value of how much higher the product price is on the marketplace compared to the store price.">
+        <source>Enter the percentage value of how much higher the product price is on the marketplace compared to the store price.</source>
+        <target>Wpisz wartość procentową, o ile jest wyższa cena produktu na marketplace w stosunku do ceny na sklepie.</target>
+      </trans-unit>
+      <trans-unit id="Marketplace commission">
+        <source>Marketplace commission</source>
+        <target>Prowizja marketplace</target>
+      </trans-unit>
+      <trans-unit id="Enter the percentage value of the total sales commission cost on the marketplace.">
+        <source>Enter the percentage value of the total sales commission cost on the marketplace.</source>
+        <target>Wpisz wartość procentową całkowitego kosztu, prowizji od sprzedaży na marketplace.</target>
+      </trans-unit>
+      <trans-unit id="Marketplace settings">
+        <source>Marketplace settings</source>
+        <target>Ustawienia marketplace</target>
+      </trans-unit>
+      <trans-unit id="License required">
+        <source>License required</source>
+        <target>Wymagana licencja</target>
+      </trans-unit>
+      <trans-unit id="The module requires a valid license key in the license.php file.">
+        <source>The module requires a valid license key in the license.php file.</source>
+        <target>Moduł wymaga prawidłowego klucza licencyjnego w pliku license.php.</target>
+      </trans-unit>
+      <trans-unit id="The license key is invalid.">
+        <source>The license key is invalid.</source>
+        <target>Klucz licencyjny jest nieprawidłowy.</target>
+      </trans-unit>
+      <trans-unit id="The license has expired.">
+        <source>The license has expired.</source>
+        <target>Licencja wygasła.</target>
+      </trans-unit>
+      <trans-unit id="The license is not valid for this shop domain.">
+        <source>The license is not valid for this shop domain.</source>
+        <target>Licencja nie jest ważna dla tej domeny sklepu.</target>
+      </trans-unit>
+      <trans-unit id="The license file or public verification key could not be read.">
+        <source>The license file or public verification key could not be read.</source>
+        <target>Nie udało się odczytać pliku licencji lub klucza publicznego weryfikacji.</target>
+      </trans-unit>
+      <trans-unit id="Update to %version%">
+        <source>Update to %version%</source>
+        <target>Aktualizuj do %version%</target>
+      </trans-unit>
+      <trans-unit id="Checking for updates...">
+        <source>Checking for updates...</source>
+        <target>Sprawdzanie aktualizacji...</target>
+      </trans-unit>
+      <trans-unit id="Downloading and installing the update...">
+        <source>Downloading and installing the update...</source>
+        <target>Pobieranie i instalacja aktualizacji...</target>
+      </trans-unit>
+      <trans-unit id="The module was updated. Refresh the page.">
+        <source>The module was updated. Refresh the page.</source>
+        <target>Moduł został zaktualizowany. Odśwież stronę.</target>
+      </trans-unit>
+      <trans-unit id="Could not check for updates.">
+        <source>Could not check for updates.</source>
+        <target>Nie udało się sprawdzić aktualizacji.</target>
+      </trans-unit>
+      <trans-unit id="Could not install the update.">
+        <source>Could not install the update.</source>
+        <target>Nie udało się zainstalować aktualizacji.</target>
+      </trans-unit>
+      <trans-unit id="e.g. 20">
+        <source>e.g. 20</source>
+        <target>np. 20</target>
+      </trans-unit>
+      <trans-unit id="Enter a valid percentage.">
+        <source>Enter a valid percentage.</source>
+        <target>Wpisz prawidłową wartość procentową.</target>
+      </trans-unit>
+      <trans-unit id="—">
+        <source>—</source>
+        <target>—</target>
+      </trans-unit>
+      <trans-unit id="Inventory_status_%date%">
+        <source>Inventory_status_%date%</source>
+        <target>Stan_magazynowy_%date%</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

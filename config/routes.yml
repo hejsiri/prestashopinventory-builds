@@ -1,0 +1,15 @@
+prestashop_inventory_warehouse:
+    path: /prestashop-inventory/warehouse
+    methods: [GET]
+    defaults:
+        _controller: 'PrestaShop\Module\PrestashopInventory\Controller\Admin\WarehouseController::indexAction'
+        _legacy_controller: 'AdminPrestashopInventoryWarehouse'
+        _legacy_link: 'AdminPrestashopInventoryWarehouse'
+
+prestashop_inventory_settings:
+    path: /prestashop-inventory/settings
+    methods: [GET]
+    defaults:
+        _controller: 'PrestaShop\Module\PrestashopInventory\Controller\Admin\SettingsController::indexAction'
+        _legacy_controller: 'AdminPrestashopInventorySettings'
+        _legacy_link: 'AdminPrestashopInventorySettings'
