@@ -1,15 +1,18 @@
-<div id="psinventory-config-head-tabs-source" class="page-head-tabs" role="tablist" aria-label="{$prestashopInventoryTranslations.module_navigation|escape:'html':'UTF-8'}">
+<div class="inventory-module-content">
+<div id="psinventory-config-head-tabs-source" class="page-head-tabs inventory-panel-tabs" role="tablist" aria-label="{$prestashopInventoryTranslations.module_navigation|escape:'html':'UTF-8'}">
   <ul class="nav nav-pills">
     <li class="nav-item">
       <a href="{$prestashopInventoryBackUrl|escape:'html':'UTF-8'}" class="nav-link" role="tab">{$prestashopInventoryTranslations.warehouse_tab|escape:'html':'UTF-8'}</a>
     </li>
     <li class="nav-item">
-      <a href="{$prestashopInventoryConfigAction|escape:'html':'UTF-8'}" class="nav-link active" aria-current="page" role="tab">{$prestashopInventoryTranslations.settings_tab|escape:'html':'UTF-8'}</a>
+      <a href="{$prestashopInventoryConfigAction|escape:'html':'UTF-8'}" class="router-link-active router-link-exact-active nav-link active" aria-current="page" role="tab">{$prestashopInventoryTranslations.settings_tab|escape:'html':'UTF-8'}</a>
     </li>
   </ul>
+  <div class="inventory-update-meta">
+    <div class="inventory-update-meta-version">Wersja {$prestashopInventoryModuleVersion|escape:'html':'UTF-8'}</div>
+    <div class="inventory-update-meta-status"></div>
+  </div>
 </div>
-
-<div class="inventory-module-content">
 <div class="panel prestashopinventory-config-list">
 
   {if $prestashopInventoryIgnoredProducts}
@@ -67,7 +70,134 @@
 
 <style>
   .inventory-module-content {
-    margin-top: 16px;
+    padding-top: 60px;
+    clear: both;
+    position: relative;
+  }
+
+  .inventory-panel-tabs {
+    margin: 0;
+  }
+
+  .page-head > .inventory-panel-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: 58px;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #eaebec;
+    border-bottom: 1px solid #eaebec;
+    background: #fff;
+    box-shadow: none;
+  }
+
+  .page-head > .inventory-panel-tabs .nav.nav-pills {
+    display: flex;
+    flex: 1 1 auto;
+    align-self: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-item {
+    display: flex;
+    margin: 0;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    min-height: 56px;
+    padding: 0 1.6rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #6c868e;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.3;
+    transition: color .2s ease, background-color .2s ease;
+    box-shadow: none;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link:hover,
+  .page-head > .inventory-panel-tabs .nav-link:focus {
+    background: #fff;
+    color: #25b9d7;
+    box-shadow: none;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #25b9d7;
+    opacity: 0;
+    transition: opacity .2s ease;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link:hover::after,
+  .page-head > .inventory-panel-tabs .nav-link:focus::after,
+  .page-head > .inventory-panel-tabs .nav-link.active::after,
+  .page-head > .inventory-panel-tabs .nav-link[aria-current="page"]::after {
+    opacity: 1;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link.active,
+  .page-head > .inventory-panel-tabs .nav-link[aria-current="page"] {
+    background: #eef8fd;
+    color: #363a41;
+    font-weight: 400;
+    box-shadow: none;
+  }
+
+  .page-head > .inventory-panel-tabs .inventory-update-meta {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    min-height: 56px;
+    margin: 0 18px 0 0;
+    text-align: right;
+  }
+
+  .page-head > .inventory-panel-tabs .inventory-update-meta-version {
+    font-size: 11px;
+    font-weight: 700;
+    color: #5f7484;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .page-head > .inventory-panel-tabs .inventory-update-meta-status {
+    font-size: 11px;
+    font-weight: 600;
+    color: #7a8f9d;
+    line-height: 1.2;
+    min-height: 12px;
+    white-space: nowrap;
+  }
+
+  .prestashopinventory-config-list.panel {
+    border: 1px solid #dce7ef;
+    border-radius: 0 20px 20px 20px;
+    box-shadow: 0 14px 28px rgba(31, 52, 66, 0.10);
+    padding: 20px 28px 24px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+    margin-top: 0 !important;
+    background: #fff;
   }
 
   .prestashopinventory-config-list .config-secondary-btn {
@@ -187,6 +317,41 @@
 
 <script>
   (function () {
+    function syncBreadcrumb(currentLabel) {
+      var breadcrumb = document.querySelector('.header-toolbar .breadcrumb');
+      if (!breadcrumb) {
+        return;
+      }
+
+      while (breadcrumb.firstChild) {
+        breadcrumb.removeChild(breadcrumb.firstChild);
+      }
+
+      var catalogItem = document.createElement('li');
+      catalogItem.className = 'breadcrumb-item';
+      var catalogIcon = document.createElement('i');
+      catalogIcon.className = 'material-icons';
+      catalogIcon.textContent = 'store';
+      catalogItem.appendChild(catalogIcon);
+      catalogItem.appendChild(document.createTextNode('Katalog'));
+      breadcrumb.appendChild(catalogItem);
+
+      var moduleItem = document.createElement('li');
+      moduleItem.className = 'breadcrumb-item';
+      var moduleLink = document.createElement('a');
+      moduleLink.href = '{$prestashopInventoryBackUrl|escape:'javascript'}';
+      moduleLink.textContent = 'Inventory';
+      moduleItem.appendChild(moduleLink);
+      breadcrumb.appendChild(moduleItem);
+
+      var currentItem = document.createElement('li');
+      currentItem.className = 'breadcrumb-item active breadcrumb-item--inventory-current';
+      var currentSpan = document.createElement('span');
+      currentSpan.textContent = currentLabel;
+      currentItem.appendChild(currentSpan);
+      breadcrumb.appendChild(currentItem);
+    }
+
     function getDirectContainerFluid(headerToolbar) {
       if (!headerToolbar) {
         return null;
@@ -208,9 +373,9 @@
         return true;
       }
 
-      var headerToolbar = document.querySelector('.header-toolbar.d-print-none, body > .header-toolbar, #main-div > .header-toolbar, .content-div > .header-toolbar, .header-toolbar');
-      var headerContainer = getDirectContainerFluid(headerToolbar);
-      if (!headerToolbar || !headerContainer) {
+      var pageHead = document.querySelector('.page-head');
+      var pageHeadWrapper = pageHead ? pageHead.querySelector('.wrapper.clearfix') : null;
+      if (!pageHead) {
         if ((attempt || 0) < 100) {
           window.setTimeout(function () {
             mountBoTabs(sourceId, (attempt || 0) + 1);
@@ -223,14 +388,16 @@
       }
 
       var mounted = document.getElementById('head_tabs');
-      if (!mounted) {
-        mounted = source.cloneNode(true);
-        mounted.id = 'head_tabs';
-        mounted.hidden = false;
+      if (mounted && mounted !== source && mounted.parentNode) {
+        mounted.parentNode.removeChild(mounted);
       }
 
-      if (mounted.parentNode !== headerToolbar || mounted.previousElementSibling !== headerContainer) {
-        headerContainer.insertAdjacentElement('afterend', mounted);
+      if (pageHeadWrapper) {
+        if (source.parentNode !== pageHead || source.previousElementSibling !== pageHeadWrapper) {
+          pageHeadWrapper.insertAdjacentElement('afterend', source);
+        }
+      } else if (source.parentNode !== pageHead) {
+        pageHead.appendChild(source);
       }
 
       var contentDiv = document.querySelector('#main-div > .content-div');
@@ -238,7 +405,9 @@
         contentDiv.classList.add('with-tabs');
       }
 
-      source.hidden = true;
+      syncBreadcrumb('Ustawienia');
+
+      source.hidden = false;
       return true;
     }
 

@@ -1,86 +1,19 @@
-<div id="psinventory-head-tabs-source" class="page-head-tabs" role="tablist" aria-label="{$inventoryTranslations.module_navigation|escape:'html':'UTF-8'}">
+<div class="inventory-module-content">
+<div id="psinventory-head-tabs-source" class="page-head-tabs inventory-panel-tabs" role="tablist" aria-label="{$inventoryTranslations.module_navigation|escape:'html':'UTF-8'}">
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a href="{$inventoryModuleUrl|escape:'html':'UTF-8'}" class="nav-link active" aria-current="page" role="tab">{$inventoryTranslations.warehouse_tab|escape:'html':'UTF-8'}</a>
+      <a href="{$inventoryModuleUrl|escape:'html':'UTF-8'}" class="router-link-active router-link-exact-active nav-link active" aria-current="page" role="tab">{$inventoryTranslations.warehouse_tab|escape:'html':'UTF-8'}</a>
     </li>
     <li class="nav-item">
       <a href="{$inventoryConfigUrl|escape:'html':'UTF-8'}" class="nav-link" role="tab">{$inventoryTranslations.settings_tab|escape:'html':'UTF-8'}</a>
     </li>
   </ul>
-</div>
-
-<div class="inventory-module-content">
-<div class="panel prestashop-inventory">
-
-  <div class="inventory-toolbar">
-    <div class="inventory-actions">
-      <div class="inventory-actions-menu inventory-filters-menu">
-        <button class="inventory-actions-toggle inventory-filter-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="{$inventoryTranslations.filters|escape:'html':'UTF-8'}">
-          <i class="icon-tasks"></i>
-          <span id="filterActiveCount" class="inventory-filter-badge">0</span>
-        </button>
-        <div class="inventory-actions-dropdown inventory-filter-dropdown">
-          <label class="inventory-switch-row inventory-filter-row">
-            <span class="ios-switch">
-              <input type="checkbox" id="activeOnly">
-              <span class="slider"></span>
-            </span>
-            <span id="activeOnlyLabel"></span>
-          </label>
-
-          <label class="inventory-switch-row inventory-filter-row">
-            <span class="ios-switch">
-              <input type="checkbox" id="onlyAvailable">
-              <span class="slider"></span>
-            </span>
-            <span id="onlyAvailableLabel"></span>
-          </label>
-
-          <label class="inventory-switch-row inventory-filter-row">
-            <span class="ios-switch">
-              <input type="checkbox" id="missingPurchasePriceOnly">
-              <span class="slider"></span>
-            </span>
-            <span id="missingPurchasePriceOnlyLabel"></span>
-          </label>
-
-          <label class="inventory-switch-row inventory-filter-row">
-            <span class="ios-switch">
-              <input type="checkbox" id="showWeight" checked>
-              <span class="slider"></span>
-            </span>
-            <span id="showWeightLabel"></span>
-          </label>
-
-          <label class="inventory-switch-row inventory-filter-row">
-            <span class="ios-switch">
-              <input type="checkbox" id="missingWeightOnly">
-              <span class="slider"></span>
-            </span>
-            <span id="missingWeightOnlyLabel"></span>
-          </label>
-
-          <label class="inventory-switch-row inventory-filter-row">
-            <span class="ios-switch">
-              <input type="checkbox" id="showBrutto" checked>
-              <span class="slider"></span>
-            </span>
-            <span id="showBruttoLabel"></span>
-          </label>
-        </div>
-      </div>
-
-      <button id="btnPdf" class="btn btn-primary inventory-toolbar-btn" type="button">
-        <i class="icon-file-pdf-o"></i> PDF
-      </button>
-
-      <button id="inventoryUpdateButton" class="btn btn-outline-primary inventory-toolbar-btn inventory-update-btn" type="button" hidden data-version="">
-        <i class="icon-refresh"></i>
-        <span class="inventory-update-btn-label"></span>
-      </button>
-    </div>
+  <div class="inventory-update-meta">
+    <div class="inventory-update-meta-version">Wersja {$inventoryModuleVersion|escape:'html':'UTF-8'}</div>
+    <div id="inventoryUpdateMetaStatus" class="inventory-update-meta-status"></div>
   </div>
-
+</div>
+<div class="panel prestashop-inventory">
   <div id="inventoryUpdateStatus" class="inventory-update-status" aria-live="polite"></div>
 
   {if !$inventoryLicenseStatus.valid}
@@ -91,13 +24,91 @@
   {/if}
 
   {if $inventoryLicenseStatus.valid}
-  <div class="inventory-search">
-    <div class="inventory-search-wrap">
-      <div id="searchBox" class="inventory-tagbox">
-        <div id="searchTags" class="inventory-tags"></div>
-        <input type="text" id="searchInput" class="inventory-tag-input" autocomplete="off">
+  <div class="inventory-topbar">
+    <div class="inventory-search">
+      <div class="inventory-search-wrap">
+        <div id="searchBox" class="inventory-tagbox">
+          <div id="searchTags" class="inventory-tags"></div>
+          <input type="text" id="searchInput" class="inventory-tag-input" autocomplete="off">
+        </div>
+        <button id="clearSearch" type="button" class="inventory-clear" aria-label="{$inventoryTranslations.clear|escape:'html':'UTF-8'}">&times;</button>
       </div>
-      <button id="clearSearch" type="button" class="inventory-clear" aria-label="{$inventoryTranslations.clear|escape:'html':'UTF-8'}">&times;</button>
+    </div>
+
+    <div class="inventory-toolbar">
+      <div class="inventory-actions">
+        <div class="inventory-actions-menu inventory-filters-menu">
+          <button class="btn btn-outline-secondary inventory-toolbar-btn inventory-actions-toggle inventory-filter-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="{$inventoryTranslations.filters|escape:'html':'UTF-8'}">
+            <i class="icon-tasks"></i>
+            <span class="inventory-filter-toggle-label">{$inventoryTranslations.filters|escape:'html':'UTF-8'}</span>
+            <span id="filterActiveCount" class="inventory-filter-badge">0</span>
+          </button>
+          <div class="inventory-actions-dropdown inventory-filter-dropdown">
+            <label class="inventory-switch-row inventory-filter-row">
+              <span class="ios-switch">
+                <input type="checkbox" id="activeOnly">
+                <span class="slider"></span>
+              </span>
+              <span id="activeOnlyLabel"></span>
+            </label>
+
+            <label class="inventory-switch-row inventory-filter-row">
+              <span class="ios-switch">
+                <input type="checkbox" id="onlyAvailable">
+                <span class="slider"></span>
+              </span>
+              <span id="onlyAvailableLabel"></span>
+            </label>
+
+            <label class="inventory-switch-row inventory-filter-row">
+              <span class="ios-switch">
+                <input type="checkbox" id="missingPurchasePriceOnly">
+                <span class="slider"></span>
+              </span>
+              <span id="missingPurchasePriceOnlyLabel"></span>
+            </label>
+
+            <label class="inventory-switch-row inventory-filter-row">
+              <span class="ios-switch">
+                <input type="checkbox" id="showWeight" checked>
+                <span class="slider"></span>
+              </span>
+              <span id="showWeightLabel"></span>
+            </label>
+
+            <label class="inventory-switch-row inventory-filter-row">
+              <span class="ios-switch">
+                <input type="checkbox" id="missingWeightOnly">
+                <span class="slider"></span>
+              </span>
+              <span id="missingWeightOnlyLabel"></span>
+            </label>
+
+            <label class="inventory-switch-row inventory-filter-row">
+              <span class="ios-switch">
+                <input type="checkbox" id="showBrutto" checked>
+                <span class="slider"></span>
+              </span>
+              <span id="showBruttoLabel"></span>
+            </label>
+          </div>
+        </div>
+
+        <button id="btnPdf" class="btn btn-primary inventory-toolbar-btn" type="button">
+          <i class="icon-file-pdf-o"></i> PDF
+        </button>
+
+        <button id="inventoryUpdateButton" class="btn btn-outline-primary inventory-toolbar-btn inventory-update-btn" type="button" hidden data-version="">
+          <span class="inventory-update-btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M6.5 18.5a4.5 4.5 0 0 1-.4-9 6.5 6.5 0 0 1 12.6 1.6h.8a3.5 3.5 0 1 1 0 7H6.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 9.5v7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="m9.25 13.75 2.75 2.75 2.75-2.75" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="inventory-update-btn-label"></span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -170,22 +181,159 @@
 
 <style>
   .inventory-module-content {
-    margin-top: 16px;
+    padding-top: 60px;
+    clear: both;
+    position: relative;
+  }
+
+  .inventory-panel-tabs {
+    margin: 0;
+    flex: 1 1 auto;
+  }
+
+  .page-head > .inventory-panel-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: 58px;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #eaebec;
+    border-bottom: 1px solid #eaebec;
+    background: #fff;
+    box-shadow: none;
+  }
+
+  .page-head > .inventory-panel-tabs .nav.nav-pills {
+    display: flex;
+    flex: 1 1 auto;
+    align-self: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-item {
+    display: flex;
+    margin: 0;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    min-height: 56px;
+    padding: 0 1.6rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #6c868e;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.3;
+    transition: color .2s ease, background-color .2s ease;
+    box-shadow: none;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link:hover,
+  .page-head > .inventory-panel-tabs .nav-link:focus {
+    background: #fff;
+    color: #25b9d7;
+    box-shadow: none;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #25b9d7;
+    opacity: 0;
+    transition: opacity .2s ease;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link:hover::after,
+  .page-head > .inventory-panel-tabs .nav-link:focus::after,
+  .page-head > .inventory-panel-tabs .nav-link.active::after,
+  .page-head > .inventory-panel-tabs .nav-link[aria-current="page"]::after {
+    opacity: 1;
+  }
+
+  .page-head > .inventory-panel-tabs .nav-link.active,
+  .page-head > .inventory-panel-tabs .nav-link[aria-current="page"] {
+    background: #eef8fd;
+    color: #363a41;
+    font-weight: 400;
+    box-shadow: none;
   }
 
   .prestashop-inventory.panel {
-    border: 1px solid #e5e5e5;
-    box-shadow: none;
-    padding: 28px 32px 24px;
+    border: 1px solid #dce7ef;
+    border-radius: 0 20px 20px 20px;
+    box-shadow: 0 14px 28px rgba(31, 52, 66, 0.10);
+    padding: 20px 28px 24px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+    margin-top: 0 !important;
+    background: #fff;
+  }
+
+  .prestashop-inventory .inventory-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px 24px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #edf3f7;
   }
 
   .prestashop-inventory .inventory-toolbar {
     display: flex;
     justify-content: flex-end;
     gap: 16px;
-    margin-bottom: 20px;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+  .page-head > .inventory-panel-tabs .inventory-update-meta {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    min-height: 56px;
+    margin: 0 18px 0 0;
+    text-align: right;
+  }
+
+  .page-head > .inventory-panel-tabs .inventory-update-meta-version {
+    font-size: 11px;
+    font-weight: 700;
+    color: #5f7484;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .page-head > .inventory-panel-tabs .inventory-update-meta-status {
+    font-size: 11px;
+    font-weight: 600;
+    color: #7a8f9d;
+    line-height: 1.2;
+    min-height: 12px;
+    white-space: nowrap;
+  }
+
+  .page-head > .inventory-panel-tabs .inventory-update-meta-status.is-error {
+    color: #c05c67;
   }
 
   .prestashop-inventory .inventory-actions {
@@ -196,7 +344,9 @@
   }
 
   .prestashop-inventory .inventory-search {
-    margin-bottom: 24px;
+    margin: 0;
+    flex: 1 1 620px;
+    min-width: 280px;
   }
 
   .prestashop-inventory .inventory-marketplace-settings {
@@ -257,7 +407,14 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    min-height: 38px;
+    height: 42px;
+    min-height: 42px;
+    padding: 0 16px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap;
   }
 
   .prestashop-inventory .inventory-toolbar-btn:hover,
@@ -266,8 +423,12 @@
   }
 
   .prestashop-inventory .inventory-toolbar-btn i {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1;
+  }
+
+  .prestashop-inventory #btnPdf {
+    min-width: 122px;
   }
 
   .prestashop-inventory .inventory-update-btn[hidden] {
@@ -275,11 +436,7 @@
   }
 
   .prestashop-inventory .inventory-update-status {
-    min-height: 20px;
-    margin: 0 0 14px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #6f8594;
+    display: none !important;
   }
 
   .prestashop-inventory .inventory-update-status.is-error {
@@ -292,22 +449,24 @@
   }
 
   .prestashop-inventory .inventory-search-wrap {
-    max-width: 720px;
+    max-width: none;
+    width: 100%;
     position: relative;
   }
 
   .prestashop-inventory .inventory-tagbox {
     min-height: 42px;
-    padding: 6px 34px 6px 8px;
+    height: 42px;
+    padding: 0 40px 0 10px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 6px;
     cursor: text;
-    border: 1px solid #bbcdd2;
-    border-radius: 4px;
+    border: 1px solid #ccd9e2;
+    border-radius: 10px;
     background: #fff;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: none;
   }
 
   .prestashop-inventory .inventory-tagbox:focus-within {
@@ -325,11 +484,16 @@
   .prestashop-inventory .inventory-tag {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 7px 12px;
-    background: #f3f3f3;
-    border-radius: 2px;
+    gap: 6px;
+    min-height: 32px;
+    padding: 3px 11px;
+    background: linear-gradient(135deg, #25b9d7 0%, #31c0e3 100%);
+    color: #fff;
+    border-radius: 8px;
     font-weight: 600;
+    font-size: 13px;
+    line-height: 1;
+    box-shadow: none;
   }
 
   .prestashop-inventory .inventory-tag-remove {
@@ -337,8 +501,8 @@
     background: transparent;
     padding: 0;
     line-height: 1;
-    font-size: 24px;
-    color: #333;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.96);
   }
 
   .prestashop-inventory .inventory-tag-input {
@@ -348,7 +512,8 @@
     outline: none !important;
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
-    padding: 4px 0;
+    height: 40px;
+    padding: 0;
     margin: 0;
     background: transparent !important;
     appearance: none;
@@ -369,7 +534,7 @@
   .prestashop-inventory .inventory-clear {
     position: absolute;
     top: 50%;
-    right: 8px;
+    right: 12px;
     transform: translateY(-50%);
     border: 0;
     background: transparent;
@@ -436,26 +601,10 @@
 
   .prestashop-inventory .inventory-filter-toggle {
     position: relative;
-    width: 42px;
-    height: 42px;
-    border: 0;
-    border-radius: 4px;
-    background: transparent;
-    color: #1f1f1f;
-    font-size: 22px;
-    transition: color .15s ease, transform .15s ease;
   }
 
-  .prestashop-inventory .inventory-filter-toggle:hover,
-  .prestashop-inventory .inventory-filter-toggle:focus {
-    color: #111;
-    transform: scale(1.04);
-    outline: none;
-  }
-
-  .prestashop-inventory .inventory-filter-toggle i {
-    display: block;
-    line-height: 1;
+  .prestashop-inventory .table-responsive-row {
+    overflow-x: auto;
   }
 
   .prestashop-inventory .inventory-filter-badge {
@@ -472,6 +621,10 @@
     font-weight: 700;
     line-height: 18px;
     text-align: center;
+  }
+
+  .prestashop-inventory .inventory-filter-badge.is-hidden {
+    display: none;
   }
 
   .prestashop-inventory .inventory-filter-dropdown {
@@ -514,13 +667,14 @@
     display: inline-flex;
     align-items: center;
     outline: none;
+    z-index: 1;
   }
 
   .prestashop-inventory .product-preview-card {
     position: absolute;
     left: calc(100% + 12px);
     top: 50%;
-    z-index: 1000;
+    z-index: 2100;
     display: none;
     min-width: 260px;
     padding: 14px 16px;
@@ -536,6 +690,12 @@
   .prestashop-inventory .product-preview:focus .product-preview-card,
   .prestashop-inventory .product-preview:focus-within .product-preview-card {
     display: block;
+  }
+
+  .prestashop-inventory .product-preview:hover,
+  .prestashop-inventory .product-preview:focus,
+  .prestashop-inventory .product-preview:focus-within {
+    z-index: 2101;
   }
 
   .prestashop-inventory .product-preview-title,
@@ -1003,14 +1163,72 @@
   }
 
   .prestashop-inventory .inventory-actions-toggle {
-    width: 34px;
-    height: 34px;
-    border: 0;
-    background: transparent;
-    color: #1f1f1f;
-    font-size: 26px;
+    position: relative;
+  }
+
+  .prestashop-inventory .inventory-filter-toggle {
+    min-width: 132px;
+    border: 1px solid #c9d2db !important;
+    background: #f5f7fa !important;
+    color: #51606d !important;
+    box-shadow: none !important;
+    transition: background .18s ease, border-color .18s ease, color .18s ease !important;
+  }
+
+  .prestashop-inventory .inventory-filter-toggle:hover,
+  .prestashop-inventory .inventory-filter-toggle:focus {
+    background: #eef2f6 !important;
+    border-color: #bbc7d1 !important;
+    color: #3f4d59 !important;
+    box-shadow: none !important;
+  }
+
+  .prestashop-inventory .inventory-filter-toggle i {
+    font-size: 15px !important;
     line-height: 1;
-    padding: 0;
+  }
+
+  .prestashop-inventory .inventory-filter-toggle-label {
+    display: inline-block;
+    font-size: 14px !important;
+    line-height: 1;
+  }
+
+  .prestashop-inventory .inventory-update-btn {
+    min-width: 154px;
+    border: 1px solid #d94b56 !important;
+    background: #e74c5b !important;
+    color: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .prestashop-inventory .inventory-update-btn:hover,
+  .prestashop-inventory .inventory-update-btn:focus {
+    background: #d83c4c !important;
+    border-color: #ca3242 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .prestashop-inventory .inventory-update-btn i,
+  .prestashop-inventory .inventory-update-btn-label {
+    color: inherit !important;
+  }
+
+  .prestashop-inventory .inventory-update-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    color: inherit !important;
+    flex: 0 0 18px;
+  }
+
+  .prestashop-inventory .inventory-update-btn-icon svg {
+    display: block;
+    width: 18px;
+    height: 18px;
   }
 
   .prestashop-inventory .inventory-actions-dropdown {
@@ -1072,14 +1290,14 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    box-shadow: 0 6px 14px rgba(15, 107, 138, 0.08);
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    box-shadow: none;
+    transition: transform .18s ease, border-color .18s ease;
   }
 
   .prestashop-inventory .inventory-sales-trigger:hover,
   .prestashop-inventory .inventory-sales-trigger:focus {
     border-color: #9bc8d8;
-    box-shadow: 0 10px 22px rgba(15, 107, 138, 0.16);
+    box-shadow: none;
     transform: translateY(-1px);
     text-decoration: none;
   }
@@ -1100,8 +1318,8 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    box-shadow: 0 6px 14px rgba(15, 107, 138, 0.08);
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    box-shadow: none;
+    transition: transform .18s ease, border-color .18s ease;
     font-size: 16px;
     font-weight: 800;
     line-height: 1;
@@ -1110,7 +1328,7 @@
   .prestashop-inventory .inventory-profit-trigger:hover,
   .prestashop-inventory .inventory-profit-trigger:focus {
     border-color: #9bc8d8;
-    box-shadow: 0 10px 22px rgba(15, 107, 138, 0.16);
+    box-shadow: none;
     transform: translateY(-1px);
     text-decoration: none;
   }
@@ -1126,14 +1344,14 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    box-shadow: 0 6px 14px rgba(163, 86, 86, 0.08);
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    box-shadow: none;
+    transition: transform .18s ease, border-color .18s ease;
   }
 
   .prestashop-inventory .inventory-hide-product-icon:hover,
   .prestashop-inventory .inventory-hide-product-icon:focus {
     border-color: #d8a3a3;
-    box-shadow: 0 10px 22px rgba(163, 86, 86, 0.16);
+    box-shadow: none;
     transform: translateY(-1px);
     text-decoration: none;
   }
@@ -1592,6 +1810,10 @@
     text-align: right;
   }
 
+  .inventory-sales-summary-line-value .inventory-sales-channel-profit {
+    display: block;
+  }
+
   .inventory-sales-chart {
     border-radius: 24px;
     padding: 14px 14px;
@@ -1768,6 +1990,41 @@
 <script src="{$inventoryModuleBaseUrl|escape:'html':'UTF-8'}views/js/chart.umd.min.js"></script>
 <script>
   (function () {
+    function syncBreadcrumb(currentLabel) {
+      var breadcrumb = document.querySelector('.header-toolbar .breadcrumb');
+      if (!breadcrumb) {
+        return;
+      }
+
+      while (breadcrumb.firstChild) {
+        breadcrumb.removeChild(breadcrumb.firstChild);
+      }
+
+      var catalogItem = document.createElement('li');
+      catalogItem.className = 'breadcrumb-item';
+      var catalogIcon = document.createElement('i');
+      catalogIcon.className = 'material-icons';
+      catalogIcon.textContent = 'store';
+      catalogItem.appendChild(catalogIcon);
+      catalogItem.appendChild(document.createTextNode('Katalog'));
+      breadcrumb.appendChild(catalogItem);
+
+      var moduleItem = document.createElement('li');
+      moduleItem.className = 'breadcrumb-item';
+      var moduleLink = document.createElement('a');
+      moduleLink.href = '{$inventoryModuleUrl|escape:'javascript'}';
+      moduleLink.textContent = 'Inventory';
+      moduleItem.appendChild(moduleLink);
+      breadcrumb.appendChild(moduleItem);
+
+      var currentItem = document.createElement('li');
+      currentItem.className = 'breadcrumb-item active breadcrumb-item--inventory-current';
+      var currentSpan = document.createElement('span');
+      currentSpan.textContent = currentLabel;
+      currentItem.appendChild(currentSpan);
+      breadcrumb.appendChild(currentItem);
+    }
+
     function getDirectContainerFluid(headerToolbar) {
       if (!headerToolbar) {
         return null;
@@ -1785,13 +2042,11 @@
 
     function mountBoTabs(sourceId, attempt) {
       var source = document.getElementById(sourceId);
-      if (!source) {
-        return true;
-      }
+      var pageHead = document.querySelector('.page-head');
+      var pageHeadWrapper = pageHead ? pageHead.querySelector('.wrapper.clearfix') : null;
+      var contentDiv = document.querySelector('#main-div > .content-div');
 
-      var headerToolbar = document.querySelector('.header-toolbar.d-print-none, body > .header-toolbar, #main-div > .header-toolbar, .content-div > .header-toolbar, .header-toolbar');
-      var headerContainer = getDirectContainerFluid(headerToolbar);
-      if (!headerToolbar || !headerContainer) {
+      if (!source || !pageHead) {
         if ((attempt || 0) < 100) {
           window.setTimeout(function () {
             mountBoTabs(sourceId, (attempt || 0) + 1);
@@ -1799,28 +2054,33 @@
           return false;
         }
 
-        source.hidden = false;
+        if (source) {
+          source.hidden = false;
+        }
         return false;
       }
 
       var mounted = document.getElementById('head_tabs');
-      if (!mounted) {
-        mounted = source.cloneNode(true);
-        mounted.id = 'head_tabs';
-        mounted.hidden = false;
+      if (mounted && mounted !== source && mounted.parentNode) {
+        mounted.parentNode.removeChild(mounted);
       }
 
-      if (mounted.parentNode !== headerToolbar || mounted.previousElementSibling !== headerContainer) {
-        headerContainer.insertAdjacentElement('afterend', mounted);
+      if (pageHeadWrapper) {
+        if (source.parentNode !== pageHead || source.previousElementSibling !== pageHeadWrapper) {
+          pageHeadWrapper.insertAdjacentElement('afterend', source);
+        }
+      } else if (source.parentNode !== pageHead) {
+        pageHead.appendChild(source);
       }
 
-      var contentDiv = document.querySelector('#main-div > .content-div');
       if (contentDiv) {
         contentDiv.classList.add('with-tabs');
       }
 
-      source.hidden = true;
-      return true;
+      syncBreadcrumb('Magazyn');
+
+      source.hidden = false;
+      return false;
     }
 
     if (document.readyState === 'loading') {
@@ -1904,6 +2164,12 @@
       salesBestMonth: sourceTranslations.sales_best_month,
       salesMonthsCount: sourceTranslations.sales_months_count,
       salesUnits: sourceTranslations.sales_units,
+      salesRevenue: sourceTranslations.sales_revenue,
+      salesRevenueShort: sourceTranslations.sales_revenue_short,
+      salesRevenueNet: sourceTranslations.sales_revenue_net,
+      salesRevenueNetShort: sourceTranslations.sales_revenue_net_short,
+      estimatedProfitNet: sourceTranslations.estimated_profit_net,
+      estimatedProfitGross: sourceTranslations.estimated_profit_gross,
       year: sourceTranslations.year,
       errorSalesStats: sourceTranslations.error_sales_stats,
       close: sourceTranslations.close,
@@ -1965,6 +2231,10 @@
       productName: '',
       combinationName: '',
       imageSrc: '',
+      cost: 0,
+      costGross: 0,
+      retailNet: 0,
+      retail: 0,
       months: 12,
       offsetMonths: 0,
       selectedYear: 0,
@@ -1992,12 +2262,20 @@
 
     function setUpdateStatus(message, isError) {
       var el = document.getElementById('inventoryUpdateStatus');
-      if (!el) {
+      var metaEl = document.getElementById('inventoryUpdateMetaStatus');
+      if (!el && !metaEl) {
         return;
       }
 
-      el.textContent = message || '';
-      el.classList.toggle('is-error', !!isError);
+      if (el) {
+        el.textContent = message || '';
+        el.classList.toggle('is-error', !!isError);
+      }
+
+      if (metaEl) {
+        metaEl.textContent = message || '';
+        metaEl.classList.toggle('is-error', !!isError);
+      }
     }
 
     function formatUpdateButtonLabel(version) {
@@ -2058,6 +2336,33 @@
       };
     }
 
+    function buildEstimatedSalesProfit(totalQuantity) {
+      var qty = Number(totalQuantity || 0);
+      if (!(qty > 0)) {
+        return null;
+      }
+
+      var marketplaceGrossPrice = salesModalState.retail > 0 ? salesModalState.retail * (1 + (marketplaceSettingsState.marketplaceMarkup / 100)) : 0;
+      var marketplaceNetPrice = salesModalState.retailNet > 0 ? salesModalState.retailNet * (1 + (marketplaceSettingsState.marketplaceMarkup / 100)) : 0;
+      var marketplaceGrossCommission = marketplaceGrossPrice * (marketplaceSettingsState.marketplaceCommission / 100);
+      var marketplaceNetCommission = marketplaceNetPrice * (marketplaceSettingsState.marketplaceCommission / 100);
+
+      return {
+        storeNet: salesModalState.retailNet > 0 ? qty * (salesModalState.retailNet - salesModalState.cost) : NaN,
+        marketplaceNet: marketplaceNetPrice > 0 ? qty * (marketplaceNetPrice - salesModalState.cost - marketplaceNetCommission) : NaN,
+        storeGross: salesModalState.retail > 0 ? qty * (salesModalState.retail - salesModalState.costGross) : NaN,
+        marketplaceGross: marketplaceGrossPrice > 0 ? qty * (marketplaceGrossPrice - salesModalState.costGross - marketplaceGrossCommission) : NaN
+      };
+    }
+
+    function renderEstimatedProfitValue(storeValue, marketplaceValue) {
+      var storeText = isFinite(storeValue) ? formatCurrencyAmount(storeValue) : t('notAvailable');
+      var marketplaceText = isFinite(marketplaceValue) ? formatCurrencyAmount(marketplaceValue) : t('notAvailable');
+
+      return '<span class="inventory-sales-channel-profit">' + escapeHtml(t('storeChannel')) + ': <strong>' + escapeHtml(storeText) + '</strong></span>' +
+        '<span class="inventory-sales-channel-profit">' + escapeHtml(t('marketplaceChannel')) + ': <strong>' + escapeHtml(marketplaceText) + '</strong></span>';
+    }
+
     function syncMarketplaceSettingsUi() {
       $('.editable-marketplace-setting').each(function () {
         var key = String($(this).data('setting-key') || '');
@@ -2079,7 +2384,22 @@
         return t('notAvailable');
       }
 
-      return Number(value).toFixed(2).replace('.', ',') + ' zł';
+      var integerPart = '';
+
+      try {
+        integerPart = new Intl.NumberFormat('pl-PL', {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+          useGrouping: true
+        }).format(Math.round(Number(value)));
+      } catch (error) {
+        var rounded = String(Math.round(Number(value)));
+        integerPart = rounded.replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
+      }
+
+      integerPart = String(integerPart).replace(/\s/g, '\u00A0');
+
+      return integerPart + '\u00A0zł';
     }
 
     function renderProfitabilityCard(label, toneClass, priceLabel, metrics) {
@@ -2324,6 +2644,7 @@
     function persistAndLoadKeywords(keywords) {
       setSearchKeywords(keywords);
       localStorage.setItem(LS_QUERY, getSearchQuery());
+      updateFilterBadge();
       currentPage = 1;
       localStorage.setItem(LS_PAGE, String(currentPage));
       loadTable(getSearchQuery(), $('#activeOnly').is(':checked'), $('#onlyAvailable').is(':checked'), $('#missingPurchasePriceOnly').is(':checked'), $('#missingWeightOnly').is(':checked'));
@@ -2393,7 +2714,15 @@
 
     function updateFilterBadge() {
       var count = 0;
-      ['activeOnly', 'onlyAvailable', 'missingPurchasePriceOnly', 'showWeight', 'missingWeightOnly', 'showBrutto'].forEach(function (id) {
+
+      [
+        'activeOnly',
+        'onlyAvailable',
+        'missingPurchasePriceOnly',
+        'showWeight',
+        'missingWeightOnly',
+        'showBrutto'
+      ].forEach(function (id) {
         var input = document.getElementById(id);
         if (input && input.checked) {
           count += 1;
@@ -2403,6 +2732,7 @@
       var badge = document.getElementById('filterActiveCount');
       if (badge) {
         badge.textContent = String(count);
+        badge.classList.toggle('is-hidden', count === 0);
       }
     }
 
@@ -2488,7 +2818,7 @@
       }
     }
 
-    function buildYearSummary(year, quantities) {
+    function buildYearSummary(year, quantities, values, valuesNet) {
       var today = new Date();
       var currentYear = today.getFullYear();
       var currentMonthIndex = today.getMonth();
@@ -2497,6 +2827,8 @@
       var lastIncludedMonthIndex = year === currentYear ? Math.min(currentMonthIndex, quantities.length - 1) : (quantities.length - 1);
       var elapsedMonthUnits = quantities.length;
       var total = 0;
+      var totalValue = 0;
+      var totalValueNet = 0;
       var minValue = null;
       var maxValue = null;
       var minMonthIndex = 0;
@@ -2509,6 +2841,8 @@
 
         var value = Number(qty || 0);
         total += value;
+        totalValue += Number((values || [])[index] || 0);
+        totalValueNet += Number((valuesNet || [])[index] || 0);
 
         if (minValue === null || value < minValue) {
           minValue = value;
@@ -2532,7 +2866,11 @@
       return {
         year: year,
         total: total,
+        totalValue: totalValue,
+        totalValueNet: totalValueNet,
         average: total / elapsedMonthUnits,
+        averageValue: totalValue / elapsedMonthUnits,
+        averageValueNet: totalValueNet / elapsedMonthUnits,
         minValue: minValue === null ? 0 : minValue,
         maxValue: maxValue === null ? 0 : maxValue,
         minMonthDate: year + '-' + String(minMonthIndex + 1).padStart(2, '0') + '-01',
@@ -2542,18 +2880,33 @@
 
     function renderYearSummaryCard(summary, toneClass) {
       var averageLabel = Number(summary.average || 0).toFixed(1).replace(/\.0$/, '');
+      var averageValueLabel = formatCurrencyAmount(Number(summary.averageValue || 0));
+      var averageValueNetLabel = formatCurrencyAmount(Number(summary.averageValueNet || 0));
+      var estimatedProfit = buildEstimatedSalesProfit(summary.total);
       var title = 'łącznie sprzedano ' + summary.total + ' ' + t('salesUnits');
+      var revenueLine = '<span class="inventory-sales-summary-line-label">' + escapeHtml(t('salesRevenue')) + '</span><span class="inventory-sales-summary-line-value"><strong>' + escapeHtml(formatCurrencyAmount(Number(summary.totalValue || 0))) + '</strong></span>';
+      var revenueNetLine = '<span class="inventory-sales-summary-line-label">' + escapeHtml(t('salesRevenueNet')) + '</span><span class="inventory-sales-summary-line-value"><strong>' + escapeHtml(formatCurrencyAmount(Number(summary.totalValueNet || 0))) + '</strong></span>';
+      var estimatedNetLine = '<span class="inventory-sales-summary-line-label">' + escapeHtml(t('estimatedProfitNet')) + '</span><span class="inventory-sales-summary-line-value">' + (estimatedProfit ? renderEstimatedProfitValue(estimatedProfit.storeNet, estimatedProfit.marketplaceNet) : escapeHtml(t('notAvailable'))) + '</span>';
+      var estimatedGrossLine = '<span class="inventory-sales-summary-line-label">' + escapeHtml(t('estimatedProfitGross')) + '</span><span class="inventory-sales-summary-line-value">' + (estimatedProfit ? renderEstimatedProfitValue(estimatedProfit.storeGross, estimatedProfit.marketplaceGross) : escapeHtml(t('notAvailable'))) + '</span>';
       var minLine = '<span class="inventory-sales-summary-line-label">Min</span><span class="inventory-sales-summary-line-value"><strong>' + summary.minValue + ' ' + escapeHtml(t('salesUnits')) + '</strong> w ' + escapeHtml(formatSalesMonthName(summary.minMonthDate, 'locative')) + '</span>';
       var maxLine = '<span class="inventory-sales-summary-line-label">Max</span><span class="inventory-sales-summary-line-value"><strong>' + summary.maxValue + ' ' + escapeHtml(t('salesUnits')) + '</strong> w ' + escapeHtml(formatSalesMonthName(summary.maxMonthDate, 'locative')) + '</span>';
       var avgLine = '<span class="inventory-sales-summary-line-label">Średnio</span><span class="inventory-sales-summary-line-value"><strong>' + escapeHtml(averageLabel) + ' ' + escapeHtml(t('salesUnits')) + '</strong> w miesiącu</span>';
+      var avgValueLine = '<span class="inventory-sales-summary-line-label">' + escapeHtml(t('salesRevenue')) + ' / mies.</span><span class="inventory-sales-summary-line-value"><strong>' + escapeHtml(averageValueLabel) + '</strong></span>';
+      var avgValueNetLine = '<span class="inventory-sales-summary-line-label">' + escapeHtml(t('salesRevenueNet')) + ' / mies.</span><span class="inventory-sales-summary-line-value"><strong>' + escapeHtml(averageValueNetLabel) + '</strong></span>';
 
       return '' +
         '<div class="inventory-sales-summary-card ' + escapeHtml(toneClass || '') + '">' +
           '<div class="inventory-sales-summary-value"><span class="inventory-sales-summary-label">' + escapeHtml(String(summary.year)) + '</span><span class="inventory-sales-summary-text">' + escapeHtml(title) + '</span></div>' +
           '<div class="inventory-sales-summary-note inventory-sales-summary-lines">' +
+            '<div class="inventory-sales-summary-line">' + revenueLine + '</div>' +
+            '<div class="inventory-sales-summary-line">' + revenueNetLine + '</div>' +
+            '<div class="inventory-sales-summary-line">' + estimatedNetLine + '</div>' +
+            '<div class="inventory-sales-summary-line">' + estimatedGrossLine + '</div>' +
             '<div class="inventory-sales-summary-line">' + minLine + '</div>' +
             '<div class="inventory-sales-summary-line">' + maxLine + '</div>' +
             '<div class="inventory-sales-summary-line">' + avgLine + '</div>' +
+            '<div class="inventory-sales-summary-line">' + avgValueLine + '</div>' +
+            '<div class="inventory-sales-summary-line">' + avgValueNetLine + '</div>' +
           '</div>' +
         '</div>';
     }
@@ -2688,6 +3041,9 @@
                 title: function () {
                   return '';
                 },
+                labelTextColor: function (context) {
+                  return context && context.dataset && context.dataset.borderColor ? context.dataset.borderColor : '#35586b';
+                },
                 label: function (context) {
                   var item = months[context.dataIndex] || {};
                   var datasetYear = context.datasetIndex === 0
@@ -2696,8 +3052,19 @@
                   var monthDate = context.datasetIndex === 2
                     ? (item.month_date || item.month || (String(datasetYear || '') + '-' + String(context.dataIndex + 1).padStart(2, '0') + '-01'))
                     : String(datasetYear || '') + '-' + String(context.dataIndex + 1).padStart(2, '0') + '-01';
+                  var datasetValue = context.datasetIndex === 0
+                    ? Number(item.earliest_value || 0)
+                    : (context.datasetIndex === 1 ? Number(item.previous_value || 0) : Number(item.value || 0));
 
-                  return formatSalesMonth(monthDate) + ': ' + String(context.parsed.y || 0) + ' ' + t('salesUnits');
+                  var revenueShortLabel = t('salesRevenueShort');
+                  if (!revenueShortLabel || revenueShortLabel === 'sales value') {
+                    revenueShortLabel = 'wartość sprzedaży (brutto)';
+                  }
+
+                  return [
+                    formatSalesMonth(monthDate) + ': ' + String(context.parsed.y || 0) + ' ' + t('salesUnits'),
+                    revenueShortLabel + ': ' + formatCurrencyAmount(datasetValue)
+                  ];
                 }
               }
             }
@@ -2853,12 +3220,24 @@
       yearLabel = String(comparison.current_year || '—') + ' / ' + String(comparison.previous_year || '—') + ' / ' + String(comparison.earliest_year || '—');
       var currentSummary = buildYearSummary(salesModalState.selectedYear, months.map(function (item) {
         return Number(item.quantity || 0);
+      }), months.map(function (item) {
+        return Number(item.value || 0);
+      }), months.map(function (item) {
+        return Number(item.value_net || 0);
       }));
       var previousSummary = buildYearSummary(salesModalState.previousYear, months.map(function (item) {
         return Number(item.previous_quantity || 0);
+      }), months.map(function (item) {
+        return Number(item.previous_value || 0);
+      }), months.map(function (item) {
+        return Number(item.previous_value_net || 0);
       }));
       var earliestSummary = buildYearSummary(salesModalState.earliestYear, months.map(function (item) {
         return Number(item.earliest_quantity || 0);
+      }), months.map(function (item) {
+        return Number(item.earliest_value || 0);
+      }), months.map(function (item) {
+        return Number(item.earliest_value_net || 0);
       }));
 
       var html = '' +
@@ -3073,6 +3452,7 @@
         $('#searchInput').val('');
         setSearchKeywords([]);
         localStorage.setItem(LS_QUERY, '');
+        updateFilterBadge();
         currentPage = 1;
         localStorage.setItem(LS_PAGE, String(currentPage));
         loadTable('', $('#activeOnly').is(':checked'), $('#onlyAvailable').is(':checked'), $('#missingPurchasePriceOnly').is(':checked'), $('#missingWeightOnly').is(':checked'));
@@ -3453,6 +3833,10 @@
         salesModalState.productName = String($button.data('product-name') || t('salesStatsTitle'));
         salesModalState.combinationName = String($button.data('combination-name') || '');
         salesModalState.imageSrc = String($button.data('image-src') || '');
+        salesModalState.cost = Number($button.data('cost') || 0);
+        salesModalState.costGross = Number($button.data('cost-gross') || 0);
+        salesModalState.retailNet = Number($button.data('retail-net') || 0);
+        salesModalState.retail = Number($button.data('retail') || 0);
         salesModalState.months = 12;
         salesModalState.offsetMonths = 0;
 

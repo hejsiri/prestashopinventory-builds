@@ -146,7 +146,7 @@ class PrestashopInventoryService
                 $salesCombinationName = (string) ($product['combination_name'] ?? '');
                 $output .= '<td class="inventory-col-actions text-center">';
                 $output .= '<div class="inventory-row-actions">';
-                $output .= '<button type="button" class="inventory-sales-trigger" data-id-product="' . $idProduct . '" data-id-attr="' . $idAttr . '" data-product-name="' . htmlspecialchars($salesProductName, ENT_QUOTES, 'UTF-8') . '" data-combination-name="' . htmlspecialchars($salesCombinationName, ENT_QUOTES, 'UTF-8') . '" data-image-src="' . ($imgId > 0 ? htmlspecialchars($this->getImagePath($imgId), ENT_QUOTES, 'UTF-8') : '') . '" aria-label="' . htmlspecialchars($this->t('sales_chart'), ENT_QUOTES, 'UTF-8') . '" title="' . htmlspecialchars($this->t('sales_chart'), ENT_QUOTES, 'UTF-8') . '"><i class="icon-bar-chart"></i></button>';
+                $output .= '<button type="button" class="inventory-sales-trigger" data-id-product="' . $idProduct . '" data-id-attr="' . $idAttr . '" data-product-name="' . htmlspecialchars($salesProductName, ENT_QUOTES, 'UTF-8') . '" data-combination-name="' . htmlspecialchars($salesCombinationName, ENT_QUOTES, 'UTF-8') . '" data-image-src="' . ($imgId > 0 ? htmlspecialchars($this->getImagePath($imgId), ENT_QUOTES, 'UTF-8') : '') . '" data-cost="' . htmlspecialchars(number_format($cost, 2, '.', ''), ENT_QUOTES, 'UTF-8') . '" data-cost-gross="' . htmlspecialchars(number_format($costBrutto, 2, '.', ''), ENT_QUOTES, 'UTF-8') . '" data-retail-net="' . htmlspecialchars(number_format($priceNetto, 2, '.', ''), ENT_QUOTES, 'UTF-8') . '" data-retail="' . htmlspecialchars(number_format($priceBrutto, 2, '.', ''), ENT_QUOTES, 'UTF-8') . '" aria-label="' . htmlspecialchars($this->t('sales_chart'), ENT_QUOTES, 'UTF-8') . '" title="' . htmlspecialchars($this->t('sales_chart'), ENT_QUOTES, 'UTF-8') . '"><i class="icon-bar-chart"></i></button>';
                 $output .= '<button type="button" class="inventory-profit-trigger" data-product-name="' . htmlspecialchars($salesProductName, ENT_QUOTES, 'UTF-8') . '" data-combination-name="' . htmlspecialchars($salesCombinationName, ENT_QUOTES, 'UTF-8') . '" data-image-src="' . ($imgId > 0 ? htmlspecialchars($this->getImagePath($imgId), ENT_QUOTES, 'UTF-8') : '') . '" data-cost="' . htmlspecialchars(number_format($cost, 2, '.', ''), ENT_QUOTES, 'UTF-8') . '" data-cost-gross="' . htmlspecialchars(number_format($costBrutto, 2, '.', ''), ENT_QUOTES, 'UTF-8') . '" data-retail-net="' . htmlspecialchars(number_format($priceNetto, 2, '.', ''), ENT_QUOTES, 'UTF-8') . '" data-retail="' . htmlspecialchars(number_format($priceBrutto, 2, '.', ''), ENT_QUOTES, 'UTF-8') . '" aria-label="' . htmlspecialchars($this->t('profitability'), ENT_QUOTES, 'UTF-8') . '" title="' . htmlspecialchars($this->t('profitability'), ENT_QUOTES, 'UTF-8') . '"><span aria-hidden="true">%</span></button>';
                 $output .= '<button type="button" class="inventory-hide-product inventory-hide-product-icon" data-id-product="' . $idProduct . '" aria-label="' . htmlspecialchars($this->t('hide_forever'), ENT_QUOTES, 'UTF-8') . '" title="' . htmlspecialchars($this->t('hide_forever'), ENT_QUOTES, 'UTF-8') . '"><i class="icon-eye-close"></i></button>';
                 $output .= '</div>';
@@ -206,6 +206,12 @@ class PrestashopInventoryService
         $currentSeries = [];
         $previousSeries = [];
         $earliestSeries = [];
+        $currentRevenueSeries = [];
+        $previousRevenueSeries = [];
+        $earliestRevenueSeries = [];
+        $currentRevenueNetSeries = [];
+        $previousRevenueNetSeries = [];
+        $earliestRevenueNetSeries = [];
 
         for ($month = 1; $month <= 12; $month++) {
             $monthKey = sprintf('%02d', $month);
@@ -213,13 +219,19 @@ class PrestashopInventoryService
             $currentSeries[$monthKey] = 0;
             $previousSeries[$monthKey] = 0;
             $earliestSeries[$monthKey] = 0;
+            $currentRevenueSeries[$monthKey] = 0.0;
+            $previousRevenueSeries[$monthKey] = 0.0;
+            $earliestRevenueSeries[$monthKey] = 0.0;
+            $currentRevenueNetSeries[$monthKey] = 0.0;
+            $previousRevenueNetSeries[$monthKey] = 0.0;
+            $earliestRevenueNetSeries[$monthKey] = 0.0;
         }
 
         $dateFrom = sprintf('%d-01-01 00:00:00', $earliestYear);
         $dateTo = sprintf('%d-12-31 23:59:59', $selectedYear);
 
         $sql = '
-            SELECT DATE_FORMAT(o.date_add, "%Y") AS sale_year, DATE_FORMAT(o.date_add, "%m") AS sale_month, SUM(od.product_quantity) AS sold_qty
+            SELECT DATE_FORMAT(o.date_add, "%Y") AS sale_year, DATE_FORMAT(o.date_add, "%m") AS sale_month, SUM(od.product_quantity) AS sold_qty, SUM(od.total_price_tax_incl / NULLIF(o.conversion_rate, 0)) AS sold_value, SUM(od.total_price_tax_excl / NULLIF(o.conversion_rate, 0)) AS sold_value_net
             FROM `' . _DB_PREFIX_ . 'orders` o
             INNER JOIN `' . _DB_PREFIX_ . 'order_detail` od ON od.id_order = o.id_order
             WHERE o.valid = 1
@@ -247,13 +259,21 @@ class PrestashopInventoryService
             }
 
             $soldQty = (int) round((float) ($row['sold_qty'] ?? 0));
+            $soldValue = (float) ($row['sold_value'] ?? 0);
+            $soldValueNet = (float) ($row['sold_value_net'] ?? 0);
 
             if ($saleYear === $selectedYear) {
                 $currentSeries[$monthKey] = $soldQty;
+                $currentRevenueSeries[$monthKey] = $soldValue;
+                $currentRevenueNetSeries[$monthKey] = $soldValueNet;
             } elseif ($saleYear === $previousYear) {
                 $previousSeries[$monthKey] = $soldQty;
+                $previousRevenueSeries[$monthKey] = $soldValue;
+                $previousRevenueNetSeries[$monthKey] = $soldValueNet;
             } elseif ($saleYear === $earliestYear) {
                 $earliestSeries[$monthKey] = $soldQty;
+                $earliestRevenueSeries[$monthKey] = $soldValue;
+                $earliestRevenueNetSeries[$monthKey] = $soldValueNet;
             }
         }
 
@@ -261,6 +281,12 @@ class PrestashopInventoryService
         $currentYearTotal = 0;
         $previousYearTotal = 0;
         $earliestYearTotal = 0;
+        $currentYearRevenue = 0.0;
+        $previousYearRevenue = 0.0;
+        $earliestYearRevenue = 0.0;
+        $currentYearRevenueNet = 0.0;
+        $previousYearRevenueNet = 0.0;
+        $earliestYearRevenueNet = 0.0;
         $bestMonth = null;
         $bestMonthQty = -1;
 
@@ -268,9 +294,21 @@ class PrestashopInventoryService
             $currentQty = $currentSeries[$monthKey];
             $previousQty = $previousSeries[$monthKey];
             $earliestQty = $earliestSeries[$monthKey];
+            $currentRevenue = $currentRevenueSeries[$monthKey];
+            $previousRevenue = $previousRevenueSeries[$monthKey];
+            $earliestRevenue = $earliestRevenueSeries[$monthKey];
+            $currentRevenueNet = $currentRevenueNetSeries[$monthKey];
+            $previousRevenueNet = $previousRevenueNetSeries[$monthKey];
+            $earliestRevenueNet = $earliestRevenueNetSeries[$monthKey];
             $currentYearTotal += $currentQty;
             $previousYearTotal += $previousQty;
             $earliestYearTotal += $earliestQty;
+            $currentYearRevenue += $currentRevenue;
+            $previousYearRevenue += $previousRevenue;
+            $earliestYearRevenue += $earliestRevenue;
+            $currentYearRevenueNet += $currentRevenueNet;
+            $previousYearRevenueNet += $previousRevenueNet;
+            $earliestYearRevenueNet += $earliestRevenueNet;
 
             if ($currentQty > $bestMonthQty) {
                 $bestMonthQty = $currentQty;
@@ -283,6 +321,12 @@ class PrestashopInventoryService
                 'quantity' => $currentQty,
                 'previous_quantity' => $previousQty,
                 'earliest_quantity' => $earliestQty,
+                'value' => round($currentRevenue, 2),
+                'previous_value' => round($previousRevenue, 2),
+                'earliest_value' => round($earliestRevenue, 2),
+                'value_net' => round($currentRevenueNet, 2),
+                'previous_value_net' => round($previousRevenueNet, 2),
+                'earliest_value_net' => round($earliestRevenueNet, 2),
             ];
         }
 
@@ -304,6 +348,12 @@ class PrestashopInventoryService
                 'total_sold' => $currentYearTotal,
                 'previous_total_sold' => $previousYearTotal,
                 'earliest_total_sold' => $earliestYearTotal,
+                'total_value' => round($currentYearRevenue, 2),
+                'previous_total_value' => round($previousYearRevenue, 2),
+                'earliest_total_value' => round($earliestYearRevenue, 2),
+                'total_value_net' => round($currentYearRevenueNet, 2),
+                'previous_total_value_net' => round($previousYearRevenueNet, 2),
+                'earliest_total_value_net' => round($earliestYearRevenueNet, 2),
                 'best_month' => $bestMonth,
                 'best_month_quantity' => max(0, $bestMonthQty),
             ],

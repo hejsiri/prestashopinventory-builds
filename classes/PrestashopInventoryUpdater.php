@@ -42,7 +42,7 @@ class PrestashopInventoryUpdater
             ];
         }
 
-        $manifestRaw = $this->fetchUrl($manifestUrl);
+        $manifestRaw = $this->fetchUrl($this->withCacheBuster($manifestUrl));
         $manifest = json_decode($manifestRaw, true);
 
         if (!is_array($manifest)) {
@@ -254,6 +254,13 @@ class PrestashopInventoryUpdater
         }
 
         return $content;
+    }
+
+    private function withCacheBuster(string $url): string
+    {
+        $separator = str_contains($url, '?') ? '&' : '?';
+
+        return $url . $separator . '_ts=' . rawurlencode((string) time());
     }
 
     private function resolveExtractedModuleRoot(string $extractPath): ?string

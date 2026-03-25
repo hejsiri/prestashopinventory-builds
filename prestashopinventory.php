@@ -17,7 +17,7 @@ class PrestashopInventory extends Module
     {
         $this->name = 'prestashopinventory';
         $this->tab = 'administration';
-        $this->version = '0.2.61';
+        $this->version = '0.3.21';
         $this->author = 'hejsiri';
         $this->need_instance = 0;
         $this->bootstrap = true;
@@ -83,6 +83,7 @@ class PrestashopInventory extends Module
             'prestashopInventoryBackUrl' => $this->context->link->getAdminLink('AdminPrestashopInventory', true),
             'prestashopInventoryIgnoredProducts' => $service->getIgnoredProducts(),
             'prestashopInventoryTranslations' => $translations,
+            'prestashopInventoryModuleVersion' => (string) $this->version,
         ]);
 
         $output .= $this->display(__FILE__, 'views/templates/admin/configure.tpl');
@@ -211,6 +212,12 @@ class PrestashopInventory extends Module
             'sales_best_month' => $this->trans('Best month', [], PrestashopInventoryI18n::DOMAIN),
             'sales_months_count' => $this->trans('Months', [], PrestashopInventoryI18n::DOMAIN),
             'sales_units' => $this->trans('pcs', [], PrestashopInventoryI18n::DOMAIN),
+            'sales_revenue' => $this->trans('Wartość sprzedaży (brutto)', [], PrestashopInventoryI18n::DOMAIN),
+            'sales_revenue_short' => $this->trans('wartość sprzedaży (brutto)', [], PrestashopInventoryI18n::DOMAIN),
+            'sales_revenue_net' => $this->trans('Wartość sprzedaży (netto)', [], PrestashopInventoryI18n::DOMAIN),
+            'sales_revenue_net_short' => $this->trans('wartość sprzedaży (netto)', [], PrestashopInventoryI18n::DOMAIN),
+            'estimated_profit_net' => $this->trans('Szacowany zysk netto', [], PrestashopInventoryI18n::DOMAIN),
+            'estimated_profit_gross' => $this->trans('Szacowany zysk brutto', [], PrestashopInventoryI18n::DOMAIN),
             'year' => $this->trans('Year', [], PrestashopInventoryI18n::DOMAIN),
             'error_sales_stats' => $this->trans('Could not load sales statistics.', [], PrestashopInventoryI18n::DOMAIN),
             'close' => $this->trans('Close', [], PrestashopInventoryI18n::DOMAIN),
