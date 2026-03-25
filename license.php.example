@@ -1,5 +1,0 @@
-<?php
-
-return [
-    'key' => 'PASTE_LICENSE_KEY_HERE',
-];
