@@ -73,15 +73,21 @@
   <div class="card-body">
     {if $prestashopInventoryIgnoredProducts}
       <div class="table-responsive-row clearfix">
-        <table class="grid-table js-grid-table table">
+        <table id="hiddenProductsTable" class="grid-table js-grid-table table">
           <thead class="thead-default">
             <tr>
-              <th>ID</th>
-              <th>{$prestashopInventoryTranslations.image|escape:'html':'UTF-8'}</th>
-              <th>{$prestashopInventoryTranslations.product_name|escape:'html':'UTF-8'}</th>
-              <th>{$prestashopInventoryTranslations.ean13|escape:'html':'UTF-8'}</th>
-              <th>{$prestashopInventoryTranslations.displayed|escape:'html':'UTF-8'}</th>
-              <th>{$prestashopInventoryTranslations.actions|escape:'html':'UTF-8'}</th>
+              <th class="config-col-id"><span class="inventory-head-title">ID</span></th>
+              <th class="config-col-image">{$prestashopInventoryTranslations.image|escape:'html':'UTF-8'}</th>
+              <th class="config-col-name">
+                <span class="inventory-head-title">{$prestashopInventoryTranslations.product_name|escape:'html':'UTF-8'}</span>
+                <span class="inventory-head-subtitle">{$prestashopInventoryTranslations.ean13|escape:'html':'UTF-8'}</span>
+              </th>
+              <th class="config-col-switch text-center">
+                <span class="inventory-head-title">{$prestashopInventoryTranslations.displayed|escape:'html':'UTF-8'}</span>
+              </th>
+              <th class="config-col-actions text-center">
+                <span class="inventory-head-title">{$prestashopInventoryTranslations.actions|escape:'html':'UTF-8'}</span>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -95,10 +101,10 @@
                     <span class="config-empty-image">{$prestashopInventoryTranslations.no_image|escape:'html':'UTF-8'}</span>
                   {/if}
                 </td>
-                <td>
-                  <strong>{$product.product_name|escape:'html':'UTF-8'}</strong>
+                <td class="config-col-name">
+                  <strong class="config-product-name">{$product.product_name|escape:'html':'UTF-8'}</strong>
+                  <span class="config-product-meta">{$product.ean13|escape:'html':'UTF-8'}</span>
                 </td>
-                <td>{$product.ean13|escape:'html':'UTF-8'}</td>
                 <td class="config-col-switch">
                   <div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center">
                     <input type="radio" name="hidden_product_active_{$product.id_product|intval}" id="hidden_product_active_{$product.id_product|intval}_off" value="0" {if !$product.active}checked{/if} disabled>
@@ -343,7 +349,7 @@
     height: 38px;
     padding: 0 14px;
     border: 1px solid #d7d7d7;
-    border-radius: 0;
+    border-radius: 8px;
     background: #fff;
     color: #2b2b2b;
     display: inline-flex;
@@ -368,9 +374,16 @@
 
   .prestashopinventory-config-list table {
     margin-bottom: 0;
+    background: #fff;
   }
 
-  .prestashopinventory-config-list thead th {
+  .prestashopinventory-config-list .table-responsive-row {
+    overflow-x: auto;
+  }
+
+  .prestashopinventory-config-list #hiddenProductsTable thead th {
+    white-space: normal;
+    vertical-align: middle;
     border: 0;
     border-bottom: 3px solid #1f1f1f;
     background: transparent;
@@ -378,41 +391,80 @@
     padding: 12px 16px;
   }
 
-  .prestashopinventory-config-list tbody td {
-    padding: 12px 16px;
+  .prestashopinventory-config-list #hiddenProductsTable tbody td {
+    padding: 8px 14px;
     border: 0;
     border-bottom: 1px solid #ececec;
     vertical-align: middle;
+    font-size: 13px;
+    color: #2b2b2b;
+    background: #fff;
+    transition: background-color .15s ease;
+  }
+
+  .prestashopinventory-config-list #hiddenProductsTable tbody tr:hover td {
+    background: #f4f8fb;
+  }
+
+  .prestashopinventory-config-list .inventory-head-title,
+  .prestashopinventory-config-list .inventory-head-subtitle {
+    display: block;
+  }
+
+  .prestashopinventory-config-list .inventory-head-subtitle {
+    margin-top: 2px;
   }
 
   .prestashopinventory-config-list .config-col-id {
-    width: 90px;
-    font-weight: 600;
+    width: 92px;
+    font-weight: 400;
   }
 
   .prestashopinventory-config-list .config-col-image {
-    width: 100px;
+    width: 86px;
+  }
+
+  .prestashopinventory-config-list .config-col-name {
+    min-width: 360px;
   }
 
   .prestashopinventory-config-list .config-thumb {
-    width: 56px;
-    height: 56px;
+    width: 45px;
+    height: 45px;
     object-fit: cover;
     background: #fff;
     border: 1px solid #ddd;
-    padding: 4px;
+    border-radius: 8px;
+    padding: 2px;
   }
 
   .prestashopinventory-config-list .config-empty-image {
     color: #888;
   }
 
+  .prestashopinventory-config-list .config-product-name,
+  .prestashopinventory-config-list .config-product-meta {
+    display: block;
+    line-height: 1.35;
+  }
+
+  .prestashopinventory-config-list .config-product-name {
+    font-weight: 600;
+  }
+
+  .prestashopinventory-config-list .config-product-meta {
+    margin-top: 4px;
+    color: #666;
+  }
+
   .prestashopinventory-config-list .config-col-switch {
     width: 150px;
+    text-align: center;
   }
 
   .prestashopinventory-config-list .config-col-actions {
     width: 150px;
+    text-align: center;
   }
 
   .prestashopinventory-config-list .config-restore-form {
