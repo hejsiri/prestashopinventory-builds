@@ -23,6 +23,10 @@ abstract class AbstractInventoryController extends FrameworkBundleAdminControlle
         $tabsMarkup = $this->renderView('@Modules/prestashopinventory/views/templates/admin-modern/_head_tabs.html.twig', [
             'currentRoute' => $currentRoute,
             'inventoryTexts' => \PrestashopInventoryI18n::all($this->translator),
+            'inventoryModuleUrl' => $this->generateUrl('prestashop_inventory_products'),
+            'inventoryConfigUrl' => $this->generateUrl('prestashop_inventory_settings'),
+            'inventorySuppliersUrl' => $this->generateUrl('prestashop_inventory_suppliers'),
+            'inventoryPurchaseOrdersUrl' => $this->generateUrl('prestashop_inventory_purchase_orders'),
         ]);
 
         if (version_compare(_PS_VERSION_, '9.0.0', '>=')) {
@@ -37,14 +41,21 @@ abstract class AbstractInventoryController extends FrameworkBundleAdminControlle
         return \PrestashopInventoryI18n::translate($this->translator, $key, $params);
     }
 
+    protected function inventoryTexts(): array
+    {
+        return \PrestashopInventoryI18n::all($this->translator);
+    }
+
     protected function renderInventoryPage(string $template, string $currentRoute, string $sectionLabelKey, array $extra = [])
     {
+        $module = \Module::getInstanceByName('prestashopinventory');
+
         return $this->render($template, array_merge($extra, [
             'layoutTitle' => $this->translate('inventory_report'),
             'headerTabContent' => $this->buildHeaderTabContent($currentRoute),
             'inventoryCurrentSectionLabel' => $this->translate($sectionLabelKey),
-            'moduleVersion' => '0.2.0',
-            'inventoryTexts' => \PrestashopInventoryI18n::all($this->translator),
+            'moduleVersion' => $module instanceof \Module ? (string) $module->version : '0.0.0',
+            'inventoryTexts' => $this->inventoryTexts(),
         ]));
     }
 }

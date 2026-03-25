@@ -10,9 +10,17 @@
         <source>Back Office inventory view with purchase price editing and PDF export.</source>
         <target>Widok magazynowy w Back Office z edycją cen zakupu i eksportem PDF.</target>
       </trans-unit>
-      <trans-unit id="Warehouse">
-        <source>Warehouse</source>
-        <target>Magazyn</target>
+      <trans-unit id="Products">
+        <source>Products</source>
+        <target>Produkty</target>
+      </trans-unit>
+      <trans-unit id="Suppliers">
+        <source>Suppliers</source>
+        <target>Dostawcy</target>
+      </trans-unit>
+      <trans-unit id="Purchase orders">
+        <source>Purchase orders</source>
+        <target>Zamówienia towaru</target>
       </trans-unit>
       <trans-unit id="Settings">
         <source>Settings</source>
@@ -22,9 +30,17 @@
         <source>Inventory report</source>
         <target>Raport magazynowy</target>
       </trans-unit>
-      <trans-unit id="New Warehouse view scaffold for the Inventory module.">
-        <source>New Warehouse view scaffold for the Inventory module.</source>
-        <target>Szkielet nowego widoku Magazyn dla modułu Inventory.</target>
+      <trans-unit id="New Products view scaffold for the Inventory module.">
+        <source>New Products view scaffold for the Inventory module.</source>
+        <target>Szkielet nowego widoku Produkty dla modułu Inventory.</target>
+      </trans-unit>
+      <trans-unit id="New Suppliers view scaffold for the Inventory module.">
+        <source>New Suppliers view scaffold for the Inventory module.</source>
+        <target>Szkielet nowego widoku Dostawcy dla modułu Inventory.</target>
+      </trans-unit>
+      <trans-unit id="New Purchase orders view scaffold for the Inventory module.">
+        <source>New Purchase orders view scaffold for the Inventory module.</source>
+        <target>Szkielet nowego widoku Zamówienia towaru dla modułu Inventory.</target>
       </trans-unit>
       <trans-unit id="New Settings view scaffold for the Inventory module.">
         <source>New Settings view scaffold for the Inventory module.</source>
@@ -32,11 +48,103 @@
       </trans-unit>
       <trans-unit id="This tab will become the new place for the inventory table after the migration to the PrestaShop 8.2+ / 9.x compatible architecture is completed.">
         <source>This tab will become the new place for the inventory table after the migration to the PrestaShop 8.2+ / 9.x compatible architecture is completed.</source>
-        <target>Ta zakładka będzie nowym miejscem na tabelę magazynową po zakończeniu migracji do architektury zgodnej z PrestaShop 8.2+ / 9.x.</target>
+        <target>Ta zakładka będzie nowym miejscem na tabelę produktów po zakończeniu migracji do architektury zgodnej z PrestaShop 8.2+ / 9.x.</target>
+      </trans-unit>
+      <trans-unit id="This tab will become the new place for suppliers management after the migration is completed.">
+        <source>This tab will become the new place for suppliers management after the migration is completed.</source>
+        <target>Ta zakładka będzie nowym miejscem do zarządzania dostawcami po zakończeniu migracji.</target>
+      </trans-unit>
+      <trans-unit id="This tab will become the new place for purchase orders after the migration is completed.">
+        <source>This tab will become the new place for purchase orders after the migration is completed.</source>
+        <target>Ta zakładka będzie nowym miejscem dla zamówień towaru po zakończeniu migracji.</target>
       </trans-unit>
       <trans-unit id="This tab will become the new place for hidden products configuration and module settings after the migration is completed.">
         <source>This tab will become the new place for hidden products configuration and module settings after the migration is completed.</source>
         <target>Ta zakładka będzie nowym miejscem na konfigurację ukrytych produktów i ustawienia modułu po zakończeniu migracji.</target>
+      </trans-unit>
+      <trans-unit id="No suppliers found.">
+        <source>No suppliers found.</source>
+        <target>Nie znaleziono dostawców.</target>
+      </trans-unit>
+      <trans-unit id="Open in PrestaShop">
+        <source>Open in PrestaShop</source>
+        <target>Otwórz w PrestaShop</target>
+      </trans-unit>
+      <trans-unit id="This list uses the default suppliers configured in PrestaShop.">
+        <source>This list uses the default suppliers configured in PrestaShop.</source>
+        <target>Ta lista korzysta z domyślnych dostawców skonfigurowanych w PrestaShop.</target>
+      </trans-unit>
+      <trans-unit id="Add supplier">
+        <source>Add supplier</source>
+        <target>Dodaj dostawcę</target>
+      </trans-unit>
+      <trans-unit id="New supplier">
+        <source>New supplier</source>
+        <target>Nowy dostawca</target>
+      </trans-unit>
+      <trans-unit id="Edit supplier">
+        <source>Edit supplier</source>
+        <target>Edytuj dostawcę</target>
+      </trans-unit>
+      <trans-unit id="Description">
+        <source>Description</source>
+        <target>Opis</target>
+      </trans-unit>
+      <trans-unit id="Edit">
+        <source>Edit</source>
+        <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="Back to list">
+        <source>Back to list</source>
+        <target>Powrót do listy</target>
+      </trans-unit>
+      <trans-unit id="Supplier created.">
+        <source>Supplier created.</source>
+        <target>Dostawca został dodany.</target>
+      </trans-unit>
+      <trans-unit id="Supplier updated.">
+        <source>Supplier updated.</source>
+        <target>Dostawca został zapisany.</target>
+      </trans-unit>
+      <trans-unit id="Could not save supplier.">
+        <source>Could not save supplier.</source>
+        <target>Nie udało się zapisać dostawcy.</target>
+      </trans-unit>
+      <trans-unit id="Supplier not found.">
+        <source>Supplier not found.</source>
+        <target>Nie znaleziono dostawcy.</target>
+      </trans-unit>
+      <trans-unit id="Created at">
+        <source>Created at</source>
+        <target>Data utworzenia</target>
+      </trans-unit>
+      <trans-unit id="Updated at">
+        <source>Updated at</source>
+        <target>Data aktualizacji</target>
+      </trans-unit>
+      <trans-unit id="Phone">
+        <source>Phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="Address">
+        <source>Address</source>
+        <target>Adres</target>
+      </trans-unit>
+      <trans-unit id="Address (2)">
+        <source>Address (2)</source>
+        <target>Adres (2)</target>
+      </trans-unit>
+      <trans-unit id="Postal code">
+        <source>Postal code</source>
+        <target>Kod pocztowy</target>
+      </trans-unit>
+      <trans-unit id="City">
+        <source>City</source>
+        <target>Miasto</target>
+      </trans-unit>
+      <trans-unit id="Country">
+        <source>Country</source>
+        <target>Kraj</target>
       </trans-unit>
       <trans-unit id="None">
         <source>None</source>

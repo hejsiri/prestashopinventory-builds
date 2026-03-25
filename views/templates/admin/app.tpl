@@ -1,19 +1,30 @@
-<div class="inventory-module-content">
+<div class="inventory-module-content{if !empty($inventoryEmbeddedInModernLayout)} inventory-module-content--embedded{/if}">
+{if empty($inventoryEmbeddedInModernLayout)}
 <div id="psinventory-head-tabs-source" class="page-head-tabs inventory-panel-tabs" role="tablist" aria-label="{$inventoryTranslations.module_navigation|escape:'html':'UTF-8'}">
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a href="{$inventoryModuleUrl|escape:'html':'UTF-8'}" class="router-link-active router-link-exact-active nav-link active" aria-current="page" role="tab">{$inventoryTranslations.warehouse_tab|escape:'html':'UTF-8'}</a>
+      <a href="{$inventoryModuleUrl|escape:'html':'UTF-8'}" class="router-link-active router-link-exact-active nav-link active" aria-current="page" role="tab">{$inventoryTranslations.products_tab|escape:'html':'UTF-8'}</a>
+    </li>
+    <li class="nav-item">
+      <a href="{$inventorySuppliersUrl|escape:'html':'UTF-8'}" class="nav-link" role="tab">{$inventoryTranslations.suppliers_tab|escape:'html':'UTF-8'}</a>
+    </li>
+    <li class="nav-item">
+      <a href="{$inventoryPurchaseOrdersUrl|escape:'html':'UTF-8'}" class="nav-link" role="tab">{$inventoryTranslations.purchase_orders_tab|escape:'html':'UTF-8'}</a>
     </li>
     <li class="nav-item">
       <a href="{$inventoryConfigUrl|escape:'html':'UTF-8'}" class="nav-link" role="tab">{$inventoryTranslations.settings_tab|escape:'html':'UTF-8'}</a>
     </li>
   </ul>
   <div class="inventory-update-meta">
-    <div class="inventory-update-meta-version">Wersja {$inventoryModuleVersion|escape:'html':'UTF-8'}</div>
     <div id="inventoryUpdateMetaStatus" class="inventory-update-meta-status"></div>
   </div>
 </div>
-<div class="panel prestashop-inventory">
+{/if}
+<div class="card js-grid-panel prestashop-inventory">
+  <div class="card-header js-grid-header">
+    <h3 class="d-inline-block card-header-title">{$inventoryTranslations.products_tab|escape:'html':'UTF-8'}</h3>
+  </div>
+  <div class="card-body">
   <div id="inventoryUpdateStatus" class="inventory-update-status" aria-live="polite"></div>
 
   {if !$inventoryLicenseStatus.valid}
@@ -113,17 +124,17 @@
   </div>
 
   <div class="table-responsive-row clearfix">
-    <table id="productsTable" class="table">
-      <thead>
+    <table id="productsTable" class="grid-table js-grid-table table">
+      <thead class="thead-default">
         <tr>
-          <th id="thNo" class="inventory-sortable" data-sort-field="id_product"><button type="button" class="inventory-sort-button"><span class="inventory-head-title">ID</span><span class="inventory-sort-indicator"></span></button></th>
+          <th id="thNo" class="inventory-sortable" data-sort-field="id_product"><div class="ps-sortable-column inventory-sort-button" role="button" tabindex="0"><span role="columnheader" class="inventory-head-title">ID</span><span class="ps-sort inventory-sort-indicator" aria-hidden="true"></span></div></th>
           <th id="thPicture">{$inventoryTranslations.image|escape:'html':'UTF-8'}</th>
-          <th id="thName" class="inventory-sortable" data-sort-field="product_name"><button type="button" class="inventory-sort-button"><span><span class="inventory-head-title">{$inventoryTranslations.product_name|escape:'html':'UTF-8'}</span><span class="inventory-head-subtitle">{$inventoryTranslations.ean13|escape:'html':'UTF-8'}</span></span><span class="inventory-sort-indicator"></span></button></th>
-          <th id="thActive" class="text-center inventory-sortable" data-sort-field="active"><button type="button" class="inventory-sort-button inventory-sort-button-center"><span class="inventory-head-title">{$inventoryTranslations.active|escape:'html':'UTF-8'}</span><span class="inventory-sort-indicator"></span></button></th>
-          <th id="thWeight" class="text-center inventory-sortable" data-sort-field="weight"><button type="button" class="inventory-sort-button inventory-sort-button-center"><span class="inventory-head-title">{$inventoryTranslations.product_weight|escape:'html':'UTF-8'}</span><span class="inventory-sort-indicator"></span></button></th>
-          <th id="thPrice" class="text-center inventory-sortable" data-sort-field="purchase_price"><button type="button" class="inventory-sort-button inventory-sort-button-center"><span class="inventory-head-title">{$inventoryTranslations.purchase_price_net|escape:'html':'UTF-8'}</span><span class="inventory-sort-indicator"></span></button></th>
-          <th id="thPriceBrutto" class="text-center inventory-sortable" data-sort-field="retail_price"><button type="button" class="inventory-sort-button inventory-sort-button-center"><span class="inventory-head-title">{$inventoryTranslations.retail_price_gross|escape:'html':'UTF-8'}</span><span class="inventory-sort-indicator"></span></button></th>
-          <th id="thQty" class="text-center inventory-sortable" data-sort-field="quantity"><button type="button" class="inventory-sort-button inventory-sort-button-center"><span class="inventory-head-title">{$inventoryTranslations.available_quantity|escape:'html':'UTF-8'}</span><span class="inventory-sort-indicator"></span></button></th>
+          <th id="thName" class="inventory-sortable" data-sort-field="product_name"><div class="ps-sortable-column inventory-sort-button" role="button" tabindex="0"><span role="columnheader"><span class="inventory-head-title">{$inventoryTranslations.product_name|escape:'html':'UTF-8'}</span><span class="inventory-head-subtitle">{$inventoryTranslations.ean13|escape:'html':'UTF-8'}</span></span><span class="ps-sort inventory-sort-indicator" aria-hidden="true"></span></div></th>
+          <th id="thActive" class="text-center inventory-sortable" data-sort-field="active"><div class="ps-sortable-column inventory-sort-button inventory-sort-button-center" role="button" tabindex="0"><span role="columnheader" class="inventory-head-title">{$inventoryTranslations.active|escape:'html':'UTF-8'}</span><span class="ps-sort inventory-sort-indicator" aria-hidden="true"></span></div></th>
+          <th id="thWeight" class="text-center inventory-sortable" data-sort-field="weight"><div class="ps-sortable-column inventory-sort-button inventory-sort-button-center" role="button" tabindex="0"><span role="columnheader" class="inventory-head-title">{$inventoryTranslations.product_weight|escape:'html':'UTF-8'}</span><span class="ps-sort inventory-sort-indicator" aria-hidden="true"></span></div></th>
+          <th id="thPrice" class="text-center inventory-sortable" data-sort-field="purchase_price"><div class="ps-sortable-column inventory-sort-button inventory-sort-button-center" role="button" tabindex="0"><span role="columnheader" class="inventory-head-title">{$inventoryTranslations.purchase_price_net|escape:'html':'UTF-8'}</span><span class="ps-sort inventory-sort-indicator" aria-hidden="true"></span></div></th>
+          <th id="thPriceBrutto" class="text-center inventory-sortable" data-sort-field="retail_price"><div class="ps-sortable-column inventory-sort-button inventory-sort-button-center" role="button" tabindex="0"><span role="columnheader" class="inventory-head-title">{$inventoryTranslations.retail_price_gross|escape:'html':'UTF-8'}</span><span class="ps-sort inventory-sort-indicator" aria-hidden="true"></span></div></th>
+          <th id="thQty" class="text-center inventory-sortable" data-sort-field="quantity"><div class="ps-sortable-column inventory-sort-button inventory-sort-button-center" role="button" tabindex="0"><span role="columnheader" class="inventory-head-title">{$inventoryTranslations.available_quantity|escape:'html':'UTF-8'}</span><span class="ps-sort inventory-sort-indicator" aria-hidden="true"></span></div></th>
           <th id="thValue" class="text-center">{$inventoryTranslations.purchase_value_net|escape:'html':'UTF-8'}</th>
           <th id="thValueBrutto" class="text-center">{$inventoryTranslations.retail_value_gross|escape:'html':'UTF-8'}</th>
           <th id="thActions" class="text-center">{$inventoryTranslations.actions|escape:'html':'UTF-8'}</th>
@@ -135,6 +146,7 @@
 
   <div id="inventoryPagination" class="inventory-pagination"></div>
   {/if}
+  </div>
 </div>
 
 <div id="inventoryProfitModal" class="inventory-sales-modal inventory-profit-modal" aria-hidden="true">
@@ -184,6 +196,10 @@
     padding-top: 60px;
     clear: both;
     position: relative;
+  }
+
+  .inventory-module-content--embedded {
+    padding-top: 0;
   }
 
   .inventory-panel-tabs {
@@ -271,16 +287,17 @@
     box-shadow: none;
   }
 
-  .prestashop-inventory.panel {
-    border: 1px solid #dce7ef;
-    border-radius: 0 20px 20px 20px;
-    box-shadow: 0 14px 28px rgba(31, 52, 66, 0.10);
-    padding: 20px 28px 24px;
-    position: relative;
-    z-index: 2;
+  .prestashop-inventory.card {
     margin-bottom: 0;
     margin-top: 0 !important;
-    background: #fff;
+  }
+
+  .prestashop-inventory .card-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .prestashop-inventory .card-body {
+    padding: 20px 28px 24px;
   }
 
   .prestashop-inventory .inventory-topbar {
@@ -305,35 +322,48 @@
 
   .page-head > .inventory-panel-tabs .inventory-update-meta {
     display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    align-items: flex-end;
+    flex: 0 0 260px;
+    align-items: center;
     justify-content: center;
-    gap: 2px;
     min-height: 56px;
+    height: 56px;
     margin: 0 18px 0 0;
     text-align: right;
-  }
-
-  .page-head > .inventory-panel-tabs .inventory-update-meta-version {
-    font-size: 11px;
-    font-weight: 700;
-    color: #5f7484;
-    line-height: 1.2;
-    white-space: nowrap;
+    overflow: hidden;
   }
 
   .page-head > .inventory-panel-tabs .inventory-update-meta-status {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
     font-size: 11px;
     font-weight: 600;
     color: #7a8f9d;
-    line-height: 1.2;
-    min-height: 12px;
+    line-height: 1.25;
+    min-height: 0;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .page-head > .inventory-panel-tabs .inventory-update-meta-status.is-error {
     color: #c05c67;
+  }
+
+  @media (max-width: 1100px) {
+    .page-head > .inventory-panel-tabs .inventory-update-meta {
+      flex-basis: 180px;
+      margin-right: 12px;
+    }
+  }
+
+  @media (max-width: 920px) {
+    .page-head > .inventory-panel-tabs .inventory-update-meta {
+      display: none;
+    }
   }
 
   .prestashop-inventory .inventory-actions {
@@ -871,15 +901,8 @@
   }
 
   .prestashop-inventory #productsTable thead th {
-    padding: 10px 14px;
-    border: 0;
-    border-bottom: 2px solid #1f1f1f;
-    font-size: 13px;
-    font-weight: 700;
-    color: #1f1f1f;
-    background: transparent;
     white-space: normal;
-    line-height: 1.15;
+    vertical-align: middle;
   }
 
   .prestashop-inventory .inventory-sort-button {
@@ -889,10 +912,7 @@
     gap: 8px;
     width: 100%;
     padding: 0;
-    border: 0;
-    background: transparent;
     text-align: left;
-    font: inherit;
     color: inherit;
   }
 
@@ -901,9 +921,9 @@
   }
 
   .prestashop-inventory .inventory-sort-indicator {
-    width: 11px;
-    min-width: 11px;
-    height: 11px;
+    width: 14px;
+    min-width: 14px;
+    height: 14px;
     position: relative;
     opacity: .72;
     display: inline-block;
@@ -912,13 +932,13 @@
   .prestashop-inventory .inventory-sort-indicator:before {
     content: "";
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 4px;
+    left: 3px;
     width: 6px;
     height: 6px;
-    border-right: 2px solid #2f2f2f;
-    border-bottom: 2px solid #2f2f2f;
-    transform: rotate(45deg);
+    border-right: 1px solid #6c868e;
+    border-bottom: 1px solid #6c868e;
+    transform: rotate(135deg);
   }
 
   .prestashop-inventory .inventory-sortable.is-active .inventory-sort-indicator {
@@ -926,8 +946,8 @@
   }
 
   .prestashop-inventory .inventory-sortable.sort-asc .inventory-sort-indicator:before {
-    top: 3px;
-    transform: rotate(225deg);
+    top: 2px;
+    transform: rotate(-45deg);
   }
 
   .prestashop-inventory #productsTable tbody td {
@@ -1107,53 +1127,8 @@
     margin-top: 2px;
   }
 
-  .prestashop-inventory .inventory-row-switch {
-    position: relative;
+  .prestashop-inventory .inventory-col-active .ps-switch {
     display: inline-block;
-    width: 28px;
-    height: 16px;
-    margin: 0;
-  }
-
-  .prestashop-inventory .inventory-row-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .prestashop-inventory .inventory-row-slider {
-    position: absolute;
-    inset: 0;
-    border-radius: 999px;
-    background: #d3d3d3;
-    transition: .2s ease;
-    cursor: pointer;
-  }
-
-  .prestashop-inventory .inventory-row-slider:before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
-    transition: .2s ease;
-  }
-
-  .prestashop-inventory .inventory-row-switch input:checked + .inventory-row-slider {
-    background: #4f955d;
-  }
-
-  .prestashop-inventory .inventory-row-switch input:checked + .inventory-row-slider:before {
-    transform: translateX(12px);
-  }
-
-  .prestashop-inventory .inventory-row-switch input:disabled + .inventory-row-slider {
-    opacity: .65;
-    cursor: progress;
   }
 
   .prestashop-inventory .inventory-actions-menu {
@@ -1989,6 +1964,7 @@
 
 <script src="{$inventoryModuleBaseUrl|escape:'html':'UTF-8'}views/js/chart.umd.min.js"></script>
 <script>
+  {if empty($inventoryEmbeddedInModernLayout)}
   (function () {
     function syncBreadcrumb(currentLabel) {
       var breadcrumb = document.querySelector('.header-toolbar .breadcrumb');
@@ -2099,10 +2075,11 @@
       mountBoTabs('psinventory-head-tabs-source', 0);
     });
     mountObserver.observe(document.documentElement, {ldelim}childList: true, subtree: true{rdelim});
-    window.setTimeout(function () {
+  window.setTimeout(function () {
       mountObserver.disconnect();
     }, 10000);
   })();
+  {/if}
 
   window.prestashopInventoryConfig = {
     ajaxUrl: '{$inventoryAjaxUrl|escape:'javascript'}',
@@ -3441,6 +3418,15 @@
         loadTable(getSearchQuery(), $('#activeOnly').is(':checked'), $('#onlyAvailable').is(':checked'), $('#missingPurchasePriceOnly').is(':checked'), $('#missingWeightOnly').is(':checked'));
       });
 
+      $(document).on('keydown', '.inventory-sortable .inventory-sort-button', function (event) {
+        if (event.key !== 'Enter' && event.key !== ' ') {
+          return;
+        }
+
+        event.preventDefault();
+        $(this).trigger('click');
+      });
+
       $(document).on('click', '.inventory-tag-remove', function () {
         var keywords = getSearchKeywords();
         var index = Number($(this).attr('data-index'));
@@ -3777,33 +3763,36 @@
       });
 
       $(document).on('change', '.toggle-product-active', function () {
+        var radio = this;
+        var $radio = $(radio);
+        var switchName = $radio.attr('name');
+        var $group = $('input[name="' + switchName + '"]');
+        var nextValue = Number($radio.val()) === 1 ? 1 : 0;
+        var previousValue = nextValue === 1 ? 0 : 1;
+
         if (!window.prestashopInventoryConfig.canEdit) {
-          this.checked = !this.checked;
+          $group.filter('[value="' + String(previousValue) + '"]').prop('checked', true);
           return;
         }
 
-        var checkbox = this;
-        var $checkbox = $(checkbox);
-        var nextValue = checkbox.checked ? 1 : 0;
-
-        $checkbox.prop('disabled', true);
+        $group.prop('disabled', true);
 
         $.post(window.prestashopInventoryConfig.ajaxUrl + '&action=ToggleProductActive', {
-          id_product: $checkbox.data('id-product'),
+          id_product: $radio.data('id-product'),
           active: nextValue
         }, null, 'json').done(function (resp) {
           if (!resp || !resp.ok) {
-            checkbox.checked = !checkbox.checked;
+            $group.filter('[value="' + String(previousValue) + '"]').prop('checked', true);
             alert(resp && resp.error ? resp.error : t('errorToggle'));
           } else {
-            checkbox.checked = Number(resp.active) === 1;
+            $group.filter('[value="' + String(Number(resp.active) === 1 ? 1 : 0) + '"]').prop('checked', true);
           }
         }).fail(function (xhr) {
-          checkbox.checked = !checkbox.checked;
+          $group.filter('[value="' + String(previousValue) + '"]').prop('checked', true);
           var error = xhr.responseJSON && xhr.responseJSON.error ? xhr.responseJSON.error : t('errorToggle');
           alert(error);
         }).always(function () {
-          $checkbox.prop('disabled', false);
+          $group.prop('disabled', false);
         });
       });
 

@@ -3,6 +3,14 @@ services:
     autowire: true
     autoconfigure: true
 
+  PrestaShop\Module\PrestashopInventory\Controller\Admin\SuppliersController:
+    autowire: true
+    autoconfigure: true
+
+  PrestaShop\Module\PrestashopInventory\Controller\Admin\PurchaseOrdersController:
+    autowire: true
+    autoconfigure: true
+
   PrestaShop\Module\PrestashopInventory\Controller\Admin\SettingsController:
     autowire: true
     autoconfigure: true

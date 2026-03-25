@@ -1,0 +1,16 @@
+{% extends '@Modules/prestashopinventory/views/templates/admin-modern/layout.html.twig' %}
+
+{% block inventoryContent %}
+    <div class="card js-grid-panel inventory-section-card">
+        <div class="card-header js-grid-header">
+            <h3 class="d-inline-block card-header-title">{{ inventoryTexts.purchase_orders_tab }}</h3>
+        </div>
+        <div class="card-body">
+            <p class="text-muted mb-4">{{ inventoryTexts.new_purchase_orders_view_scaffold }}</p>
+
+            <div class="alert alert-info mb-0">
+                {{ migrationNotice }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

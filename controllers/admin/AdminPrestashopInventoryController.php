@@ -26,12 +26,22 @@ class AdminPrestashopInventoryController extends ModuleAdminController
     {
         $this->assertViewAccess();
 
+        if (!Tools::getIsset('ajax') && !Tools::getIsset('exportPdf')) {
+            Tools::redirectAdmin($this->getModuleRouteUrl('prestashop_inventory_products'));
+        }
+
+        if ($this->module instanceof PrestashopInventory) {
+            $this->module->ensureTabsAvailable();
+        }
+
         $translations = $this->inventoryService->getTranslations();
         $licenseStatus = $this->licenseService->getStatus();
 
         $this->context->smarty->assign([
             'inventoryCatalogUrl' => $this->context->link->getAdminLink('AdminProducts', true),
             'inventoryModuleUrl' => $this->context->link->getAdminLink('AdminPrestashopInventory', true),
+            'inventorySuppliersUrl' => $this->context->link->getAdminLink('AdminPrestashopInventorySuppliers', true),
+            'inventoryPurchaseOrdersUrl' => $this->context->link->getAdminLink('AdminPrestashopInventoryPurchaseOrders', true),
             'inventoryModuleBaseUrl' => $this->module->getPathUri(),
             'inventoryAjaxUrl' => $this->context->link->getAdminLink('AdminPrestashopInventory', true, [], [
                 'ajax' => 1,
@@ -59,6 +69,13 @@ class AdminPrestashopInventoryController extends ModuleAdminController
         );
 
         parent::initContent();
+    }
+
+    private function getModuleRouteUrl(string $routeName): string
+    {
+        $router = \PrestaShop\PrestaShop\Adapter\SymfonyContainer::getInstance()->get('router');
+
+        return $router->generate($routeName);
     }
 
     public function postProcess(): void

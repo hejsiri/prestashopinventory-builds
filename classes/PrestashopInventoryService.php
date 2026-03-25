@@ -87,11 +87,17 @@ class PrestashopInventoryService
                 }
                 $output .= '</td>';
 
+                $switchName = 'inventory_product_active_' . $idProduct . '_' . ($idAttr > 0 ? $idAttr : 0);
+                $offId = $switchName . '_off';
+                $onId = $switchName . '_on';
                 $output .= '<td class="inventory-col-active text-center">';
-                $output .= '<label class="inventory-row-switch">';
-                $output .= '<input type="checkbox" class="toggle-product-active" data-id-product="' . $idProduct . '"' . ($isActive ? ' checked' : '') . '>';
-                $output .= '<span class="inventory-row-slider"></span>';
-                $output .= '</label>';
+                $output .= '<div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center inventory-product-status-switch">';
+                $output .= '<input type="radio" class="toggle-product-active" data-id-product="' . $idProduct . '" name="' . htmlspecialchars($switchName, ENT_QUOTES, 'UTF-8') . '" id="' . htmlspecialchars($offId, ENT_QUOTES, 'UTF-8') . '" value="0"' . (!$isActive ? ' checked' : '') . '>';
+                $output .= '<label for="' . htmlspecialchars($offId, ENT_QUOTES, 'UTF-8') . '">Off</label>';
+                $output .= '<input type="radio" class="toggle-product-active" data-id-product="' . $idProduct . '" name="' . htmlspecialchars($switchName, ENT_QUOTES, 'UTF-8') . '" id="' . htmlspecialchars($onId, ENT_QUOTES, 'UTF-8') . '" value="1"' . ($isActive ? ' checked' : '') . '>';
+                $output .= '<label for="' . htmlspecialchars($onId, ENT_QUOTES, 'UTF-8') . '">On</label>';
+                $output .= '<span class="slide-button"></span>';
+                $output .= '</div>';
                 $output .= '</td>';
 
                 if ($showWeight) {
@@ -606,6 +612,176 @@ class PrestashopInventoryService
         unset($product);
 
         return $products;
+    }
+
+    public function getSuppliers(): array
+    {
+        $sql = '
+            SELECT
+                s.id_supplier,
+                s.name,
+                s.active,
+                s.date_add,
+                s.date_upd,
+                COUNT(DISTINCT ps.id_product) AS products_count
+            FROM `' . _DB_PREFIX_ . 'supplier` s
+            LEFT JOIN `' . _DB_PREFIX_ . 'product_supplier` ps ON ps.id_supplier = s.id_supplier
+            GROUP BY s.id_supplier, s.name, s.active, s.date_add, s.date_upd
+            ORDER BY s.name ASC
+        ';
+
+        $rows = $this->getPdo()->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        if (!is_array($rows)) {
+            return [];
+        }
+
+        $suppliers = [];
+        foreach ($rows as $row) {
+            $idSupplier = (int) ($row['id_supplier'] ?? 0);
+            if ($idSupplier <= 0) {
+                continue;
+            }
+
+            $suppliers[] = [
+                'id_supplier' => $idSupplier,
+                'name' => (string) ($row['name'] ?? ''),
+                'active' => (bool) ($row['active'] ?? false),
+                'date_add' => (string) ($row['date_add'] ?? ''),
+                'date_upd' => (string) ($row['date_upd'] ?? ''),
+                'products_count' => (int) ($row['products_count'] ?? 0),
+                'edit_url' => $this->getSupplierModuleEditUrl($idSupplier),
+            ];
+        }
+
+        return $suppliers;
+    }
+
+    public function getSupplierFormData(int $idSupplier): array
+    {
+        if ($idSupplier <= 0) {
+            throw new InvalidArgumentException($this->t('supplier_not_found'));
+        }
+
+        $supplier = new Supplier($idSupplier);
+        if (!Validate::isLoadedObject($supplier)) {
+            throw new InvalidArgumentException($this->t('supplier_not_found'));
+        }
+
+        $description = '';
+        if (isset($supplier->description)) {
+            if (is_array($supplier->description)) {
+                $description = (string) ($supplier->description[(int) $this->context->language->id] ?? reset($supplier->description) ?: '');
+            } else {
+                $description = (string) $supplier->description;
+            }
+        }
+
+        return array_merge([
+            'id_supplier' => (int) $supplier->id,
+            'name' => (string) ($supplier->name ?? ''),
+            'description' => $description,
+            'active' => (bool) ($supplier->active ?? true),
+        ], $this->getSupplierAddressData($idSupplier));
+    }
+
+    public function getSupplierCountries(): array
+    {
+        $sql = '
+            SELECT c.id_country, cl.name
+            FROM `' . _DB_PREFIX_ . 'country` c
+            INNER JOIN `' . _DB_PREFIX_ . 'country_lang` cl ON cl.id_country = c.id_country AND cl.id_lang = :id_lang
+            WHERE c.active = 1
+            ORDER BY cl.name ASC
+        ';
+
+        $stmt = $this->getPdo()->prepare($sql);
+        $stmt->execute([
+            ':id_lang' => (int) $this->context->language->id,
+        ]);
+
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!is_array($rows)) {
+            return [];
+        }
+
+        return array_map(static function (array $row): array {
+            return [
+                'id_country' => (int) ($row['id_country'] ?? 0),
+                'name' => (string) ($row['name'] ?? ''),
+            ];
+        }, $rows);
+    }
+
+    public function saveSupplier(array $data): int
+    {
+        $idSupplier = (int) ($data['id_supplier'] ?? 0);
+        $name = trim((string) ($data['name'] ?? ''));
+        $description = trim((string) ($data['description'] ?? ''));
+        $active = $this->toBool($data['active'] ?? false, false);
+        $phone = trim((string) ($data['phone'] ?? ''));
+        $address1 = trim((string) ($data['address1'] ?? ''));
+        $address2 = trim((string) ($data['address2'] ?? ''));
+        $postcode = trim((string) ($data['postcode'] ?? ''));
+        $city = trim((string) ($data['city'] ?? ''));
+        $idCountry = (int) ($data['id_country'] ?? 0);
+
+        if ($name === '' || $address1 === '' || $city === '' || $idCountry <= 0) {
+            throw new InvalidArgumentException($this->t('supplier_save_error'));
+        }
+
+        $supplier = $idSupplier > 0 ? new Supplier($idSupplier) : new Supplier();
+        if ($idSupplier > 0 && !Validate::isLoadedObject($supplier)) {
+            throw new InvalidArgumentException($this->t('supplier_not_found'));
+        }
+
+        $supplier->name = $name;
+        $supplier->active = $active ? 1 : 0;
+
+        $descriptionByLang = [];
+        $metaTitleByLang = [];
+        $metaDescriptionByLang = [];
+        $metaKeywordsByLang = [];
+        foreach (Language::getLanguages(false) as $language) {
+            $languageId = (int) ($language['id_lang'] ?? 0);
+            if ($languageId <= 0) {
+                continue;
+            }
+
+            $descriptionByLang[$languageId] = $description;
+            $metaTitleByLang[$languageId] = $name;
+            $metaDescriptionByLang[$languageId] = '';
+            $metaKeywordsByLang[$languageId] = '';
+        }
+
+        if (property_exists($supplier, 'description')) {
+            $supplier->description = $descriptionByLang;
+        }
+        if (property_exists($supplier, 'meta_title')) {
+            $supplier->meta_title = $metaTitleByLang;
+        }
+        if (property_exists($supplier, 'meta_description')) {
+            $supplier->meta_description = $metaDescriptionByLang;
+        }
+        if (property_exists($supplier, 'meta_keywords')) {
+            $supplier->meta_keywords = $metaKeywordsByLang;
+        }
+
+        $saved = $idSupplier > 0 ? $supplier->update() : $supplier->add();
+        if (!$saved || !Validate::isLoadedObject($supplier)) {
+            throw new RuntimeException($this->t('supplier_save_error'));
+        }
+
+        $this->saveSupplierAddress((int) $supplier->id, [
+            'phone' => $phone,
+            'address1' => $address1,
+            'address2' => $address2,
+            'postcode' => $postcode,
+            'city' => $city,
+            'id_country' => $idCountry,
+            'company' => $name,
+        ]);
+
+        return (int) $supplier->id;
     }
 
     public function hideProduct(int $idProduct): array
@@ -1336,6 +1512,88 @@ class PrestashopInventoryService
         }
 
         return $legacyUrl;
+    }
+
+    private function getSupplierEditUrl(int $idSupplier): string
+    {
+        return $this->context->link->getAdminLink('AdminSuppliers', true, [], [
+            'id_supplier' => $idSupplier,
+            'updatesupplier' => 1,
+        ]);
+    }
+
+    private function getSupplierModuleEditUrl(int $idSupplier): string
+    {
+        return $this->context->link->getAdminLink('AdminPrestashopInventorySuppliers', true, [], [
+            'editSupplier' => 1,
+            'id_supplier' => $idSupplier,
+        ]);
+    }
+
+    private function getSupplierAddressData(int $idSupplier): array
+    {
+        $sql = '
+            SELECT id_address, phone, address1, address2, postcode, city, id_country
+            FROM `' . _DB_PREFIX_ . 'address`
+            WHERE id_supplier = :id_supplier
+              AND deleted = 0
+            ORDER BY id_address ASC
+            LIMIT 1
+        ';
+
+        $stmt = $this->getPdo()->prepare($sql);
+        $stmt->execute([
+            ':id_supplier' => $idSupplier,
+        ]);
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!is_array($row)) {
+            return [
+                'id_address' => 0,
+                'phone' => '',
+                'address1' => '',
+                'address2' => '',
+                'postcode' => '',
+                'city' => '',
+                'id_country' => (int) Configuration::get('PS_COUNTRY_DEFAULT'),
+            ];
+        }
+
+        return [
+            'id_address' => (int) ($row['id_address'] ?? 0),
+            'phone' => (string) ($row['phone'] ?? ''),
+            'address1' => (string) ($row['address1'] ?? ''),
+            'address2' => (string) ($row['address2'] ?? ''),
+            'postcode' => (string) ($row['postcode'] ?? ''),
+            'city' => (string) ($row['city'] ?? ''),
+            'id_country' => (int) ($row['id_country'] ?? 0),
+        ];
+    }
+
+    private function saveSupplierAddress(int $idSupplier, array $data): void
+    {
+        $addressData = $this->getSupplierAddressData($idSupplier);
+        $address = (int) ($addressData['id_address'] ?? 0) > 0 ? new Address((int) $addressData['id_address']) : new Address();
+
+        $address->id_supplier = $idSupplier;
+        $address->id_customer = 0;
+        $address->id_manufacturer = 0;
+        $address->alias = Tools::substr((string) ($data['company'] ?? 'Supplier'), 0, 32);
+        $address->lastname = 'Supplier';
+        $address->firstname = 'Supplier';
+        $address->company = (string) ($data['company'] ?? '');
+        $address->phone = (string) ($data['phone'] ?? '');
+        $address->address1 = (string) ($data['address1'] ?? '');
+        $address->address2 = (string) ($data['address2'] ?? '');
+        $address->postcode = (string) ($data['postcode'] ?? '');
+        $address->city = (string) ($data['city'] ?? '');
+        $address->id_country = (int) ($data['id_country'] ?? 0);
+        $address->deleted = 0;
+
+        $saved = Validate::isLoadedObject($address) ? $address->update() : $address->add();
+        if (!$saved) {
+            throw new RuntimeException($this->t('supplier_save_error'));
+        }
     }
 
     private function getAbsoluteImagePath(int $idImage): ?string

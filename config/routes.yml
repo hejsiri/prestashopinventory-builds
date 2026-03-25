@@ -1,15 +1,31 @@
-prestashop_inventory_warehouse:
-    path: /prestashop-inventory/warehouse
+prestashop_inventory_products:
+    path: /prestashop-inventory/products
     methods: [GET]
     defaults:
         _controller: 'PrestaShop\Module\PrestashopInventory\Controller\Admin\WarehouseController::indexAction'
-        _legacy_controller: 'AdminPrestashopInventoryWarehouse'
-        _legacy_link: 'AdminPrestashopInventoryWarehouse'
+        _legacy_controller: 'AdminPrestashopInventory'
+        _legacy_link: 'prestashop_inventory_products_entry'
+
+prestashop_inventory_suppliers:
+    path: /prestashop-inventory/suppliers
+    methods: [GET, POST]
+    defaults:
+        _controller: 'PrestaShop\Module\PrestashopInventory\Controller\Admin\SuppliersController::indexAction'
+        _legacy_controller: 'AdminPrestashopInventorySuppliers'
+        _legacy_link: 'prestashop_inventory_suppliers_entry'
+
+prestashop_inventory_purchase_orders:
+    path: /prestashop-inventory/purchase-orders
+    methods: [GET]
+    defaults:
+        _controller: 'PrestaShop\Module\PrestashopInventory\Controller\Admin\PurchaseOrdersController::indexAction'
+        _legacy_controller: 'AdminPrestashopInventoryPurchaseOrders'
+        _legacy_link: 'prestashop_inventory_purchase_orders_entry'
 
 prestashop_inventory_settings:
     path: /prestashop-inventory/settings
-    methods: [GET]
+    methods: [GET, POST]
     defaults:
         _controller: 'PrestaShop\Module\PrestashopInventory\Controller\Admin\SettingsController::indexAction'
         _legacy_controller: 'AdminPrestashopInventorySettings'
-        _legacy_link: 'AdminPrestashopInventorySettings'
+        _legacy_link: 'prestashop_inventory_settings_entry'

@@ -2,7 +2,7 @@
 <module>
     <name>prestashopinventory</name>
     <displayName><![CDATA[Inventory Report]]></displayName>
-  <version><![CDATA[0.3.21]]></version>
+  <version><![CDATA[0.3.42]]></version>
     <description><![CDATA[Back Office inventory view with purchase price editing and PDF export.]]></description>
     <author><![CDATA[hejsiri]]></author>
     <tab><![CDATA[administration]]></tab>

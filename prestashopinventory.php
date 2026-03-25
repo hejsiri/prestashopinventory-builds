@@ -12,12 +12,15 @@ if (!defined('_PS_VERSION_')) {
 class PrestashopInventory extends Module
 {
     private const ADMIN_TAB_CLASS_NAME = 'AdminPrestashopInventory';
+    private const SUPPLIERS_TAB_CLASS_NAME = 'AdminPrestashopInventorySuppliers';
+    private const PURCHASE_ORDERS_TAB_CLASS_NAME = 'AdminPrestashopInventoryPurchaseOrders';
+    private const RUNTIME_VERSION_CONFIG = 'PSINV_RUNTIME_VERSION';
 
     public function __construct()
     {
         $this->name = 'prestashopinventory';
         $this->tab = 'administration';
-        $this->version = '0.3.21';
+        $this->version = '0.3.42';
         $this->author = 'hejsiri';
         $this->need_instance = 0;
         $this->bootstrap = true;
@@ -41,7 +44,7 @@ class PrestashopInventory extends Module
             return false;
         }
 
-        if (!$this->installTab()) {
+        if (!$this->installTabs()) {
             parent::uninstall();
 
             return false;
@@ -58,13 +61,17 @@ class PrestashopInventory extends Module
     {
         Configuration::deleteByName(PrestashopInventoryService::CONFIG_IGNORED_IDS);
 
-        return $this->uninstallTab() && parent::uninstall();
+        return $this->uninstallTabs() && parent::uninstall();
     }
 
     public function getContent(): string
     {
+        $this->ensureModuleRuntimeReady();
+        $this->ensureTabsAvailable();
+
         $output = '';
         $service = new PrestashopInventoryService($this->getLocalPath(), $this->context, $this);
+        $licenseService = new PrestashopInventoryLicense($this->getLocalPath(), $this->context, $this);
 
         if (Tools::isSubmit('submitPrestashopInventoryRestoreHidden')) {
             try {
@@ -76,19 +83,50 @@ class PrestashopInventory extends Module
         }
 
         $translations = $service->getTranslations();
+        $licenseStatus = $licenseService->getStatus();
+        $licenseDetails = is_array($licenseStatus['details'] ?? null) ? $licenseStatus['details'] : [];
+        $licensePayload = is_array($licenseDetails['payload'] ?? null) ? $licenseDetails['payload'] : [];
+        $licenseCustomer = trim((string) ($licensePayload['customer'] ?? ''));
+        $licenseDomain = trim((string) ($licenseDetails['domain'] ?? $licensePayload['domain'] ?? ''));
+        $licenseExpiresAt = trim((string) ($licenseDetails['expires_at'] ?? $licensePayload['expires_at'] ?? ''));
 
         $this->context->smarty->assign([
             'prestashopInventoryConfigAction' => AdminController::$currentIndex . '&configure=' . $this->name . '&token=' . Tools::getAdminTokenLite('AdminModules'),
             'prestashopInventoryCatalogUrl' => $this->context->link->getAdminLink('AdminProducts', true),
             'prestashopInventoryBackUrl' => $this->context->link->getAdminLink('AdminPrestashopInventory', true),
+            'prestashopInventorySuppliersUrl' => $this->context->link->getAdminLink('AdminPrestashopInventorySuppliers', true),
+            'prestashopInventoryPurchaseOrdersUrl' => $this->context->link->getAdminLink('AdminPrestashopInventoryPurchaseOrders', true),
             'prestashopInventoryIgnoredProducts' => $service->getIgnoredProducts(),
             'prestashopInventoryTranslations' => $translations,
             'prestashopInventoryModuleVersion' => (string) $this->version,
+            'prestashopInventoryLicenseStatus' => $licenseStatus,
+            'prestashopInventoryLicenseSummary' => [
+                'customer' => $licenseCustomer !== '' ? $licenseCustomer : '—',
+                'domain' => $licenseDomain !== '' ? $licenseDomain : '—',
+                'expires_at' => $licenseExpiresAt !== '' ? $licenseExpiresAt : '—',
+            ],
         ]);
 
         $output .= $this->display(__FILE__, 'views/templates/admin/configure.tpl');
 
         return $output;
+    }
+
+    public function ensureTabsAvailable(): void
+    {
+        $this->ensureModuleRuntimeReady();
+        $this->installTabs();
+    }
+
+    public function ensureModuleRuntimeReady(): void
+    {
+        $storedVersion = (string) Configuration::get(self::RUNTIME_VERSION_CONFIG);
+        if ($storedVersion === (string) $this->version) {
+            return;
+        }
+
+        $this->clearRuntimeCache();
+        Configuration::updateValue(self::RUNTIME_VERSION_CONFIG, (string) $this->version);
     }
 
     public function isUsingNewTranslationSystem(): bool
@@ -104,13 +142,41 @@ class PrestashopInventory extends Module
     public function getTranslationCatalogue(): array
     {
         return [
-            'warehouse_tab' => $this->trans('Warehouse', [], PrestashopInventoryI18n::DOMAIN),
+            'products_tab' => $this->trans('Products', [], PrestashopInventoryI18n::DOMAIN),
+            'suppliers_tab' => $this->trans('Suppliers', [], PrestashopInventoryI18n::DOMAIN),
+            'purchase_orders_tab' => $this->trans('Purchase orders', [], PrestashopInventoryI18n::DOMAIN),
             'settings_tab' => $this->trans('Settings', [], PrestashopInventoryI18n::DOMAIN),
             'inventory_report' => $this->trans('Inventory report', [], PrestashopInventoryI18n::DOMAIN),
-            'new_warehouse_view_scaffold' => $this->trans('New Warehouse view scaffold for the Inventory module.', [], PrestashopInventoryI18n::DOMAIN),
+            'new_products_view_scaffold' => $this->trans('New Products view scaffold for the Inventory module.', [], PrestashopInventoryI18n::DOMAIN),
+            'new_suppliers_view_scaffold' => $this->trans('New Suppliers view scaffold for the Inventory module.', [], PrestashopInventoryI18n::DOMAIN),
+            'new_purchase_orders_view_scaffold' => $this->trans('New Purchase orders view scaffold for the Inventory module.', [], PrestashopInventoryI18n::DOMAIN),
             'new_settings_view_scaffold' => $this->trans('New Settings view scaffold for the Inventory module.', [], PrestashopInventoryI18n::DOMAIN),
-            'warehouse_migration_notice' => $this->trans('This tab will become the new place for the inventory table after the migration to the PrestaShop 8.2+ / 9.x compatible architecture is completed.', [], PrestashopInventoryI18n::DOMAIN),
+            'products_migration_notice' => $this->trans('This tab will become the new place for the inventory table after the migration to the PrestaShop 8.2+ / 9.x compatible architecture is completed.', [], PrestashopInventoryI18n::DOMAIN),
+            'suppliers_migration_notice' => $this->trans('This tab will become the new place for suppliers management after the migration is completed.', [], PrestashopInventoryI18n::DOMAIN),
+            'purchase_orders_migration_notice' => $this->trans('This tab will become the new place for purchase orders after the migration is completed.', [], PrestashopInventoryI18n::DOMAIN),
             'settings_migration_notice' => $this->trans('This tab will become the new place for hidden products configuration and module settings after the migration is completed.', [], PrestashopInventoryI18n::DOMAIN),
+            'suppliers_empty' => $this->trans('No suppliers found.', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_products_count' => $this->trans('Products', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_open_native' => $this->trans('Open in PrestaShop', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_panel_note' => $this->trans('This list uses the default suppliers configured in PrestaShop.', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_add_button' => $this->trans('Add supplier', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_form_new_title' => $this->trans('New supplier', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_form_edit_title' => $this->trans('Edit supplier', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_description' => $this->trans('Description', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_edit_button' => $this->trans('Edit', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_back_to_list' => $this->trans('Back to list', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_created_message' => $this->trans('Supplier created.', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_updated_message' => $this->trans('Supplier updated.', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_save_error' => $this->trans('Could not save supplier.', [], PrestashopInventoryI18n::DOMAIN),
+            'supplier_not_found' => $this->trans('Supplier not found.', [], PrestashopInventoryI18n::DOMAIN),
+            'created_at' => $this->trans('Created at', [], PrestashopInventoryI18n::DOMAIN),
+            'updated_at' => $this->trans('Updated at', [], PrestashopInventoryI18n::DOMAIN),
+            'phone' => $this->trans('Phone', [], PrestashopInventoryI18n::DOMAIN),
+            'address' => $this->trans('Address', [], PrestashopInventoryI18n::DOMAIN),
+            'address2' => $this->trans('Address (2)', [], PrestashopInventoryI18n::DOMAIN),
+            'postcode' => $this->trans('Postal code', [], PrestashopInventoryI18n::DOMAIN),
+            'city' => $this->trans('City', [], PrestashopInventoryI18n::DOMAIN),
+            'country' => $this->trans('Country', [], PrestashopInventoryI18n::DOMAIN),
             'no_image' => $this->trans('None', [], PrestashopInventoryI18n::DOMAIN),
             'no_data' => $this->trans('No data', [], PrestashopInventoryI18n::DOMAIN),
             'combination_id' => $this->trans('Combination ID: %id%', ['%id%' => '{{ id }}'], PrestashopInventoryI18n::DOMAIN),
@@ -245,13 +311,8 @@ class PrestashopInventory extends Module
         ];
     }
 
-    private function installTab(): bool
+    private function installTabs(): bool
     {
-        $tabId = (int) Tab::getIdFromClassName(self::ADMIN_TAB_CLASS_NAME);
-        if ($tabId > 0) {
-            return true;
-        }
-
         $parentId = $this->resolveCatalogParentTabId();
         if ($parentId <= 0) {
             $this->_errors[] = PrestashopInventoryI18n::translate($this, 'module_parent_tab_error');
@@ -259,36 +320,37 @@ class PrestashopInventory extends Module
             return false;
         }
 
-        $tab = new Tab();
-        $tab->active = 1;
-        $tab->class_name = self::ADMIN_TAB_CLASS_NAME;
-        $tab->module = $this->name;
-        $tab->id_parent = $parentId;
-
-        $inventoryLabel = PrestashopInventoryI18n::translate($this, 'inventory_report');
-        foreach (Language::getLanguages(false) as $language) {
-            $tab->name[(int) $language['id_lang']] = $inventoryLabel;
+        $mainTabId = $this->ensureTab(self::ADMIN_TAB_CLASS_NAME, $parentId, PrestashopInventoryI18n::translate($this, 'inventory_report'), true);
+        if ($mainTabId <= 0) {
+            return false;
         }
 
-        if (!$tab->add()) {
-            $this->_errors[] = PrestashopInventoryI18n::translate($this, 'module_tab_create_error');
+        if ($this->ensureTab(self::SUPPLIERS_TAB_CLASS_NAME, $mainTabId, PrestashopInventoryI18n::translate($this, 'suppliers_tab'), false) <= 0) {
+            return false;
+        }
 
+        if ($this->ensureTab(self::PURCHASE_ORDERS_TAB_CLASS_NAME, $mainTabId, PrestashopInventoryI18n::translate($this, 'purchase_orders_tab'), false) <= 0) {
             return false;
         }
 
         return true;
     }
 
-    private function uninstallTab(): bool
+    private function uninstallTabs(): bool
     {
-        $tabId = (int) Tab::getIdFromClassName(self::ADMIN_TAB_CLASS_NAME);
-        if ($tabId <= 0) {
-            return true;
+        $success = true;
+
+        foreach ([self::SUPPLIERS_TAB_CLASS_NAME, self::PURCHASE_ORDERS_TAB_CLASS_NAME, self::ADMIN_TAB_CLASS_NAME] as $className) {
+            $tabId = (int) Tab::getIdFromClassName($className);
+            if ($tabId <= 0) {
+                continue;
+            }
+
+            $tab = new Tab($tabId);
+            $success = (bool) $tab->delete() && $success;
         }
 
-        $tab = new Tab($tabId);
-
-        return (bool) $tab->delete();
+        return $success;
     }
 
     private function resolveCatalogParentTabId(): int
@@ -307,5 +369,84 @@ class PrestashopInventory extends Module
         }
 
         return 0;
+    }
+
+    private function ensureTab(string $className, int $parentId, string $label, bool $active): int
+    {
+        $tabId = (int) Tab::getIdFromClassName($className);
+        if ($tabId > 0) {
+            return $tabId;
+        }
+
+        $tab = new Tab();
+        $tab->active = $active ? 1 : 0;
+        $tab->class_name = $className;
+        $tab->module = $this->name;
+        $tab->id_parent = $parentId;
+
+        foreach (Language::getLanguages(false) as $language) {
+            $tab->name[(int) $language['id_lang']] = $label;
+        }
+
+        if (!$tab->add()) {
+            $this->_errors[] = PrestashopInventoryI18n::translate($this, 'module_tab_create_error');
+
+            return 0;
+        }
+
+        return (int) $tab->id;
+    }
+
+    private function clearRuntimeCache(): void
+    {
+        $cachePaths = [
+            _PS_ROOT_DIR_ . '/var/cache',
+            _PS_ROOT_DIR_ . '/app/cache',
+        ];
+
+        foreach ($cachePaths as $cachePath) {
+            if (!is_dir($cachePath)) {
+                continue;
+            }
+
+            $entries = @scandir($cachePath);
+            if (!is_array($entries)) {
+                continue;
+            }
+
+            foreach ($entries as $entry) {
+                if ($entry === '.' || $entry === '..') {
+                    continue;
+                }
+
+                $this->deletePathRecursively($cachePath . '/' . $entry);
+            }
+        }
+    }
+
+    private function deletePathRecursively(string $path): void
+    {
+        if (!file_exists($path) && !is_link($path)) {
+            return;
+        }
+
+        if (is_file($path) || is_link($path)) {
+            @unlink($path);
+
+            return;
+        }
+
+        $entries = @scandir($path);
+        if (is_array($entries)) {
+            foreach ($entries as $entry) {
+                if ($entry === '.' || $entry === '..') {
+                    continue;
+                }
+
+                $this->deletePathRecursively($path . '/' . $entry);
+            }
+        }
+
+        @rmdir($path);
     }
 }

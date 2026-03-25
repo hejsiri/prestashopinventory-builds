@@ -1,9 +1,5 @@
 {% extends '@Modules/prestashopinventory/views/templates/admin-modern/layout.html.twig' %}
 
 {% block inventoryContent %}
-    <p class="mb-4">{{ inventoryTexts.new_warehouse_view_scaffold }}</p>
-
-    <div class="alert alert-info mb-0">
-        {{ migrationNotice }}
-    </div>
+    {{ legacyContent|raw }}
 {% endblock %}

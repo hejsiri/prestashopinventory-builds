@@ -1,0 +1,144 @@
+{% extends '@Modules/prestashopinventory/views/templates/admin-modern/layout.html.twig' %}
+
+{% block inventoryContent %}
+    <div class="card js-grid-panel inventory-section-card">
+        <div class="card-header js-grid-header d-flex flex-wrap justify-content-between align-items-center" style="gap: 1rem;">
+            <div>
+                <h3 class="d-inline-block card-header-title">{{ inventoryTexts.suppliers_tab }}</h3>
+                <p class="text-muted mb-0 mt-1">{{ inventoryTexts.supplier_panel_note }}</p>
+            </div>
+            {% if canManageSuppliers %}
+                <a href="{{ supplierCreateUrl }}" class="btn btn-primary">{{ inventoryTexts.supplier_add_button }}</a>
+            {% endif %}
+        </div>
+        <div class="card-body">
+
+            {% for message in supplierMessages %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endfor %}
+
+            {% for error in supplierErrors %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+
+            {% if supplierForm.show %}
+                <div class="card mb-4">
+                    <div class="card-header d-flex flex-wrap justify-content-between align-items-center" style="gap: 1rem;">
+                        <h4 class="mb-0">{{ supplierForm.title }}</h4>
+                        <a href="{{ supplierListUrl }}" class="btn btn-outline-secondary btn-sm">{{ inventoryTexts.supplier_back_to_list }}</a>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="{{ supplierListUrl }}">
+                            <input type="hidden" name="id_supplier" value="{{ supplierForm.data.id_supplier }}">
+
+                            <div class="form-group mb-3">
+                                <label for="supplier_name">{{ inventoryTexts.name }}</label>
+                                <input type="text" id="supplier_name" name="supplier_name" class="form-control" value="{{ supplierForm.data.name }}" required>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="supplier_description">{{ inventoryTexts.supplier_description }}</label>
+                                <textarea id="supplier_description" name="supplier_description" class="form-control" rows="4">{{ supplierForm.data.description }}</textarea>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="supplier_phone">{{ inventoryTexts.phone }}</label>
+                                <input type="text" id="supplier_phone" name="supplier_phone" class="form-control" value="{{ supplierForm.data.phone }}">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="supplier_address1">* {{ inventoryTexts.address }}</label>
+                                <input type="text" id="supplier_address1" name="supplier_address1" class="form-control" value="{{ supplierForm.data.address1 }}" required>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="supplier_address2">{{ inventoryTexts.address2 }}</label>
+                                <input type="text" id="supplier_address2" name="supplier_address2" class="form-control" value="{{ supplierForm.data.address2 }}">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label for="supplier_postcode">{{ inventoryTexts.postcode }}</label>
+                                        <input type="text" id="supplier_postcode" name="supplier_postcode" class="form-control" value="{{ supplierForm.data.postcode }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <label for="supplier_city">* {{ inventoryTexts.city }}</label>
+                                        <input type="text" id="supplier_city" name="supplier_city" class="form-control" value="{{ supplierForm.data.city }}" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="supplier_id_country">* {{ inventoryTexts.country }}</label>
+                                <select id="supplier_id_country" name="supplier_id_country" class="form-control" required>
+                                    <option value="">--</option>
+                                    {% for country in supplierCountries %}
+                                        <option value="{{ country.id_country }}" {% if supplierForm.data.id_country == country.id_country %}selected{% endif %}>{{ country.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="form-group form-check mb-3">
+                                <input type="checkbox" id="supplier_active" name="supplier_active" value="1" class="form-check-input" {% if supplierForm.data.active %}checked{% endif %}>
+                                <label for="supplier_active" class="form-check-label">{{ inventoryTexts.active }}</label>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <button type="submit" name="submitPrestashopInventorySaveSupplier" class="btn btn-primary">{{ inventoryTexts.save }}</button>
+                                <a href="{{ supplierListUrl }}" class="btn btn-outline-secondary">{{ inventoryTexts.cancel }}</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if suppliers is not empty %}
+                <div class="table-responsive">
+                    <table class="grid-table js-grid-table table">
+                        <thead class="thead-default">
+                            <tr>
+                                <th>ID</th>
+                                <th>{{ inventoryTexts.name }}</th>
+                                <th>{{ inventoryTexts.supplier_products_count }}</th>
+                                <th>{{ inventoryTexts.active }}</th>
+                                <th>{{ inventoryTexts.created_at }}</th>
+                                <th>{{ inventoryTexts.updated_at }}</th>
+                                <th>{{ inventoryTexts.actions }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for supplier in suppliers %}
+                                <tr>
+                                    <td>{{ supplier.id_supplier }}</td>
+                                    <td><strong>{{ supplier.name }}</strong></td>
+                                    <td>{{ supplier.products_count }}</td>
+                                    <td>
+                                        <span class="switch prestashop-switch fixed-width-lg">
+                                            <input type="radio" name="supplier_active_{{ supplier.id_supplier }}" id="supplier_active_on_{{ supplier.id_supplier }}" value="1" {% if supplier.active %}checked="checked"{% endif %} disabled="disabled">
+                                            <label for="supplier_active_on_{{ supplier.id_supplier }}">Tak</label>
+                                            <input type="radio" name="supplier_active_{{ supplier.id_supplier }}" id="supplier_active_off_{{ supplier.id_supplier }}" value="0" {% if not supplier.active %}checked="checked"{% endif %} disabled="disabled">
+                                            <label for="supplier_active_off_{{ supplier.id_supplier }}">Nie</label>
+                                            <a class="slide-button btn"></a>
+                                        </span>
+                                    </td>
+                                    <td>{{ supplier.date_add }}</td>
+                                    <td>{{ supplier.date_upd }}</td>
+                                    <td>
+                                        {% if canManageSuppliers %}
+                                            <a href="{{ supplier.edit_url }}" class="btn btn-sm btn-outline-secondary">{{ inventoryTexts.supplier_edit_button }}</a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="alert alert-info mb-0">{{ inventoryTexts.suppliers_empty }}</div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

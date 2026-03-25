@@ -1,70 +1,139 @@
-<div class="inventory-module-content">
+<div class="inventory-module-content{if !empty($prestashopInventoryEmbeddedInModernLayout)} inventory-module-content--embedded{/if}">
+{if empty($prestashopInventoryEmbeddedInModernLayout)}
 <div id="psinventory-config-head-tabs-source" class="page-head-tabs inventory-panel-tabs" role="tablist" aria-label="{$prestashopInventoryTranslations.module_navigation|escape:'html':'UTF-8'}">
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a href="{$prestashopInventoryBackUrl|escape:'html':'UTF-8'}" class="nav-link" role="tab">{$prestashopInventoryTranslations.warehouse_tab|escape:'html':'UTF-8'}</a>
+      <a href="{$prestashopInventoryBackUrl|escape:'html':'UTF-8'}" class="nav-link" role="tab">{$prestashopInventoryTranslations.products_tab|escape:'html':'UTF-8'}</a>
+    </li>
+    <li class="nav-item">
+      <a href="{$prestashopInventorySuppliersUrl|escape:'html':'UTF-8'}" class="nav-link" role="tab">{$prestashopInventoryTranslations.suppliers_tab|escape:'html':'UTF-8'}</a>
+    </li>
+    <li class="nav-item">
+      <a href="{$prestashopInventoryPurchaseOrdersUrl|escape:'html':'UTF-8'}" class="nav-link" role="tab">{$prestashopInventoryTranslations.purchase_orders_tab|escape:'html':'UTF-8'}</a>
     </li>
     <li class="nav-item">
       <a href="{$prestashopInventoryConfigAction|escape:'html':'UTF-8'}" class="router-link-active router-link-exact-active nav-link active" aria-current="page" role="tab">{$prestashopInventoryTranslations.settings_tab|escape:'html':'UTF-8'}</a>
     </li>
   </ul>
   <div class="inventory-update-meta">
-    <div class="inventory-update-meta-version">Wersja {$prestashopInventoryModuleVersion|escape:'html':'UTF-8'}</div>
     <div class="inventory-update-meta-status"></div>
   </div>
 </div>
-<div class="panel prestashopinventory-config-list">
+{/if}
+{foreach from=$prestashopInventoryMessages item=message}
+  <div class="alert alert-success">{$message|escape:'html':'UTF-8'}</div>
+{/foreach}
 
-  {if $prestashopInventoryIgnoredProducts}
-    <div class="table-responsive-row clearfix">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>{$prestashopInventoryTranslations.image|escape:'html':'UTF-8'}</th>
-            <th>{$prestashopInventoryTranslations.product_name|escape:'html':'UTF-8'}</th>
-            <th>{$prestashopInventoryTranslations.ean13|escape:'html':'UTF-8'}</th>
-            <th>{$prestashopInventoryTranslations.displayed|escape:'html':'UTF-8'}</th>
-            <th>{$prestashopInventoryTranslations.actions|escape:'html':'UTF-8'}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {foreach from=$prestashopInventoryIgnoredProducts item=product}
-            <tr>
-              <td class="config-col-id">{$product.id_product|intval}</td>
-              <td class="config-col-image">
-                {if $product.image_url}
-                  <img src="{$product.image_url|escape:'html':'UTF-8'}" alt="" class="config-thumb">
-                {else}
-                  <span class="config-empty-image">{$prestashopInventoryTranslations.no_image|escape:'html':'UTF-8'}</span>
-                {/if}
-              </td>
-              <td>
-                <strong>{$product.product_name|escape:'html':'UTF-8'}</strong>
-              </td>
-              <td>{$product.ean13|escape:'html':'UTF-8'}</td>
-              <td class="config-col-switch">
-                <span class="config-switch {if $product.active}is-on{/if}">
-                  <span class="config-switch-track"></span>
-                  <span class="config-switch-thumb"></span>
-                </span>
-              </td>
-              <td class="config-col-actions">
-                <form method="post" action="{$prestashopInventoryConfigAction|escape:'html':'UTF-8'}" class="config-restore-form">
-                  <input type="hidden" name="id_product" value="{$product.id_product|intval}">
-                  <button type="submit" name="submitPrestashopInventoryRestoreHidden" class="config-secondary-btn">
-                    <i class="icon-undo"></i> {$prestashopInventoryTranslations.restore|escape:'html':'UTF-8'}
-                  </button>
-                </form>
-              </td>
-            </tr>
-          {/foreach}
-        </tbody>
-      </table>
+{foreach from=$prestashopInventoryErrors item=errorMessage}
+  <div class="alert alert-danger">{$errorMessage|escape:'html':'UTF-8'}</div>
+{/foreach}
+
+<div class="card js-grid-panel prestashopinventory-config-list">
+  <div class="card-header js-grid-header">
+    <h3 class="d-inline-block card-header-title">Informacje o module</h3>
+  </div>
+  <div class="card-body">
+    <div class="inventory-settings-meta">
+      <div class="inventory-settings-meta-grid">
+        <div class="inventory-settings-meta-item">
+          <div class="inventory-settings-meta-label">Wersja modułu</div>
+          <div class="inventory-settings-meta-value">{$prestashopInventoryModuleVersion|escape:'html':'UTF-8'}</div>
+        </div>
+
+        <div class="inventory-settings-meta-item">
+          <div class="inventory-settings-meta-label">Licencja dla</div>
+          <div class="inventory-settings-meta-value">{$prestashopInventoryLicenseSummary.customer|escape:'html':'UTF-8'}</div>
+        </div>
+
+        <div class="inventory-settings-meta-item">
+          <div class="inventory-settings-meta-label">Domena</div>
+          <div class="inventory-settings-meta-value">{$prestashopInventoryLicenseSummary.domain|escape:'html':'UTF-8'}</div>
+        </div>
+
+        <div class="inventory-settings-meta-item">
+          <div class="inventory-settings-meta-label">Wygasa</div>
+          <div class="inventory-settings-meta-value">{$prestashopInventoryLicenseSummary.expires_at|escape:'html':'UTF-8'}</div>
+        </div>
+      </div>
+
+      {if !$prestashopInventoryLicenseStatus.valid}
+        <div class="alert alert-danger inventory-settings-license-alert" role="alert">
+          <strong>{$prestashopInventoryTranslations.license_required_title|escape:'html':'UTF-8'}:</strong>
+          <span>{$prestashopInventoryLicenseStatus.message|escape:'html':'UTF-8'}</span>
+        </div>
+      {/if}
     </div>
-  {else}
-    <p class="alert alert-info">{$prestashopInventoryTranslations.hidden_products_empty|escape:'html':'UTF-8'}</p>
-  {/if}
+  </div>
+</div>
+
+<div class="card js-grid-panel prestashopinventory-config-list">
+  <div class="card-header js-grid-header">
+    <h3 class="d-inline-block card-header-title">Lista ukrytych produktów</h3>
+  </div>
+  <div class="card-body">
+    {if $prestashopInventoryIgnoredProducts}
+      <div class="table-responsive-row clearfix">
+        <table class="grid-table js-grid-table table">
+          <thead class="thead-default">
+            <tr>
+              <th>ID</th>
+              <th>{$prestashopInventoryTranslations.image|escape:'html':'UTF-8'}</th>
+              <th>{$prestashopInventoryTranslations.product_name|escape:'html':'UTF-8'}</th>
+              <th>{$prestashopInventoryTranslations.ean13|escape:'html':'UTF-8'}</th>
+              <th>{$prestashopInventoryTranslations.displayed|escape:'html':'UTF-8'}</th>
+              <th>{$prestashopInventoryTranslations.actions|escape:'html':'UTF-8'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {foreach from=$prestashopInventoryIgnoredProducts item=product}
+              <tr>
+                <td class="config-col-id">{$product.id_product|intval}</td>
+                <td class="config-col-image">
+                  {if $product.image_url}
+                    <img src="{$product.image_url|escape:'html':'UTF-8'}" alt="" class="config-thumb">
+                  {else}
+                    <span class="config-empty-image">{$prestashopInventoryTranslations.no_image|escape:'html':'UTF-8'}</span>
+                  {/if}
+                </td>
+                <td>
+                  <strong>{$product.product_name|escape:'html':'UTF-8'}</strong>
+                </td>
+                <td>{$product.ean13|escape:'html':'UTF-8'}</td>
+                <td class="config-col-switch">
+                  <div class="ps-switch ps-switch-sm ps-switch-nolabel ps-switch-center">
+                    <input type="radio" name="hidden_product_active_{$product.id_product|intval}" id="hidden_product_active_{$product.id_product|intval}_off" value="0" {if !$product.active}checked{/if} disabled>
+                    <label for="hidden_product_active_{$product.id_product|intval}_off">Off</label>
+                    <input type="radio" name="hidden_product_active_{$product.id_product|intval}" id="hidden_product_active_{$product.id_product|intval}_on" value="1" {if $product.active}checked{/if} disabled>
+                    <label for="hidden_product_active_{$product.id_product|intval}_on">On</label>
+                    <span class="slide-button"></span>
+                  </div>
+                </td>
+                <td class="config-col-actions">
+                  <form method="post" action="{$prestashopInventoryConfigAction|escape:'html':'UTF-8'}" class="config-restore-form">
+                    <input type="hidden" name="id_product" value="{$product.id_product|intval}">
+                    <button type="submit" name="submitPrestashopInventoryRestoreHidden" class="config-secondary-btn">
+                      <i class="icon-undo"></i> {$prestashopInventoryTranslations.restore|escape:'html':'UTF-8'}
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            {/foreach}
+          </tbody>
+        </table>
+      </div>
+    {else}
+      <p class="alert alert-info">{$prestashopInventoryTranslations.hidden_products_empty|escape:'html':'UTF-8'}</p>
+    {/if}
+  </div>
+</div>
+
+<div class="card js-grid-panel prestashopinventory-config-list">
+  <div class="card-header js-grid-header">
+    <h3 class="d-inline-block card-header-title">Inne ustawienia</h3>
+  </div>
+  <div class="card-body">
+    <p class="text-muted mb-0">Ta sekcja jest gotowa pod kolejne ustawienia modułu.</p>
+  </div>
 </div>
 </div>
 
@@ -73,6 +142,10 @@
     padding-top: 60px;
     clear: both;
     position: relative;
+  }
+
+  .inventory-module-content--embedded {
+    padding-top: 0;
   }
 
   .inventory-panel-tabs {
@@ -161,43 +234,109 @@
 
   .page-head > .inventory-panel-tabs .inventory-update-meta {
     display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    align-items: flex-end;
+    flex: 0 0 260px;
+    align-items: center;
     justify-content: center;
-    gap: 2px;
     min-height: 56px;
+    height: 56px;
     margin: 0 18px 0 0;
     text-align: right;
-  }
-
-  .page-head > .inventory-panel-tabs .inventory-update-meta-version {
-    font-size: 11px;
-    font-weight: 700;
-    color: #5f7484;
-    line-height: 1.2;
-    white-space: nowrap;
+    overflow: hidden;
   }
 
   .page-head > .inventory-panel-tabs .inventory-update-meta-status {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
     font-size: 11px;
     font-weight: 600;
     color: #7a8f9d;
-    line-height: 1.2;
-    min-height: 12px;
+    line-height: 1.25;
+    min-height: 0;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .prestashopinventory-config-list.panel {
-    border: 1px solid #dce7ef;
-    border-radius: 0 20px 20px 20px;
-    box-shadow: 0 14px 28px rgba(31, 52, 66, 0.10);
-    padding: 20px 28px 24px;
-    position: relative;
-    z-index: 2;
-    margin-bottom: 0;
+  @media (max-width: 1100px) {
+    .page-head > .inventory-panel-tabs .inventory-update-meta {
+      flex-basis: 180px;
+      margin-right: 12px;
+    }
+  }
+
+  @media (max-width: 920px) {
+    .page-head > .inventory-panel-tabs .inventory-update-meta {
+      display: none;
+    }
+  }
+
+  .prestashopinventory-config-list.card {
+    margin-bottom: 1rem;
     margin-top: 0 !important;
+  }
+
+  .prestashopinventory-config-list .card-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .prestashopinventory-config-list .card-body {
+    padding: 20px 28px 24px;
+  }
+
+  .prestashopinventory-config-list .inventory-settings-meta {
+    margin-bottom: 24px;
+    padding: 18px 20px;
+    border: 1px solid #dce7ef;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #f9fcfe 0%, #f3f8fb 100%);
+  }
+
+  .prestashopinventory-config-list .inventory-settings-meta-header {
+    margin-bottom: 14px;
+  }
+
+  .prestashopinventory-config-list .inventory-settings-meta-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #243746;
+  }
+
+  .prestashopinventory-config-list .inventory-settings-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+  }
+
+  .prestashopinventory-config-list .inventory-settings-meta-item {
+    padding: 14px 16px;
+    border: 1px solid #d8e4ec;
+    border-radius: 4px;
     background: #fff;
+  }
+
+  .prestashopinventory-config-list .inventory-settings-meta-label {
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #6f8796;
+  }
+
+  .prestashopinventory-config-list .inventory-settings-meta-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #243746;
+    word-break: break-word;
+  }
+
+  .prestashopinventory-config-list .inventory-settings-license-alert {
+    margin: 16px 0 0;
   }
 
   .prestashopinventory-config-list .config-secondary-btn {
@@ -280,41 +419,12 @@
     margin: 0;
   }
 
-  .prestashopinventory-config-list .config-switch {
-    position: relative;
+  .prestashopinventory-config-list .config-col-switch .ps-switch {
     display: inline-block;
-    width: 28px;
-    height: 16px;
-  }
-
-  .prestashopinventory-config-list .config-switch-track {
-    position: absolute;
-    inset: 0;
-    border-radius: 999px;
-    background: #d3d3d3;
-  }
-
-  .prestashopinventory-config-list .config-switch-thumb {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 12px;
-    height: 12px;
-    background: #fff;
-    border-radius: 50%;
-    transition: transform .2s ease;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
-  }
-
-  .prestashopinventory-config-list .config-switch.is-on .config-switch-track {
-    background: #4f955d;
-  }
-
-  .prestashopinventory-config-list .config-switch.is-on .config-switch-thumb {
-    transform: translateX(12px);
   }
 </style>
 
+{if empty($prestashopInventoryEmbeddedInModernLayout)}
 <script>
   (function () {
     function syncBreadcrumb(currentLabel) {
@@ -432,3 +542,4 @@
     }, 10000);
   })();
 </script>
+{/if}
