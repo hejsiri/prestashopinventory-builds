@@ -1,8 +1,8 @@
 {
-    "version": "0.3.51",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.51-active-install.zip",
-    "sha256": "4e8b4db0fc6e76fe2b46720859eacf65cc9d3129918110c1b20c08e5f351d972",
-    "signature": "sdsUZyVXVPQMEBnmXggDNxzDz2cnzP5KR18JC3FhJ9YBBhwnkuzw2Pwa+OfE5wpX0MbWIKc/bxzeMvx/McyrIvwQWznDzGqkfcE9HQIpXll4XJ6zvvIJ6ZW5M+vf1G8Ch/Kt+QmMiZ5ZKQBOENFMU9C7OWthZObv77SeDkMnNG7D0UDI6g8bzB+/xntDa97cVkXmkPZDE8UXaR1OJy2xssDTDEksXduJ72dP2Mv3HvotpOd0AwpiFpmEmCS3np8YfCF3QGlgmlE1GQB1eya8h1Og+ztdbTRa9SYAfBlllf8BlGDiZ0cb/4Nm8cNDpdE49H7kZtHZ7MBKpcYCjLGcRg==",
-    "published_at": "2026-03-25T17:06:34+00:00",
+    "version": "0.3.52",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.52-active-install.zip",
+    "sha256": "4ce219d268a5fa55ce4aefc7f26a48ba0e3ecf3400b9453a0a69265f4ad609e3",
+    "signature": "dHSGMwQIo4S/ihNyA9Sb55sBb83+qW6cRCFNBcvDk5UPx1gmn6ZfzOf9mwxSdDQkqAdER4Laf99HQn5IvlhGvEfu8r6IyOCVErZ2KLAFKhObUSRIO3DnAvtO5cWPWwnL5CCBRDsjdR7clp4OqsNR2cljJbmFVUmb0C11SGWuisXo7edzPDsgD1LhCzFCuPAH9b/vE4Wpn0b9qrp3YNwvM29j03uXMeX7T1DBcqw4iP1ioUDPHb673H6xRTSTMrYdOxPRr3p6JDVTPHBXJ6y8GvYqhjRyDy2CYNTUw1Oxbgzb6Mp3k6I6NWKKtnRBZigk3JIpdU4FUVKT5V7IXZbeCA==",
+    "published_at": "2026-03-25T17:13:02+00:00",
     "notes": "Public build for module auto-update"
 }
