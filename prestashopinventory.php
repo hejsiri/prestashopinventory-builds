@@ -20,7 +20,7 @@ class PrestashopInventory extends Module
     {
         $this->name = 'prestashopinventory';
         $this->tab = 'administration';
-        $this->version = '0.3.42';
+        $this->version = '0.3.43';
         $this->author = 'hejsiri';
         $this->need_instance = 0;
         $this->bootstrap = true;

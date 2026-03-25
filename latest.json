@@ -1,8 +1,8 @@
 {
-    "version": "0.3.42",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.42-active-install.zip",
-    "sha256": "5cbd9b57e6e057094c9005850ab5b12e784b2f0b6a74281e805684efc2f5f06a",
-    "signature": "r94EbooOKdiBUqgE1mRiJZyB6cNvxHusCCBl0YMBbq5L9hSksT7l8WGPJpaUON6V5W3wVXt08fniUVtQT0QZ9yEg6PJbNjlIKkZYM20ABz7cVeg176/tiuKBub00ApZglpGy5f4/zKCfIvQJIK+PWA7rYKMKnvcxMXhwUo0AUGkAXN3KneaG9xTGapyS34rLt4XnRwBmjG7fHwUts5ycwfZDB1/jq5pzHMW3GN1P3uEmyNWz0VYN58RDwg5kK/LijMc33XmytWfrqxp7E6YaW556opt/TVuiDzRN9rR4Fnr8t9oepRJg81k0WX963ObVfdV58sPyIqmtTvHS1PxMXQ==",
-    "published_at": "2026-03-25T15:45:10+00:00",
+    "version": "0.3.43",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.43-active-install.zip",
+    "sha256": "91ac36c81ae3c2e833083264815fba6a00bb9c7ea55de573802ff7e8b46e564a",
+    "signature": "iW5WPNtv+u15dcL+Eo84p60eqbP6u1DbykxpkeSNeOadCAx3wjOdPNDobh/Uwu27i+LozArKaw+fl94YNPibQxc8Q4ys9jGKvPeafeW+gCa+Ts6w67YshF3TuJ8AotSPlx9l4ErGL3wHQcRttUQoBALAtROE8+PdP6BK4+gHWmN6EuwYOpESv4vrGWUYk3K/YCbr3kFxTdjto3j+Cs3fsGlmPddxZ8Bqk5lNSaOTKCLgtX5Nst3SmoFacU6RJm/KIbJbFzrxL1FDNdrX7EN5aSUHorIMpwe9+OXhlxya7Z4evcj3yRK1qUnO4wsDfjXleyqxO/maFAdmIvpMQIEedA==",
+    "published_at": "2026-03-25T16:00:40+00:00",
     "notes": "Public build for module auto-update"
 }
