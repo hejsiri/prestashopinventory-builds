@@ -1,8 +1,8 @@
 {
-    "version": "0.3.98",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.98-active-install.zip",
-    "sha256": "6cc19edd007c752d98c59b6c3065287d00e65a8981b60b17e298879675a80f28",
-    "signature": "GEZl35M+RZaC9cVH+RjL84dQcvVrb0TOrJWOa7wjI3x1Sgm+4RX6JtO74kUQzfCwhA9EE6uUSdFiBvbPGGqhm5+OCLWQtqPrk6DL4lnuV8CJxJ8ZvjkyZRrk3gdfsxelgWppiN3Jq4veAPSb05wYl5l7zWHVwWjA3CNnQZpSZcIUJDwTOoNGE5sFVsE8OFlbrx+mqS6J5BO6POgpjYLM0QueyIl+wCCEliQ62kkrFV7VD2+lHLzj/7Fs6wcLD2spqHkA7lbvldbag/R7+1m2YxLD+Q0DPEgLymdo9Blq8yuiuMqU0/1mR9Ov7ZPGZBUJLhlTmQG30NPTMMiJlc66LQ==",
-    "published_at": "2026-03-26T20:29:55+00:00",
-    "notes": "Reduce line spacing in order detail summary meta list"
+    "version": "0.3.99",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.99-active-install.zip",
+    "sha256": "6cb54698b6b4f9a1c8623330dae8a82f4003a24bbc32b5fd41bab098f59a9f7a",
+    "signature": "3ACKJNJXWidtPfRz6x92cmAxgU0bqc9ov79CfvaNg3pI8YgZiIiPmTvqgy/oYCdYtV4v81gP4ofz0cFgcuZppphdUWQw9Tw0cpnxdjOJXBXUz7NRjn7mo4cNoYTNCwwZVNgxAmCsOzIrc90taAQNBc6RQ0PqVh1eC5/f0mecA+DUhD6CccPjDEJAh38pkYZk1e21KF05CcnyxZLgo2ii675ZfGPQoU75zPk3ncixdEP8TOt7g38+oMQF2eC1iJZCD8kr/co9ZppU/noTa2SyvNJ8cTNyc6MpaivJXRCwtFFZxVR7D8IcDShT2DvJcM2ImzTbI66LtllZJKJY/1sA8A==",
+    "published_at": "2026-03-26T20:41:46+00:00",
+    "notes": "Fix invoice re-edit loading wrong value; carrier select uses settings carriers; supplier section style matches delivery address; file description truncated with tooltip"
 }

@@ -1,3 +1,9 @@
+## [0.3.99] - 2026-03-26
+- Poprawka: ponowna edycja numeru faktury wczytywała stare dane (błąd cache jQuery `.data()`)
+- Poprawka: pole Przewoźnik używa teraz select z listy zdefiniowanych przewoźników
+- Styl sekcji Dostawca ujednolicony z sekcją Adres dostawy (zwykły tekst, bez bold)
+- Opis pliku skrócony w tabeli (ellipsis), pełna treść widoczna w tooltipie po najechaniu
+
 ## [0.3.98] - 2026-03-26
 - Zmniejszone odstępy między wierszami w sekcji podsumowania podglądu zamówienia
 
