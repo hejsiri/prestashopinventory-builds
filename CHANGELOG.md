@@ -1,3 +1,10 @@
+## [0.4.0] - 2026-03-26
+- Statusy zamówień: szybka edycja nazwy inline (klik → input, Enter=zapisz AJAX, Esc=anuluj)
+- Statusy zamówień: zmiana koloru przez kliknięcie w swatch → zapis AJAX
+- Usunięto przycisk „Zapisz" z sekcji statusów; adres dostawy ma własny przycisk zapisu
+- Poprawka: plakietki statusów w kolumnie Podgląd mają teraz poprawny kolor (usunięto klasę `badge`)
+- Ikona kosza w kolumnie Akcje statusów ujednolicona z poprzednimi tabelami
+
 ## [0.3.99] - 2026-03-26
 - Poprawka: ponowna edycja numeru faktury wczytywała stare dane (błąd cache jQuery `.data()`)
 - Poprawka: pole Przewoźnik używa teraz select z listy zdefiniowanych przewoźników

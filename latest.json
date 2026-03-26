@@ -1,8 +1,8 @@
 {
-    "version": "0.3.99",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.99-active-install.zip",
-    "sha256": "6cb54698b6b4f9a1c8623330dae8a82f4003a24bbc32b5fd41bab098f59a9f7a",
-    "signature": "3ACKJNJXWidtPfRz6x92cmAxgU0bqc9ov79CfvaNg3pI8YgZiIiPmTvqgy/oYCdYtV4v81gP4ofz0cFgcuZppphdUWQw9Tw0cpnxdjOJXBXUz7NRjn7mo4cNoYTNCwwZVNgxAmCsOzIrc90taAQNBc6RQ0PqVh1eC5/f0mecA+DUhD6CccPjDEJAh38pkYZk1e21KF05CcnyxZLgo2ii675ZfGPQoU75zPk3ncixdEP8TOt7g38+oMQF2eC1iJZCD8kr/co9ZppU/noTa2SyvNJ8cTNyc6MpaivJXRCwtFFZxVR7D8IcDShT2DvJcM2ImzTbI66LtllZJKJY/1sA8A==",
-    "published_at": "2026-03-26T20:41:46+00:00",
-    "notes": "Fix invoice re-edit loading wrong value; carrier select uses settings carriers; supplier section style matches delivery address; file description truncated with tooltip"
+    "version": "0.4.0",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.0-active-install.zip",
+    "sha256": "3e9daadf24f245d4500727816022de5347f88d84aa2b47bc656f953c3fb9660c",
+    "signature": "znt0MvRuCcUlUx+y1O0qhvE31KK8Wwt+lwbf4Cbn8/5L51Lu07+xnwDQqUZuPtxxsqCT7KFExQi0IpFSYAMvixZwMxzVCv+PKxcF/rpfyBH7HZ2HppapGAggPFGRCzekAh3JrFPb95GnGd2utwYCzZoHU2x2lTb50ERyDSS2H0TmHfOrUrvPZ8sVCvakX6YwQOM7EPkBWxCzU+WPLN2kX4mMUACaBwcVMG1fBBr7qw9FpeXU6hyoZS4aGNFT4qG2YI5FaFPAvUmI/+9blXYNG8CnRje5HKXS/OGnTjAO2t9y+9WvaeBT7UIFynZv2X6qrfyI5CPSL63viwBnJ2uCdg==",
+    "published_at": "2026-03-26T21:00:42+00:00",
+    "notes": "Order status inline edit (label + color swatch click), fixed badge color preview, trash icon unified"
 }
