@@ -1,8 +1,8 @@
 {
-    "version": "0.3.97",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.97-active-install.zip",
-    "sha256": "f6780624c364dbee2c8c4f787e25464f1d4f2740b875f13bbb16d3ef55afdb50",
-    "signature": "skdgc7p4d1qUVlIkjM5kXcCyIdWqmFLHT0PtlXv2PP107UjQn8sJgcBYpNEguwDysOiiEOXxoDil4UZFRRKgroY+ENB30kY6IXeKt8ckFoMTTkSrZcvfOoWbpxwpcaxCtqywHeErs8rpfgAxOQ6XHoihaxsNeZkJxKmUhXXuwXkma1e7SlhBIgvWosxV2Y8YKZzBu6Bjm1cAeIDQrxhDi9UA8UakQlh/kExyieAqYkUXDO6I/iCoPHmhiB4m0IjD9CKPCqBfjAWIGHK060Ne2No/tLjOjcWzfkzg24hFPCMedCT26e0cgDZBoUZeDTqwH7EFgjeOI7VtqOfXuYg9Dg==",
-    "published_at": "2026-03-26T20:26:14+00:00",
-    "notes": "Upload dirs named after order reference (e.g. ZAK-001) instead of numeric ID"
+    "version": "0.3.98",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.98-active-install.zip",
+    "sha256": "6cc19edd007c752d98c59b6c3065287d00e65a8981b60b17e298879675a80f28",
+    "signature": "GEZl35M+RZaC9cVH+RjL84dQcvVrb0TOrJWOa7wjI3x1Sgm+4RX6JtO74kUQzfCwhA9EE6uUSdFiBvbPGGqhm5+OCLWQtqPrk6DL4lnuV8CJxJ8ZvjkyZRrk3gdfsxelgWppiN3Jq4veAPSb05wYl5l7zWHVwWjA3CNnQZpSZcIUJDwTOoNGE5sFVsE8OFlbrx+mqS6J5BO6POgpjYLM0QueyIl+wCCEliQ62kkrFV7VD2+lHLzj/7Fs6wcLD2spqHkA7lbvldbag/R7+1m2YxLD+Q0DPEgLymdo9Blq8yuiuMqU0/1mR9Ov7ZPGZBUJLhlTmQG30NPTMMiJlc66LQ==",
+    "published_at": "2026-03-26T20:29:55+00:00",
+    "notes": "Reduce line spacing in order detail summary meta list"
 }

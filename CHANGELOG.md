@@ -1,3 +1,6 @@
+## [0.3.98] - 2026-03-26
+- Zmniejszone odstępy między wierszami w sekcji podsumowania podglądu zamówienia
+
 ## [0.3.97] - 2026-03-26
 - Katalogi plików zamówień nazwane referencją zamówienia (np. `ZAK-001`) zamiast numerycznym ID
 
