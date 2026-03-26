@@ -1,3 +1,6 @@
+## [0.3.96] - 2026-03-26
+- Szybka edycja opisu pliku inline w tabeli plików zamówienia (klik → input, Enter = zapis, Esc = anuluj)
+
 # Changelog
 
 ## [0.3.95] - 2026-03-26

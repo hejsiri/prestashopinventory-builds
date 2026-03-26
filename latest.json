@@ -1,8 +1,8 @@
 {
-    "version": "0.3.95",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.95-active-install.zip",
-    "sha256": "a73aadcb75a6d494b0061ae55f5ec4cf28858e4d60c9a7e370474b7ad347026a",
-    "signature": "pTvJaLxADJpHbgmvakjwIhs+E0vqE3AXaSTMWWIWaJJMY4yTFgG1G/eOiLq6ihT2Ta6s5F3FjJXiYZSdzEVcAOJ38M4rwrkZtnJy7j26J4rkHtvQz4QVFHTdD6Jibv6OyvcPAj2RRTmvwn2+eqmJZGaVUjxXeyXcUUQMX0rEmwhasgMfwsOkWwZ4MtwvmPv4hA1geMd8xzUNlLabV31SQzEmuBU3VILnweM1Rd1GpZvlhHSEbdcTxJMXArHf/XyRcoHpUiqSKO9FOyrwOGhtzDsrDwiJr5bAoDmqlVEleJs5KoP0OOGBh43IZEbMJdN26NnpxR/rmMqA09x6wIsuhA==",
-    "published_at": "2026-03-26T20:10:14+00:00",
-    "notes": "File preview/download icons, doc-type inline quick-edit, carrier/doctype inline edit in settings"
+    "version": "0.3.96",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.96-active-install.zip",
+    "sha256": "2bf5cf0fc2501ced26f00256e47b55fb15d0e298aaba5a66675f58529d775ca6",
+    "signature": "L/RS92ScMn1QW8EeJngqziy8EgPxIU2HMgk0uxxpkmw5b8INGY6Mq2uCivyvlgwYonJyySJAkT5+SsDDdumc4mjEow8NoFqMmh/WOxKjNldIbWjUgrXHMeHtxVygI6WmCJhCFdUdrATzc30SAzkj4ph8fh8BAQYhJDTaQzUDUDjkfIqYKxBsOjPfsqqAo7Mprw9FovvJZmZngEAiJ+yOKmIoDXBPRVPX1ENi9eH0nc0bArCea6ci1Wd1/s+X6Xp9XGNyuyCgsyYATnqV6R/SPyDKnujWw8hA7Hrq+hO/n5RUCCLaApUwAOoeD+AEkAcrKxEyDPhRBqXOixGqVvMf+g==",
+    "published_at": "2026-03-26T20:24:51+00:00",
+    "notes": "Inline quick-edit for file description in purchase order files table"
 }
