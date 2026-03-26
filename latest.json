@@ -1,8 +1,8 @@
 {
-    "version": "0.3.93",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.93-active-install.zip",
-    "sha256": "ba05961a159f343ff371d8cfb2ef5b40ffaf73ed4ac2932e44222efb1cad00f4",
-    "signature": "O+r8l/VAktkGHcyKy/eFdZRCm0sP9obFqej/mbPzKZZGP4EqSM+9l/uHmGsT6pw4H406kcfW1KOU9203NtlQJIOjl04TEtfzHF3UyZWNifJ9/ecEq4yktwluszYrWDhIaLiO1TrYNF7NKjy/aCFd8Hei/0+MU6j+jo9K8lm8518mj6h1UKsNoM1nrIKZVdSLqrurIgcSQy+0klxzvPtJ6G+OSSMzbyV/k5FsJOKJGyDtFrGWAf06vrSJU4WEdi8waybAYGRcY1qoe3YJ4nHsmOFLsr9xFMHTVaIXgzRUtiRo/6VxYivaiB6x3QGV1521km8cO7nynWuRxjlZNAlFrw==",
-    "published_at": "2026-03-26T19:38:34+00:00",
-    "notes": "Fix carrier/doctype CRUD JS not loaded in modern layout"
+    "version": "0.3.94",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.94-active-install.zip",
+    "sha256": "60ae0b59153accf3f8d42695816d330355cb5d60021b1dad8d946f460faeb049",
+    "signature": "jfmYLWc0qm/N3+Th6j4Xy46GlqYh8GHN/pe8AwSG7GLCVsb4X/OuJ+BPymCHm6sPZfKMmKd14bz7i1R7QPPOiDtMAv1KCJhv8fP+6Bty+nxXF8m9Gyz5W/3UXUrj1kpnlGF+j5+wu3yX1+c0bAKCAMHQs/kyFLO2Hoswtto/YediJXtHVLcJ0CPdC4w5O+W1WIn/pC7BhM0ptfuN04+NpjqTr129sIUbQ8AZLPvov4MdCBiNdwktC/tlc+4Y5MZf2RHoVdi7x+apfz+g+QudK1D3B9OpO+pyykTdHLEutlCNyEUdL4fd/7KhjXqXcJ2HIRniEWdisbf22fx5wwK5jA==",
+    "published_at": "2026-03-26T20:02:17+00:00",
+    "notes": "Store purchase order files in module uploads dir (not PS upload/ which is HTTP-blocked)"
 }
