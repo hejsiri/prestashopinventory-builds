@@ -1,3 +1,9 @@
+## [0.4.1] - 2026-03-26
+- Styl plakietek statusów oparty na natywnej klasie Bootstrap `.badge` (jak w BO PrestaShop)
+- `background-color !important` zapewnia poprawny kolor bez konfliktu z motywem PS
+- Paleta kolorów statusów odświeżona i ułożona chromatycznie (czerwony→pomarańczowy→żółty→zielony→turkus→niebieski→fioletowy→szary→ciemny)
+- Usunięto martwy kod starego formularza statusów
+
 ## [0.4.0] - 2026-03-26
 - Statusy zamówień: szybka edycja nazwy inline (klik → input, Enter=zapisz AJAX, Esc=anuluj)
 - Statusy zamówień: zmiana koloru przez kliknięcie w swatch → zapis AJAX

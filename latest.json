@@ -1,8 +1,8 @@
 {
-    "version": "0.4.0",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.0-active-install.zip",
-    "sha256": "3e9daadf24f245d4500727816022de5347f88d84aa2b47bc656f953c3fb9660c",
-    "signature": "znt0MvRuCcUlUx+y1O0qhvE31KK8Wwt+lwbf4Cbn8/5L51Lu07+xnwDQqUZuPtxxsqCT7KFExQi0IpFSYAMvixZwMxzVCv+PKxcF/rpfyBH7HZ2HppapGAggPFGRCzekAh3JrFPb95GnGd2utwYCzZoHU2x2lTb50ERyDSS2H0TmHfOrUrvPZ8sVCvakX6YwQOM7EPkBWxCzU+WPLN2kX4mMUACaBwcVMG1fBBr7qw9FpeXU6hyoZS4aGNFT4qG2YI5FaFPAvUmI/+9blXYNG8CnRje5HKXS/OGnTjAO2t9y+9WvaeBT7UIFynZv2X6qrfyI5CPSL63viwBnJ2uCdg==",
-    "published_at": "2026-03-26T21:00:42+00:00",
-    "notes": "Order status inline edit (label + color swatch click), fixed badge color preview, trash icon unified"
+    "version": "0.4.1",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.1-active-install.zip",
+    "sha256": "5f5654c2c5397c7b27f37c9b3d0a3b1cfd6a4db88fdf5c345ca32d2ac586a4ef",
+    "signature": "qVMXWokQUZHTDXYgyT5TMpdEcumsCCGY+25mfClyyLrwtHvgHk1m9UPpZnZafk7GqAbLYhUBjjYpsBu42BrXv9q0Deuob7Tb9C49zG73Fjb6hODaPFtON3H88cdFu7p1vza10f61H6cm2wzzj74C3POETBa9/2Bk80bW2SkHLj1I4EDmN1y3PMFHIYld0r7Rqv08JRnzAGhD2Lm/UruzMz4Pwpu84dOHsvrou2wqyCkKb3tWfto7PPY//3IznIT8USzrZ8hUoKG385qfTbK07OrfcT495e3tDWfROl/SfWbKPgg8stg0CaESp2aFApvRrHvuoYw+1vZ3Pm+mrUAAUQ==",
+    "published_at": "2026-03-26T21:38:23+00:00",
+    "notes": "Badge style matches PS BO native .badge; chromatic color palette (9 colors); removed dead form code"
 }
