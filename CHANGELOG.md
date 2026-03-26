@@ -1,3 +1,6 @@
+## [0.4.3] - 2026-03-26
+- Cofnięto zmianę palety kolorów — przywrócono chromatic (czerwony→pomarańczowy→żółty→zielony→turkus→niebieski→fioletowy→szary→ciemny)
+
 ## [0.4.2] - 2026-03-26
 - Paleta kolorów statusów dopasowana do kolorów plakietek z BO PrestaShop (wyciągnięte ze screenshotów)
 
