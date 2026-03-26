@@ -1,3 +1,7 @@
+## [0.4.5] - 2026-03-27
+- Przywrócono tekst „Wartość zamówienia:" przy czerwonej plakietce; wartość pogrubiona
+- Przycisk PDF bardziej widoczny (btn-outline-secondary z ikoną i napisem „PDF")
+
 ## [0.4.4] - 2026-03-26
 - Ustawienia > Informacje o module: uproszczony widok — zwykły tekst w tabeli zamiast kafelków
 - Przycisk „Przywróć" w liście ukrytych produktów zastąpiony ikoną `replay` (styl jak ikona usuń)

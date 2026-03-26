@@ -1,8 +1,8 @@
 {
-    "version": "0.4.4",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.4-active-install.zip",
-    "sha256": "c1def45ae3a42f2a8ca7d643baa65557a6eea6f168a75143cbdb59263a7576f9",
-    "signature": "YGyJ4Cfpth5qxJpmJscW8nBuSLBfkET4s3hRRtICxEOS1JVhveJhtkK0SA1taMNn6swcsLgDEkgNjdSPDM6+1SCEO4ZE1R2kHPQcmZINCbMR4x148aIX2HsO4uDw9itrtSePE5JI1DX61SQJJ/hvxYalc5pgFLIiV4Azl1rlIBOXHH1JhVvtFxEB3kfWtKG9NSck+aGSXJvbk5jiTWQc5q2W/7dzPmBjYZUtl/k7WuSZpBPKfYFxrwlZlWOFWMG7rRbvD3WrS7t/M4bdEsjnfdrC3q0qsMdEaaNlKMKVBmksVuolJJPXF8G3Q/B0K0nByiRtRt9DG9a5qiEejRiu9A==",
-    "published_at": "2026-03-26T22:41:40+00:00",
-    "notes": "Settings info simplified, restore icon, primary add buttons, fullscreen file preview, weight/volume decimal fix, order details rename, red value badge, purchase order PDF export"
+    "version": "0.4.5",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.5-active-install.zip",
+    "sha256": "88dae93deba89fabcd56d3185f5b5bb3e838396b25dbf538b5c53d3b0bcfbb17",
+    "signature": "o/bCxChETUSTSy9IfmDsQOoGozB+7SdjalsYxkN1pVnwb7hubFgM2Va5UsalOCkEw1p3kAjVoo3M39PNuiGxbr1Tc0OO+LWRuD5oNmvBnSiLITV3DjXZXKzquhr8jVzzgGqbKzhDYX4kcmyJJebIqds6r6D6yJt4NQs9mmFe+qdwhi+flzW7vFUsA8eC+hNFH0YrWvFsSjGGfGNOqFCtphLX0YyTsj1AiEHCk1+cflgGZTM1HCzQ8hX0C3+rrVEagqQH3LJcicre0cx2xSXHFlH5m5kRX8o7QnqYYfHNAjP1QW7mr+Yw4Vo86x/MuCcKSYsJi+umReHF3teiOK8PrA==",
+    "published_at": "2026-03-26T23:07:20+00:00",
+    "notes": "Order value badge: restored label text with bold value, more visible PDF button"
 }
