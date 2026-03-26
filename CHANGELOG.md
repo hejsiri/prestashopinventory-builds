@@ -1,3 +1,14 @@
+## [0.4.4] - 2026-03-26
+- Ustawienia > Informacje o module: uproszczony widok — zwykły tekst w tabeli zamiast kafelków
+- Przycisk „Przywróć" w liście ukrytych produktów zastąpiony ikoną `replay` (styl jak ikona usuń)
+- Przyciski „Dodaj przewoźnika", „Dodaj rodzaj", „Dodaj status" w stylu niebieskiego przycisku BO (`btn-primary` + ikona `add`)
+- Podgląd pliku (PDF/obraz): pełnoekranowy modal bez paddingu, uproszczony (tylko przycisk zamknij)
+- Suma kolumny Waga w tabeli produktów zamówienia: 1 miejsce po przecinku
+- Suma kolumny Objętość w tabeli produktów zamówienia: 3 miejsca po przecinku
+- Sekcja „Podsumowanie" w podglądzie zamówienia przemianowana na „Szczegóły"
+- Wartość zamówienia wyświetlana jako czerwona plakietka w nagłówku sekcji Produkty
+- Generowanie PDF zamówienia: ikona `picture_as_pdf` obok wartości, pobiera PDF z nr zamówienia, dostawcą, adresem dostawy, szczegółami i tabelą produktów
+
 ## [0.4.3] - 2026-03-26
 - Cofnięto zmianę palety kolorów — przywrócono chromatic (czerwony→pomarańczowy→żółty→zielony→turkus→niebieski→fioletowy→szary→ciemny)
 

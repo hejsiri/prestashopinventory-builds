@@ -1,8 +1,8 @@
 {
-    "version": "0.4.3",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.3-active-install.zip",
-    "sha256": "107811a2ce0c53d3cac3607590accf549dae4c6160bf3f3191218eae6588de03",
-    "signature": "Zd1nThn+cscoUj6f4YFoESfdmlY0zFaZwSjoFpyTEQ/33GMr4JzeIU71UzLpRUjspGTyNPcNRpoIlo6jOmgeUfoIqXdvuDrPGegc9gZtLcyV5OtVJM1csxHREkOEEPDCac1yKxD1g7uBxAVAspUkW1tD7akYrpy+AR+vkqdAAUMtFvWx2hJhKVzPDjTq4yJeVdMInLUgyNsQFcpcJF9EWBzol5cjpzzcLVt8tKGvG2VNgEEVwS4Prf6Iyamd+4HqgxXmaxrAvuAD8me+VvHujeQaoEjDVyQnbzzYR5rrePgqKfuggma2W9rngpAd67In2wdp0NFGVGP8a2dIYD+zKw==",
-    "published_at": "2026-03-26T21:50:08+00:00",
-    "notes": "Revert color palette to chromatic (red-orange-yellow-green-teal-blue-purple-gray-dark)"
+    "version": "0.4.4",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.4-active-install.zip",
+    "sha256": "c1def45ae3a42f2a8ca7d643baa65557a6eea6f168a75143cbdb59263a7576f9",
+    "signature": "YGyJ4Cfpth5qxJpmJscW8nBuSLBfkET4s3hRRtICxEOS1JVhveJhtkK0SA1taMNn6swcsLgDEkgNjdSPDM6+1SCEO4ZE1R2kHPQcmZINCbMR4x148aIX2HsO4uDw9itrtSePE5JI1DX61SQJJ/hvxYalc5pgFLIiV4Azl1rlIBOXHH1JhVvtFxEB3kfWtKG9NSck+aGSXJvbk5jiTWQc5q2W/7dzPmBjYZUtl/k7WuSZpBPKfYFxrwlZlWOFWMG7rRbvD3WrS7t/M4bdEsjnfdrC3q0qsMdEaaNlKMKVBmksVuolJJPXF8G3Q/B0K0nByiRtRt9DG9a5qiEejRiu9A==",
+    "published_at": "2026-03-26T22:41:40+00:00",
+    "notes": "Settings info simplified, restore icon, primary add buttons, fullscreen file preview, weight/volume decimal fix, order details rename, red value badge, purchase order PDF export"
 }
