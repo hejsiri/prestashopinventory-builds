@@ -1,3 +1,6 @@
+## [0.4.2] - 2026-03-26
+- Paleta kolorów statusów dopasowana do kolorów plakietek z BO PrestaShop (wyciągnięte ze screenshotów)
+
 ## [0.4.1] - 2026-03-26
 - Styl plakietek statusów oparty na natywnej klasie Bootstrap `.badge` (jak w BO PrestaShop)
 - `background-color !important` zapewnia poprawny kolor bez konfliktu z motywem PS
