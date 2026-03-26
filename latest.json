@@ -1,8 +1,8 @@
 {
-    "version": "0.3.91",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.91-active-install.zip",
-    "sha256": "4d8128456842a7d9dedb2806f802c6b97d6dbf280527fa790a951a5924a89f3d",
-    "signature": "ez0jROnGU8HQSMjWQ9Qwi8RYKXsUih6HfWAQkR210ZMwOfyCqOKHAfNW5kptXu8krqfHOuUQfSR9D5PFePRY435zlViXSnQIEVhiQ21NLuSB0sIh0bILA+bET4pGq5wF5R6ToVN7QPvJR0QndrMb2opvaMtIxnXS1whNZTAWKcgC3qWvVvFXRefabc1XmsvI4aSUI3+tFuOuBWG92DYEi9Xa62yfALUDGTLfJoDB85Os1eEP2fI1Grs0XwPdS3NA1c8qYaQGaFRuQgpwzK3klEt7rxtDY5TwZ3zDdSw5Gg0Mji+tQfddE3vzIj2xBsQxA/bOYUw8qMtQZeo83JbmsA==",
-    "published_at": "2026-03-26T19:18:30+00:00",
-    "notes": "Drag & drop file attachments on purchase orders, document type selector, carrier select, fixed badge colors"
+    "version": "0.3.92",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.92-active-install.zip",
+    "sha256": "b237003d3782891cb4d749de08a2a226e9555434e5e07442d4b172719243c4a0",
+    "signature": "3WA55ITLmV2p/0MztH8lf+IIEuMhkp4c6t8qzupcxuAaa8fKT6P4k/z8t73jeiT/auqQWjp7rMFyNSjqKaKGqIyRnNN4EjkZ4W9QLy03eXihjlDCBMldwDDtFq6LFPwaTDJTK8IXs5cAM0EVxi6o1vFykqz6m749M9+0fq+JsdaHt7oYc7Mw6yR6/lSf5Q+lR2zdJo2oBAS+g7Je3f2l3Hlffb822pz6ssPw0UZkPJXfc/1fV7GJiWIKsCoahDh7RhdxUeZM6djpFp3JJxxGl88UVsDRLbcrJi6EtkbFq1/nGWvNAlUy7mL/LxFVYROckfdwtxT12GqgiUtduSerAA==",
+    "published_at": "2026-03-26T19:30:28+00:00",
+    "notes": "Fix carrier/document-type CRUD panels not binding on page load"
 }
