@@ -1,8 +1,8 @@
 {
-    "version": "0.3.89",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.89-active-install.zip",
-    "sha256": "9e789a07555425b09e89dd9af3c99e9ea36ebc110c995aa54dd58b6373eddc05",
-    "signature": "TOdr6NnarX/YAxkBtVjk3BPpIgNV847Rsxysxjj6X/kTSC0mxYWCXEDijSV9T/hsGhs6pRbO1+a6jMOC/4ETQDNS1bTg+JrCmQq3XgQ6iUD5uoa3YNcSV5gdbziQBc2IhEHIiplXhmSMCB67eClOdBLTuYyiKnQWRxa8raro6TYGx0N9JLn0ONgy0QmWaTrVmD52xZSS1rcv8mf7wMEkhq6BaIWX1T//E2MLnY7x9cPqRHlWpTAPd5DWBreJPz/Eqf41VxkZR2wYvjhOVo22YI8Vw2df0UNsO7e24J7VJbuQ6THP6KSf/hPsgxr4UWhyQRhOesqGr7f64ut09rS1RQ==",
-    "published_at": "2026-03-26T18:15:19+00:00",
-    "notes": "Remove Waga kartonu brutto column; fix order status label colors (solid bg + white text); PS default trash icon in settings"
+    "version": "0.3.90",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.90-active-install.zip",
+    "sha256": "8b5ed1c0f628ff5fed982145baca25da0a501e7b79dad99e582fd6864f15958e",
+    "signature": "6727DWWPqu4nM2xwB+vBdf4jKMj5xaOVHHEbHLoNWqu6C6TE9YDjX8D/b74cyxHQH4JPKC8nY5Emv74AOZoO8Pd5ByCH0moKT0iG0tR71DyAxJChUSBnsyDGCw80YR3pjYctY9QhKQoQ9tOaAXjsSNFqC30g6wVu70zl3YnSKSQyxK3UhMVWFkNBV8rtZHTrMlbnWyO9Pcl8Lqot5qiimhEQHIyEgafK9m1rD3r/bXcAcjM7DWN3Lh5tBXOeT+S1X6ejDkqJp3arDPB4ALM32WY1HaL97Qd+WLgEhpDixrzHLjw+kToU0FH4s7laWiyT8qUo/bPhcE5soZdZ9Ly0UQ==",
+    "published_at": "2026-03-26T18:34:08+00:00",
+    "notes": "Show currency code in items table value summary"
 }
