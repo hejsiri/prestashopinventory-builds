@@ -1,8 +1,8 @@
 {
-    "version": "0.3.94",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.94-active-install.zip",
-    "sha256": "60ae0b59153accf3f8d42695816d330355cb5d60021b1dad8d946f460faeb049",
-    "signature": "jfmYLWc0qm/N3+Th6j4Xy46GlqYh8GHN/pe8AwSG7GLCVsb4X/OuJ+BPymCHm6sPZfKMmKd14bz7i1R7QPPOiDtMAv1KCJhv8fP+6Bty+nxXF8m9Gyz5W/3UXUrj1kpnlGF+j5+wu3yX1+c0bAKCAMHQs/kyFLO2Hoswtto/YediJXtHVLcJ0CPdC4w5O+W1WIn/pC7BhM0ptfuN04+NpjqTr129sIUbQ8AZLPvov4MdCBiNdwktC/tlc+4Y5MZf2RHoVdi7x+apfz+g+QudK1D3B9OpO+pyykTdHLEutlCNyEUdL4fd/7KhjXqXcJ2HIRniEWdisbf22fx5wwK5jA==",
-    "published_at": "2026-03-26T20:02:17+00:00",
-    "notes": "Store purchase order files in module uploads dir (not PS upload/ which is HTTP-blocked)"
+    "version": "0.3.95",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.95-active-install.zip",
+    "sha256": "a73aadcb75a6d494b0061ae55f5ec4cf28858e4d60c9a7e370474b7ad347026a",
+    "signature": "pTvJaLxADJpHbgmvakjwIhs+E0vqE3AXaSTMWWIWaJJMY4yTFgG1G/eOiLq6ihT2Ta6s5F3FjJXiYZSdzEVcAOJ38M4rwrkZtnJy7j26J4rkHtvQz4QVFHTdD6Jibv6OyvcPAj2RRTmvwn2+eqmJZGaVUjxXeyXcUUQMX0rEmwhasgMfwsOkWwZ4MtwvmPv4hA1geMd8xzUNlLabV31SQzEmuBU3VILnweM1Rd1GpZvlhHSEbdcTxJMXArHf/XyRcoHpUiqSKO9FOyrwOGhtzDsrDwiJr5bAoDmqlVEleJs5KoP0OOGBh43IZEbMJdN26NnpxR/rmMqA09x6wIsuhA==",
+    "published_at": "2026-03-26T20:10:14+00:00",
+    "notes": "File preview/download icons, doc-type inline quick-edit, carrier/doctype inline edit in settings"
 }
