@@ -1,8 +1,8 @@
 {
-    "version": "0.3.92",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.92-active-install.zip",
-    "sha256": "b237003d3782891cb4d749de08a2a226e9555434e5e07442d4b172719243c4a0",
-    "signature": "3WA55ITLmV2p/0MztH8lf+IIEuMhkp4c6t8qzupcxuAaa8fKT6P4k/z8t73jeiT/auqQWjp7rMFyNSjqKaKGqIyRnNN4EjkZ4W9QLy03eXihjlDCBMldwDDtFq6LFPwaTDJTK8IXs5cAM0EVxi6o1vFykqz6m749M9+0fq+JsdaHt7oYc7Mw6yR6/lSf5Q+lR2zdJo2oBAS+g7Je3f2l3Hlffb822pz6ssPw0UZkPJXfc/1fV7GJiWIKsCoahDh7RhdxUeZM6djpFp3JJxxGl88UVsDRLbcrJi6EtkbFq1/nGWvNAlUy7mL/LxFVYROckfdwtxT12GqgiUtduSerAA==",
-    "published_at": "2026-03-26T19:30:28+00:00",
-    "notes": "Fix carrier/document-type CRUD panels not binding on page load"
+    "version": "0.3.93",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.93-active-install.zip",
+    "sha256": "ba05961a159f343ff371d8cfb2ef5b40ffaf73ed4ac2932e44222efb1cad00f4",
+    "signature": "O+r8l/VAktkGHcyKy/eFdZRCm0sP9obFqej/mbPzKZZGP4EqSM+9l/uHmGsT6pw4H406kcfW1KOU9203NtlQJIOjl04TEtfzHF3UyZWNifJ9/ecEq4yktwluszYrWDhIaLiO1TrYNF7NKjy/aCFd8Hei/0+MU6j+jo9K8lm8518mj6h1UKsNoM1nrIKZVdSLqrurIgcSQy+0klxzvPtJ6G+OSSMzbyV/k5FsJOKJGyDtFrGWAf06vrSJU4WEdi8waybAYGRcY1qoe3YJ4nHsmOFLsr9xFMHTVaIXgzRUtiRo/6VxYivaiB6x3QGV1521km8cO7nynWuRxjlZNAlFrw==",
+    "published_at": "2026-03-26T19:38:34+00:00",
+    "notes": "Fix carrier/doctype CRUD JS not loaded in modern layout"
 }
