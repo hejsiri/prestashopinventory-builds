@@ -1,8 +1,8 @@
 {
-    "version": "0.4.7",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.7-active-install.zip",
-    "sha256": "cc2e3f21d79b8742cbdc5222a8d4a1e7100de63d5f56433074e55482891e9af4",
-    "signature": "GsjXb50x0y7t3aBe+UrzWt2GmpDwKSXT4vM2A6k/vD/r49KAR/c/F92DWCUyqfmo6jLtpCbNKQcS30b2WU55Q4LXVY5N31PZGG1XzS1FSBP+OXHL6b1kfGgN3a0oQIBBpDoGpEnDBkUZHxj+OIQ5iOnHMoGjdlO882d2XhYLMCuktFvur5GsX5rmZlaeEpkk5B8UBUaGRAGkcvRXMvtulsVpz7eHfVRQHY9XV8oXAIHEQd/Wu9zn7bD9IM5AInzW9ysrFqFaTLxocosazWBNhifNG3NgZ6Xjp7442vZLTpIz41HgBGlYWmme11PdyLpY3E1m7wS68S1MYM9fr0JGWg==",
-    "published_at": "2026-03-26T23:37:25+00:00",
-    "notes": "Incoterms 2020 descriptions in settings table and order view tooltip"
+    "version": "0.4.8",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.8-active-install.zip",
+    "sha256": "04c607a039703162ba153a66a879999d130e294be095884244e7aa7a450049e8",
+    "signature": "2BXg9Md53CaXwwRc7hf9w8nb748bx/AIRif1WYKRc3GgajN9D6u8KMmsmZqlDHHnEWSo2RoFlwWRyW8p/0VU0VjXaI8PalpVq8ec3bzmYaF4QBlZwq3nmBKKp+ZxBIEGJd1jEd+8Smtx/qKviaO7c+vIhuPD8D2GsmwQazbAorMJ4CY0Kg9s8MxEGcNdA99dXHwYhj3f/N+l9D0fHjvZq6GbiVvhJ2HcZ4t6C103FxieTyga/gSAD+YZn8yovy2CYxk6ytZeeBg9mHTwEs1Baa67sNNIrvpg15X40Fp5c/ZXAA9S5jZ5vdGFMveK6krHgBtP5aMIsy/9JO2ZlB4TZg==",
+    "published_at": "2026-03-26T23:47:11+00:00",
+    "notes": "Incoterms table redesign; CSS-only tooltip fix"
 }

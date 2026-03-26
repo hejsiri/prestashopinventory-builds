@@ -1,3 +1,7 @@
+## [0.4.8] - 2026-03-27
+- Tabela Incoterms w ustawieniach: kompaktowy dwukolumnowy grid, kody jako szare plakietki
+- Tooltip incoterm: CSS-only (ciemne tło, biały tekst), pojawia się nad kodem po najechaniu
+
 ## [0.4.7] - 2026-03-27
 - Opisy Incoterms 2020 dodane do każdego kodu warunków dostawy
 - Ustawienia: tabela referencyjna Incoterms z opisami
