@@ -1,3 +1,6 @@
+## [0.3.97] - 2026-03-26
+- Katalogi plików zamówień nazwane referencją zamówienia (np. `ZAK-001`) zamiast numerycznym ID
+
 ## [0.3.96] - 2026-03-26
 - Szybka edycja opisu pliku inline w tabeli plików zamówienia (klik → input, Enter = zapis, Esc = anuluj)
 
