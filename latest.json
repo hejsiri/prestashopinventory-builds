@@ -1,8 +1,8 @@
 {
     "version": "0.3.83",
     "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.83-active-install.zip",
-    "sha256": "7626eaa7300f77ce29bcdfb1b43bc472d0bd7610dde6f0039ac8b363ed10809d",
-    "signature": "w8WdEKxDO/JvXnb1UhhacOSZy7dc7mhH0+cd8XykDZzIGe3PN2oo5fjc9Ni89U5tltHge9N1SRiULxUmwgseWa7UmEhBCZvO47nFTkc/6sSU4kYn9LHe2PCHvQZ55lPI4eCpX8j5yn57pxsPr/L8En2pAogSIzbVvi4bgA52rrXr1o9VVDdShqpCnwjLnu47LEH4Qa0BnXdrs+rPzrDfB4W5+EFXde3RQCvBNUF4rGW/KCMUhRBl88rDSk/q5JwuPYXZMmkqvxeZ0mUGCsHAQ8uM2H6xCn8XCUy7GB9QDjnKfnjtpSvhXcqZMOkQ7qdPYWBfArn31LJFIV84xdwjJA==",
-    "published_at": "2026-03-26T16:57:17+00:00",
+    "sha256": "73a042e2c4db0d3925729abbedb38d0c65bed5495c7d82c2ce41d3282eb35a6a",
+    "signature": "Jmvz2I4wO1DtyE0TPqz8PVHOCXLAbGEFoM3gj1MSc4yHYFFmIvJ4oO2TutY93HoKwYTJiiV3zxGsg0sIznXqHmU97czGe22C3a93E3GfrQflIZkx3TjrYNRnoXtJC13WjUtWAuFkAiRUQHEiV7jK469aI8faWpb3JskD6MY91Y8mxBkPeJgDxksZjUi7/+wzo+RCFDkeH6t7NLVoN6mw4lJfqBIsgU1+ou8Vy9xY/vWxWGGIp/czO1oPsOWq07M1pq8Tw4MJqeos0Y6yzy+6pwO3q+vkOnrYJG77qWxU3Nmr9hGb6ufHIig0ayEcQS+hCEHeZtP0J3fB2durydhdeQ==",
+    "published_at": "2026-03-26T17:01:05+00:00",
     "notes": "Fix timeline progress bar alignment and remove header gradient"
 }
