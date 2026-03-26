@@ -1,8 +1,8 @@
 {
-    "version": "0.3.83",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.83-active-install.zip",
-    "sha256": "73a042e2c4db0d3925729abbedb38d0c65bed5495c7d82c2ce41d3282eb35a6a",
-    "signature": "Jmvz2I4wO1DtyE0TPqz8PVHOCXLAbGEFoM3gj1MSc4yHYFFmIvJ4oO2TutY93HoKwYTJiiV3zxGsg0sIznXqHmU97czGe22C3a93E3GfrQflIZkx3TjrYNRnoXtJC13WjUtWAuFkAiRUQHEiV7jK469aI8faWpb3JskD6MY91Y8mxBkPeJgDxksZjUi7/+wzo+RCFDkeH6t7NLVoN6mw4lJfqBIsgU1+ou8Vy9xY/vWxWGGIp/czO1oPsOWq07M1pq8Tw4MJqeos0Y6yzy+6pwO3q+vkOnrYJG77qWxU3Nmr9hGb6ufHIig0ayEcQS+hCEHeZtP0J3fB2durydhdeQ==",
-    "published_at": "2026-03-26T17:01:05+00:00",
-    "notes": "Fix timeline progress bar alignment and remove header gradient"
+    "version": "0.3.84",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.84-active-install.zip",
+    "sha256": "0d9bda829ad7e732e1b4ada907cbcdfd8f417313186a7f3e0400a582a1fe9315",
+    "signature": "EnS9XgcFzaRsc9ZgRnsFxFKGBKMqqMPMijCHGcIcSZ8iPCsaOwFtaGUpEy/chKo9fmHDtGuPwO6Emd8kVl6WslG5+tblIHURXvg5FZau773bOS3++s2pHGyDxvNfhBhVtnyCR/p+j14XkCAsqOAwS2Qtmu2hj2VV8TxnlxAKiZwI1OfBfo+2ZHkf94cQjIN4nHvBiOlTYLdPHl0w9+2hMlttmpaFOjlSQmLmNCcvyEenCODVRcEvmKFFiwGL68A/VbrQveF/J9XkuvJGXVtV9cFlY2IHCOfct0IPdR+XFK9awI9pyttJ1ckIu0nOKq0s8QSJMnF5smZV6sMHuJvhnA==",
+    "published_at": "2026-03-26T17:10:50+00:00",
+    "notes": "Orders list row hover+link, items table hover, volume row compact inline"
 }
