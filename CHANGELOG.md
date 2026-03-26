@@ -1,3 +1,9 @@
+## [0.4.6] - 2026-03-27
+- Pole „Nr śledzenia" w sekcji Szczegóły zamówienia (edycja inline AJAX)
+- Link śledzenia przesyłki: UPS i DHL Express podlinkowane automatycznie po wykryciu nazwy przewoźnika
+- Kolorowe plakietki przewoźnika przy polu Przewoźnik (UPS brązowo-złoty, DHL żółto-czerwony, inne szare)
+- Badge i link aktualizują się dynamicznie po zmianie przewoźnika lub numeru śledzenia
+
 ## [0.4.5] - 2026-03-27
 - Przywrócono tekst „Wartość zamówienia:" przy czerwonej plakietce; wartość pogrubiona
 - Przycisk PDF bardziej widoczny (btn-outline-secondary z ikoną i napisem „PDF")

@@ -1,8 +1,8 @@
 {
-    "version": "0.4.5",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.5-active-install.zip",
-    "sha256": "88dae93deba89fabcd56d3185f5b5bb3e838396b25dbf538b5c53d3b0bcfbb17",
-    "signature": "o/bCxChETUSTSy9IfmDsQOoGozB+7SdjalsYxkN1pVnwb7hubFgM2Va5UsalOCkEw1p3kAjVoo3M39PNuiGxbr1Tc0OO+LWRuD5oNmvBnSiLITV3DjXZXKzquhr8jVzzgGqbKzhDYX4kcmyJJebIqds6r6D6yJt4NQs9mmFe+qdwhi+flzW7vFUsA8eC+hNFH0YrWvFsSjGGfGNOqFCtphLX0YyTsj1AiEHCk1+cflgGZTM1HCzQ8hX0C3+rrVEagqQH3LJcicre0cx2xSXHFlH5m5kRX8o7QnqYYfHNAjP1QW7mr+Yw4Vo86x/MuCcKSYsJi+umReHF3teiOK8PrA==",
-    "published_at": "2026-03-26T23:07:20+00:00",
-    "notes": "Order value badge: restored label text with bold value, more visible PDF button"
+    "version": "0.4.6",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.6-active-install.zip",
+    "sha256": "eccbd54b43ee3e4ffa36f2fba79c7cf58b908e5808336b22e8582615d4f5a858",
+    "signature": "Pc9mPhp5RwK4pYLpsH1ZfwFKAnmJYEJbEOOuBoas/Bn5aPkZe/q0mN9BnnW65fXBeVRX3PLCc5/LDoNBUgOY0wP5sJAhdAOTMzta+UnMeSUvdxr9P7EZHmVLUBDjRgBsVzyr8oyLK9/fw2Y5EzGPUAD1QKGjBvOx5q0TBTJqLiCqEwzIVQo5w5D+cOu24FSBNgc0VunRiAJ7t3vJ2pgNz2VNN9HFHSBjP8HRmpYc8B64Y1+PDNMM9p1inCr3KOybZ2meDquBHwtHAcodd8JLpSkc7ZGwWWF2zm7ME0HNUYQry+hpq7niJfOwOWLECE+bb7cWO/8eadzF+2hvsKulYA==",
+    "published_at": "2026-03-26T23:26:10+00:00",
+    "notes": "Tracking number field with UPS/DHL auto-link and carrier color badges"
 }
