@@ -1,8 +1,8 @@
 {
-    "version": "0.3.86",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.86-active-install.zip",
-    "sha256": "37da28b09eb687286a265e3004072783af81073a1d3b227b7bb21d6bead0e484",
-    "signature": "N6xQIJHSdmquO8z2903WOui2lNDjYcjjgV8iWsunHIqO0tFOPybHUp0SpTmAMq9BMHeLVDfwCmeF2sgy1vT2U886mAKhiKPROcmLAB1GLRStng69lA4lPp5kcJYNgJZECvzYt3sE1GWgd6HX9IXuYGdLU9lP8Wbxgskt0pcgzfqtY+nTtn1A1fyyZegIygI/qpgJQg43dtNO1kxtLSHCVyZi4ojJAC/uLydKpldUaB/9p205S5LJvUP37U+b1FyQtFCwSPMMia5gEytk1wHov8PIKGlhTvdhjBv//pwqjdSN1DXv5Nu2P9QX50MvCKvHGBtP+rJtFPrSh81A0iqzHw==",
-    "published_at": "2026-03-26T17:49:58+00:00",
-    "notes": "Fix customs rate % style, summary number formatting with thousand separators"
+    "version": "0.3.87",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.87-active-install.zip",
+    "sha256": "7388462fcbd22b188cd6ae9b894c5001e032d59389e3a87e3cf68d9e6517a2dd",
+    "signature": "TdTaClYkATxPa1g5RXSS+t48cCtzgEd2OvoO/eXMuodnS/H1o5yUqaZMagoh8k5I03yW0u9k1Ue4xm0ypKcUOFF86iPkHpK21hEIfsvapJ3JUoQcZ7a4mCenHjkWRnUHjsGjjL2/5S5bPBAT3bRihLecATwW7HbyD0hoiIyuymswAt+ZLnWk53bJSD9XuZek63nQ6GOLMK8l/Q6isENav1S6YXwWgj3SpS/jl64jzW5PKJobSQCWc0Zt6fz6P9jJtyxKOJNMZgY1i59nk4jgNiYDL02kMKTnIMhvuHP7Gjr7cMLy71V1TteuNDK1KY0vHlbcG8IzuMD/yvGjUkpvJQ==",
+    "published_at": "2026-03-26T17:53:12+00:00",
+    "notes": "Add units per carton field to product module form"
 }
