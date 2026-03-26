@@ -1,3 +1,6 @@
+## [0.4.9] - 2026-03-27
+- Poprawka: tooltip incoterm zakotwiczony do prawej krawędzi — nie wychodzi poza ekran
+
 ## [0.4.8] - 2026-03-27
 - Tabela Incoterms w ustawieniach: kompaktowy dwukolumnowy grid, kody jako szare plakietki
 - Tooltip incoterm: CSS-only (ciemne tło, biały tekst), pojawia się nad kodem po najechaniu

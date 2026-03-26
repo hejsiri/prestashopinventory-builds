@@ -1,8 +1,8 @@
 {
-    "version": "0.4.8",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.8-active-install.zip",
-    "sha256": "04c607a039703162ba153a66a879999d130e294be095884244e7aa7a450049e8",
-    "signature": "2BXg9Md53CaXwwRc7hf9w8nb748bx/AIRif1WYKRc3GgajN9D6u8KMmsmZqlDHHnEWSo2RoFlwWRyW8p/0VU0VjXaI8PalpVq8ec3bzmYaF4QBlZwq3nmBKKp+ZxBIEGJd1jEd+8Smtx/qKviaO7c+vIhuPD8D2GsmwQazbAorMJ4CY0Kg9s8MxEGcNdA99dXHwYhj3f/N+l9D0fHjvZq6GbiVvhJ2HcZ4t6C103FxieTyga/gSAD+YZn8yovy2CYxk6ytZeeBg9mHTwEs1Baa67sNNIrvpg15X40Fp5c/ZXAA9S5jZ5vdGFMveK6krHgBtP5aMIsy/9JO2ZlB4TZg==",
-    "published_at": "2026-03-26T23:47:11+00:00",
-    "notes": "Incoterms table redesign; CSS-only tooltip fix"
+    "version": "0.4.9",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.9-active-install.zip",
+    "sha256": "7cd1fd333906c2c7fee9de2427debbabfbb2f66736a72bc82d0c57c8befd22a0",
+    "signature": "nR2PTu2GyeP2vOwM0V2Sa6bCMd3xVIrmPEmsjbfzRz3MlQ0ouxnnL6rTY179/h9pe/apyFHKs0LGCicjZcfdXml/ZTtnK0tpHrmTqqaCtO5O3jrEHRzpWb7FW4FaoFhvaeY3vKNHOsh58j/FSvwvbd33Xlp6CuOSkCDxYWCXB8FnHaX9yTuYwoq4KhGEMFpoF/+1o3GbmFexEVSlwPIwgpefu49vr4ZU/TeqVVLcTmdpsewhgDbHNS8agXNu3XFefCwckf0xrm3eLd66qVjUNemX7ErlvgPjx60rVtmWEoqjbjb9Q7v1rQdhgdyqIS3RKxxoPtm6VNO1ZvcWlF65yQ==",
+    "published_at": "2026-03-26T23:53:52+00:00",
+    "notes": "Fix incoterm tooltip overflow — anchored to right edge"
 }
