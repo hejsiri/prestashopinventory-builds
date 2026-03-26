@@ -1,8 +1,8 @@
 {
-    "version": "0.4.6",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.6-active-install.zip",
-    "sha256": "eccbd54b43ee3e4ffa36f2fba79c7cf58b908e5808336b22e8582615d4f5a858",
-    "signature": "Pc9mPhp5RwK4pYLpsH1ZfwFKAnmJYEJbEOOuBoas/Bn5aPkZe/q0mN9BnnW65fXBeVRX3PLCc5/LDoNBUgOY0wP5sJAhdAOTMzta+UnMeSUvdxr9P7EZHmVLUBDjRgBsVzyr8oyLK9/fw2Y5EzGPUAD1QKGjBvOx5q0TBTJqLiCqEwzIVQo5w5D+cOu24FSBNgc0VunRiAJ7t3vJ2pgNz2VNN9HFHSBjP8HRmpYc8B64Y1+PDNMM9p1inCr3KOybZ2meDquBHwtHAcodd8JLpSkc7ZGwWWF2zm7ME0HNUYQry+hpq7niJfOwOWLECE+bb7cWO/8eadzF+2hvsKulYA==",
-    "published_at": "2026-03-26T23:26:10+00:00",
-    "notes": "Tracking number field with UPS/DHL auto-link and carrier color badges"
+    "version": "0.4.7",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.7-active-install.zip",
+    "sha256": "cc2e3f21d79b8742cbdc5222a8d4a1e7100de63d5f56433074e55482891e9af4",
+    "signature": "GsjXb50x0y7t3aBe+UrzWt2GmpDwKSXT4vM2A6k/vD/r49KAR/c/F92DWCUyqfmo6jLtpCbNKQcS30b2WU55Q4LXVY5N31PZGG1XzS1FSBP+OXHL6b1kfGgN3a0oQIBBpDoGpEnDBkUZHxj+OIQ5iOnHMoGjdlO882d2XhYLMCuktFvur5GsX5rmZlaeEpkk5B8UBUaGRAGkcvRXMvtulsVpz7eHfVRQHY9XV8oXAIHEQd/Wu9zn7bD9IM5AInzW9ysrFqFaTLxocosazWBNhifNG3NgZ6Xjp7442vZLTpIz41HgBGlYWmme11PdyLpY3E1m7wS68S1MYM9fr0JGWg==",
+    "published_at": "2026-03-26T23:37:25+00:00",
+    "notes": "Incoterms 2020 descriptions in settings table and order view tooltip"
 }

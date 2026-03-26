@@ -1,3 +1,9 @@
+## [0.4.7] - 2026-03-27
+- Opisy Incoterms 2020 dodane do każdego kodu warunków dostawy
+- Ustawienia: tabela referencyjna Incoterms z opisami
+- Zamówienie: tooltip z opisem po najechaniu na kod warunków dostawy
+- Tooltip aktualizuje się dynamicznie po zmianie warunków przez edycję inline
+
 ## [0.4.6] - 2026-03-27
 - Pole „Nr śledzenia" w sekcji Szczegóły zamówienia (edycja inline AJAX)
 - Link śledzenia przesyłki: UPS i DHL Express podlinkowane automatycznie po wykryciu nazwy przewoźnika
