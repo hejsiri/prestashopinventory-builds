@@ -1,8 +1,8 @@
 {
-    "version": "0.3.87",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.87-active-install.zip",
-    "sha256": "7388462fcbd22b188cd6ae9b894c5001e032d59389e3a87e3cf68d9e6517a2dd",
-    "signature": "TdTaClYkATxPa1g5RXSS+t48cCtzgEd2OvoO/eXMuodnS/H1o5yUqaZMagoh8k5I03yW0u9k1Ue4xm0ypKcUOFF86iPkHpK21hEIfsvapJ3JUoQcZ7a4mCenHjkWRnUHjsGjjL2/5S5bPBAT3bRihLecATwW7HbyD0hoiIyuymswAt+ZLnWk53bJSD9XuZek63nQ6GOLMK8l/Q6isENav1S6YXwWgj3SpS/jl64jzW5PKJobSQCWc0Zt6fz6P9jJtyxKOJNMZgY1i59nk4jgNiYDL02kMKTnIMhvuHP7Gjr7cMLy71V1TteuNDK1KY0vHlbcG8IzuMD/yvGjUkpvJQ==",
-    "published_at": "2026-03-26T17:53:12+00:00",
-    "notes": "Add units per carton field to product module form"
+    "version": "0.3.88",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.88-active-install.zip",
+    "sha256": "fe9c2794b8936c46553218ef68874c4afba5f63ffd64808463f09156947a6322",
+    "signature": "Cr152GKcdv33UDC5tPUnhPArhRjuSyNSfXCsxF3NyugALTSQDs+pfG0FdBatz5RueJacEsuMYFB2VpqiahU7bEfEM3Jr1kfagefdJTIcWD/jVnOcnyMP3DeMLU0S4z3scHHdtASSHOK0jtJesh9ovaaxy3JsnFgERc0irBJlJl1YA9335pZxPaxt7ANSD8ngLG2ILW/dPq1J6BmbKLh4JE7Rv1ByMI+WI8f0kG4U5OmpKHPqFLJ2fAeptWb1OVBmsk86UxbIHvNcslmiEUi6H8C/J53enZ2ubl9EXbEFPmpPodTdwmod9CljoeJYY6U6AJjGyUy6oaPQaL6gkMmeBw==",
+    "published_at": "2026-03-26T17:59:04+00:00",
+    "notes": "Rename unit volume column label to Objetosc"
 }
