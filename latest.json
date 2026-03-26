@@ -1,8 +1,8 @@
 {
-    "version": "0.3.84",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.84-active-install.zip",
-    "sha256": "0d9bda829ad7e732e1b4ada907cbcdfd8f417313186a7f3e0400a582a1fe9315",
-    "signature": "EnS9XgcFzaRsc9ZgRnsFxFKGBKMqqMPMijCHGcIcSZ8iPCsaOwFtaGUpEy/chKo9fmHDtGuPwO6Emd8kVl6WslG5+tblIHURXvg5FZau773bOS3++s2pHGyDxvNfhBhVtnyCR/p+j14XkCAsqOAwS2Qtmu2hj2VV8TxnlxAKiZwI1OfBfo+2ZHkf94cQjIN4nHvBiOlTYLdPHl0w9+2hMlttmpaFOjlSQmLmNCcvyEenCODVRcEvmKFFiwGL68A/VbrQveF/J9XkuvJGXVtV9cFlY2IHCOfct0IPdR+XFK9awI9pyttJ1ckIu0nOKq0s8QSJMnF5smZV6sMHuJvhnA==",
-    "published_at": "2026-03-26T17:10:50+00:00",
-    "notes": "Orders list row hover+link, items table hover, volume row compact inline"
+    "version": "0.3.85",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.85-active-install.zip",
+    "sha256": "4ab2ab3277e402e69ecd9505e3325661c054a76332a709c7f5eaa70ab0046d3b",
+    "signature": "Xsilm7z2AcQfiJGYamJZkaOr2fMnhClnBCfHcb1hQ1elhZnQB8J9GzgrhE0IqXgp05I8/D2DCGX5v3MSzQAawCTlng/nsZ9TQptcMJZjqC2PCwYYz5F8J6Zvga92/I7tiA6fCIAJEzQxr1xDArplkLNcEyqVcZbdgwKiP1mQrwfzaKd3EBrKPxb+IfCcMf0DPEpxF33V079VokAW/yp1vuBi/9Wv5Pm6TSnyw0cADnTvzsK0PRTvWolTz36nqnXj9AWL07zKZ2YXbecR+2wASuTZsoTRmasRZZF7w0niT88NMDh6y2rw0dZilAhpzCjoozE4FWABahiJ1w4ElSgu8Q==",
+    "published_at": "2026-03-26T17:33:32+00:00",
+    "notes": "Dims in cm, gross weight field, customs rate %, 2-line product name, items summary row"
 }
