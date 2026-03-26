@@ -1,8 +1,8 @@
 {
-    "version": "0.3.90",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.90-active-install.zip",
-    "sha256": "8b5ed1c0f628ff5fed982145baca25da0a501e7b79dad99e582fd6864f15958e",
-    "signature": "6727DWWPqu4nM2xwB+vBdf4jKMj5xaOVHHEbHLoNWqu6C6TE9YDjX8D/b74cyxHQH4JPKC8nY5Emv74AOZoO8Pd5ByCH0moKT0iG0tR71DyAxJChUSBnsyDGCw80YR3pjYctY9QhKQoQ9tOaAXjsSNFqC30g6wVu70zl3YnSKSQyxK3UhMVWFkNBV8rtZHTrMlbnWyO9Pcl8Lqot5qiimhEQHIyEgafK9m1rD3r/bXcAcjM7DWN3Lh5tBXOeT+S1X6ejDkqJp3arDPB4ALM32WY1HaL97Qd+WLgEhpDixrzHLjw+kToU0FH4s7laWiyT8qUo/bPhcE5soZdZ9Ly0UQ==",
-    "published_at": "2026-03-26T18:34:08+00:00",
-    "notes": "Show currency code in items table value summary"
+    "version": "0.3.91",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.3.91-active-install.zip",
+    "sha256": "4d8128456842a7d9dedb2806f802c6b97d6dbf280527fa790a951a5924a89f3d",
+    "signature": "ez0jROnGU8HQSMjWQ9Qwi8RYKXsUih6HfWAQkR210ZMwOfyCqOKHAfNW5kptXu8krqfHOuUQfSR9D5PFePRY435zlViXSnQIEVhiQ21NLuSB0sIh0bILA+bET4pGq5wF5R6ToVN7QPvJR0QndrMb2opvaMtIxnXS1whNZTAWKcgC3qWvVvFXRefabc1XmsvI4aSUI3+tFuOuBWG92DYEi9Xa62yfALUDGTLfJoDB85Os1eEP2fI1Grs0XwPdS3NA1c8qYaQGaFRuQgpwzK3klEt7rxtDY5TwZ3zDdSw5Gg0Mji+tQfddE3vzIj2xBsQxA/bOYUw8qMtQZeo83JbmsA==",
+    "published_at": "2026-03-26T19:18:30+00:00",
+    "notes": "Drag & drop file attachments on purchase orders, document type selector, carrier select, fixed badge colors"
 }
