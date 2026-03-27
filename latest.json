@@ -1,8 +1,8 @@
 {
-    "version": "0.4.9",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.4.9-active-install.zip",
-    "sha256": "7cd1fd333906c2c7fee9de2427debbabfbb2f66736a72bc82d0c57c8befd22a0",
-    "signature": "nR2PTu2GyeP2vOwM0V2Sa6bCMd3xVIrmPEmsjbfzRz3MlQ0ouxnnL6rTY179/h9pe/apyFHKs0LGCicjZcfdXml/ZTtnK0tpHrmTqqaCtO5O3jrEHRzpWb7FW4FaoFhvaeY3vKNHOsh58j/FSvwvbd33Xlp6CuOSkCDxYWCXB8FnHaX9yTuYwoq4KhGEMFpoF/+1o3GbmFexEVSlwPIwgpefu49vr4ZU/TeqVVLcTmdpsewhgDbHNS8agXNu3XFefCwckf0xrm3eLd66qVjUNemX7ErlvgPjx60rVtmWEoqjbjb9Q7v1rQdhgdyqIS3RKxxoPtm6VNO1ZvcWlF65yQ==",
-    "published_at": "2026-03-26T23:53:52+00:00",
-    "notes": "Fix incoterm tooltip overflow — anchored to right edge"
+    "version": "0.5.0",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.0-active-install.zip",
+    "sha256": "e65c719776e2be13494b04a8f78c75b01da013901970a1f8f1d9a816714bf348",
+    "signature": "eQNRxQF7Cg/VO0bGZ6rLLQm/ixnHMztW2YWLDbTjPnRJuw4ffLZwHls3IYVm78TXBhqVwictTaFJSakcC9V+OXITeNO1alX2ayC0sgnRE//9vvFSo398dC7wpgQLTD40jsgBEG8SLhNZEwXUTZM2Iw8Z0PNqVV62lb+6vBveSwxKD1B2v6YWRqok7+7UAsbKDgIDrLaprd4js0OuVLKnlG+/kCVuM/3E9adUPI8GRPdbb/9OxY+qbTbxGlt7tcCe5+rYmG5R9jl2W8aheoTxroF6noiyjOuYKdS7y3xlxcEXM3EjDRzX9c1zX4wayUUAl2h5qgIzaho3uER1wVecCg==",
+    "published_at": "2026-03-27T00:14:05+00:00",
+    "notes": "Add product modal: default qty from units_per_carton, last purchase price pre-fill, removed default price column"
 }

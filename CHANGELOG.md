@@ -1,3 +1,8 @@
+## [0.5.0] - 2026-03-26
+- Modal dodawania produktu do zamówienia: domyślna ilość = szt. w kartonie (fallback 1)
+- Modal dodawania produktu: usunięto kolumnę „Cena domyślna"
+- Modal dodawania produktu: pole ceny zakupu wstępnie wypełnione ostatnią ceną z poprzednich zamówień
+
 ## [0.4.9] - 2026-03-27
 - Poprawka: tooltip incoterm zakotwiczony do prawej krawędzi — nie wychodzi poza ekran
 
