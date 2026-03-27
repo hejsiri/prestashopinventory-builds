@@ -1,3 +1,6 @@
+## [0.5.2] - 2026-03-27
+- Breadcrumb ujednolicony we wszystkich zakładkach: „Raport magazynowy > [sekcja]"
+
 ## [0.5.1] - 2026-03-27
 - Panel „Pliki" przemianowany na „Dokumenty"
 - Kolumna „Plik" w tabeli zmieniona na „Nazwa pliku"

@@ -1,8 +1,8 @@
 {
-    "version": "0.5.1",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.1-active-install.zip",
-    "sha256": "278e2670c7f91e183221131a6c6782bea5cb9901cdf2dc30661f4089586e7352",
-    "signature": "TmdXGm31OyT5WIq1l4ZrZW+50uIRubRg5yY2AEWE4Y8IRGcsF0KWrzdqG9861d1bjuDKja2I+1VDx0l4Bpdhhk0R2Gw0HZHOsmlkFAOvsFQbberudFlWwngOQ9MHgGAut9KOVh8eSnCwYPGSV/kPgJLck9pW56TVbVR0ldgDid4Znf/5TtWzZbbDZE5yHWMC8zo9lAU74bwTCb0eUA+02sdzFyUalyj91XOXihPoZzTh+mnMRQEgdv8P2+X/GEDvSwuwH3E839qlui7w4jhJf77dAYV5Is8C7HwMdfELzBKvkCYJzsCotzfFPq4QDY1hY2koSj1moGWnvITdirwArw==",
-    "published_at": "2026-03-27T07:44:28+00:00",
-    "notes": "Documents panel: list first, blur preview fullscreen, preview only for pdf/image, Safari iframe fix"
+    "version": "0.5.2",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.2-active-install.zip",
+    "sha256": "42ecf19d806a99714016a11596f47c4bbe765565ef8fcd5fbb4f89605ef691fc",
+    "signature": "hzFUbvwo9xbwCqmmsDSkNzOjOBcYcmfE1hv1PayerlPKQtqJccOJy3EdhUCgX1+NieVVmFl+k66FXUv48A1duYiiB8emqN0qnQpRsOgrJrBVzIsttoycQGfu+D1k5manX6kLQgeYLA2kHq0us2PkXypjkdgG8qKVClVuKmp18d+GLLkJpJTkoxDQMUCqC3U1Xpy1RYcVZiDva5CUdu6BM93ea8gwrmJe4USG5NrvGhqj5sthGdGSTwfnYa/dIw+hugl53tybmg5vJqpnJfScBpJ77hl5NyO3nXebYK9KU+oLuNCAX+KRMmm41Vwz3b+QVXsWYNtg2r9BOfRuCc643w==",
+    "published_at": "2026-03-27T07:49:44+00:00",
+    "notes": "Unified breadcrumb across all tabs: Raport magazynowy > section"
 }
