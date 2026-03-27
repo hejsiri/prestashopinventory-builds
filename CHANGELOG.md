@@ -1,3 +1,8 @@
+## [0.5.10] - 2026-03-27
+- Tabela produktów zamówienia: miniatury (small_default, ~98×98px) zamiast oryginałów 1600×1600
+- Modal dodawania produktu: miniatury zamiast oryginałów
+- Popup kosztu produktu nadal używa oryginalnego obrazka (wyświetlany w większym rozmiarze)
+
 ## [0.5.9] - 2026-03-27
 - Modal danych modułowych: grid 4-kolumnowy zamiast 2-kolumnowego
 - Pole Materiał i Stawka celna przeniesione do wiersza Objętości (obok wymiarów)
