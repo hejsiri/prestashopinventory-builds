@@ -1,3 +1,9 @@
+## [0.5.8] - 2026-03-27
+- PDF zamówienia: ujednolicony rozmiar czcionki 8pt dla całego dokumentu (poza tytułem h1)
+- PDF zamówienia: zmniejszona czcionka tabeli produktów (8pt nagłówki i komórki, 7pt model)
+- PDF zamówienia: poprawione formatowanie sekcji między tytułem a tabelą (sec-title z podkreśleniem, wyrównane kolumny meta)
+- PDF zamówienia: usunięta górna linia hr pod h1, divider tylko przed tabelą produktów
+
 ## [0.5.7] - 2026-03-27
 - Poprawka ikony „i" w tabeli produktów zamówienia: kolor dopasowany do pozostałych ikon
 - Poprawka ikony PDF: zmiana `<i>` na `<span>` z `color:inherit` — kolor zgodny z przyciskiem
