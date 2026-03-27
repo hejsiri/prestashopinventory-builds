@@ -1,3 +1,9 @@
+## [0.5.9] - 2026-03-27
+- Modal danych modułowych: grid 4-kolumnowy zamiast 2-kolumnowego
+- Pole Materiał i Stawka celna przeniesione do wiersza Objętości (obok wymiarów)
+- HS Code i Szt. w kartonie w kolejnym wierszu (po pół szerokości)
+- Wymiary: usunięto „cm" z placeholderów, dodano jeden wspólny suffix „cm" po trzecim wymiarze
+
 ## [0.5.8] - 2026-03-27
 - PDF zamówienia: ujednolicony rozmiar czcionki 8pt dla całego dokumentu (poza tytułem h1)
 - PDF zamówienia: zmniejszona czcionka tabeli produktów (8pt nagłówki i komórki, 7pt model)
