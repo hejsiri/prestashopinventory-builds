@@ -1,3 +1,10 @@
+## [0.5.4] - 2026-03-27
+- Kalkulacja kosztu produktu: przycisk „i" w kolumnie akcji tabeli pozycji zamówienia
+- Popup z danymi produktu (model, EAN, HS Code, materiał, opis, waga, szt. w kartonie, objętość)
+- Kalkulacja krok po kroku: cena × kurs → koszt całkowity → narzut → cena detaliczna netto/brutto
+- Narzut edytowalny inline, zapisywany w localStorage
+- Marża obliczana dynamicznie
+
 ## [0.5.3] - 2026-03-27
 - Poprawka: paczka ZIP zawiera teraz folder `prestashopinventory/` (był błędny `prestashopinventory-source/`)
 - Przycisk aktualizacji: zmieniono tekst na „Dostępna aktualizacja X.Y.Z"

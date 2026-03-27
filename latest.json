@@ -1,8 +1,8 @@
 {
-    "version": "0.5.3",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.3-active-install.zip",
-    "sha256": "81f428f40e4d4d256ba6faf017f3a708bdef94a5475eb56cf0991f49d5edc69a",
-    "signature": "QuRGGE8jS1NtJPai0tYH21OLwH/GGvo9DxUO17f32WWENI5w1wQfvuParvw86t8AQcTRTb1+kldy3DHFnumGXthu/uFH1lTY9qtA4qkS+iBLhn5UtfZdWFwxw4YuUeXeR+e3lF4oQxXOtG4Yn+K64wSyd7kfakj3AhBk7hHSgJg6ixIXZEJZCLZTrd8bsRphVN69VDVXv5AKoP7XUH92myQfhAsU46ydH1TY/53LSozICpIqWXxbNTw6TWtREU40v6jUo4uW0Xhx7rsXnJAk4fPtP9WdwGsmvdEGsZivAZmLicd9wKWk7wG8JeHouHIuK4Tf+pC/zOzxT1v7uZ9bZg==",
-    "published_at": "2026-03-27T08:00:58+00:00",
-    "notes": "Fix: public ZIP no longer contains license.php — prevents domain mismatch on manual install"
+    "version": "0.5.4",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.4-active-install.zip",
+    "sha256": "8abdc4c2110c2942bdcb54ec3bba525de419ffc0f2e7c7c8ee462aad08f603a3",
+    "signature": "47NuKjVctJjvgXISkkWqn+/XSEhOozz46drQNWAHJHl+7WR6Vje0eE1hfW9MgF8nbaflZU9xF5xBw+0lqP9/Q9Z9Zkd6Yma5UwcvDS287mMntyYhxJyMGVgdRBt+oIBLINnYZ+sc6ws6cPWixD4pnUxiipG1cj1uFiB/b4mfyor1wjm2OlY5XFukQLc99LJvMYNqc/UzUfiM0PwTdd4sTEGX6vkBGDaQydc+qph3+o7cJFS/wT4L0AKt2BdLj4K4dXyKtZt0xULkXQA6xCghzR45p1jij4wqJ3jo3XH6KdpTUcOc/upknVxBD7V62Rv3hIShpOjjaPNLbbFpGndB4g==",
+    "published_at": "2026-03-27T08:19:16+00:00",
+    "notes": "Product cost calculation popup on order items"
 }
