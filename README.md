@@ -111,7 +111,7 @@ Moduł obsługuje automatyczne aktualizacje przez Back Office PrestaShop:
 
 ## Instalacja
 
-1. Pobierz najnowszy plik ZIP z tego repozytorium — np. `prestashopinventory-v0.5.13-install.zip` (dostępny jako plik w głównym katalogu repo)
+1. Pobierz najnowszy plik ZIP z zakładki [**Releases**](https://github.com/hejsiri/prestashopinventory-builds/releases/latest)
 2. W panelu Back Office PrestaShop: **Moduły → Menedżer modułów → Wgraj moduł**
 3. Wgraj ZIP — moduł zainstaluje się automatycznie
 4. Po instalacji przejdź do: **Back Office → Raport magazynowy**
