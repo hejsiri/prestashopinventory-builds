@@ -1,3 +1,6 @@
+## [0.5.19] - 2026-03-27
+- Tabela produktów: kolumna „Szt. / karton" przemianowana na „Ilość w kartonie"
+
 ## [0.5.18] - 2026-03-27
 - Tabela produktów: szybka edycja inline dla kolumn Materiał, HS Code, Cło % (klik → input, Enter=zapis, Esc=anuluj)
 
