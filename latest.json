@@ -1,8 +1,8 @@
 {
-    "version": "0.5.2",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.2-active-install.zip",
-    "sha256": "42ecf19d806a99714016a11596f47c4bbe765565ef8fcd5fbb4f89605ef691fc",
-    "signature": "hzFUbvwo9xbwCqmmsDSkNzOjOBcYcmfE1hv1PayerlPKQtqJccOJy3EdhUCgX1+NieVVmFl+k66FXUv48A1duYiiB8emqN0qnQpRsOgrJrBVzIsttoycQGfu+D1k5manX6kLQgeYLA2kHq0us2PkXypjkdgG8qKVClVuKmp18d+GLLkJpJTkoxDQMUCqC3U1Xpy1RYcVZiDva5CUdu6BM93ea8gwrmJe4USG5NrvGhqj5sthGdGSTwfnYa/dIw+hugl53tybmg5vJqpnJfScBpJ77hl5NyO3nXebYK9KU+oLuNCAX+KRMmm41Vwz3b+QVXsWYNtg2r9BOfRuCc643w==",
-    "published_at": "2026-03-27T07:49:44+00:00",
-    "notes": "Unified breadcrumb across all tabs: Raport magazynowy > section"
+    "version": "0.5.3",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.3-active-install.zip",
+    "sha256": "9cf113f32259e65930891b423f0a283044c7ffdb7ec5f53d92164828a4d6bf6e",
+    "signature": "UfZtM/EeawXZ+XseS7jStWhT9pmwtNpq8qgKmekSZ1QJ3CIiokq5fe4QJOfmkevKW57rhXDUAFgjOLDLI8bZkxZ1nWmEFoSVSt79tIxDWT/8CxLMhPthJnriuMmHyCOdgLsWCg1Lf5ZOMzbXT3s6LOGVhXLtbNrQppgpzvzPxiYzQhmhY8sgrO0D/ju7y90EAqq3Ev0IrXywDpzKbe823JbyZ1w2fWeIBf+b/x31k2lbt/fWZaSbEqSb03pj2DL1LCXKwu1UVmHFqthMAFnK3cTtdol7Z19z45A8LnX0yesEaPWm8hqBwujk+Kqk616pIKrh3Iq02EpYXKV/MDOA2g==",
+    "published_at": "2026-03-27T07:53:57+00:00",
+    "notes": "Fix ZIP root folder name (was prestashopinventory-source, now prestashopinventory); update button label in Polish"
 }

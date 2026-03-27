@@ -1,3 +1,7 @@
+## [0.5.3] - 2026-03-27
+- Poprawka: paczka ZIP zawiera teraz folder `prestashopinventory/` (był błędny `prestashopinventory-source/`)
+- Przycisk aktualizacji: zmieniono tekst na „Dostępna aktualizacja X.Y.Z"
+
 ## [0.5.2] - 2026-03-27
 - Breadcrumb ujednolicony we wszystkich zakładkach: „Raport magazynowy > [sekcja]"
 
