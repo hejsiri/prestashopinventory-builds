@@ -1,3 +1,10 @@
+## [0.5.16] - 2026-03-27
+- Tabela produktów: nowe kolumny Materiał, HS Code, Cło % (toggleowalne, domyślnie widoczne)
+- Filtry podzielone na 2 kolumny: „Pokaż kolumny" i „Pokaż tylko"
+- Ikony akcji w tabeli produktów: bar_chart, calculate, visibility_off (Material Icons)
+- Ikona kalkulatora kosztów w zamówieniu zmieniona na calculate (Material Icons)
+- Naprawa licznika filtrów: badge zlicza dynamicznie przez data-filter-type
+
 ## [0.5.15] - 2026-03-27
 - PDF zamówienia: nagłówki sekcji — padding renderowany poprawnie (zamiana div→table, mPDF fix)
 
