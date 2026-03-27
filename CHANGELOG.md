@@ -1,3 +1,6 @@
+## [0.5.15] - 2026-03-27
+- PDF zamówienia: nagłówki sekcji — padding renderowany poprawnie (zamiana div→table, mPDF fix)
+
 ## [0.5.14] - 2026-03-27
 - PDF zamówienia: usunięto „Data dostawy" z sekcji Szczegóły
 - PDF zamówienia: nagłówki sekcji — zwiększony padding (4pt 8pt)
