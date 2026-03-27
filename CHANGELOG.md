@@ -1,3 +1,6 @@
+## [0.5.12] - 2026-03-27
+- Popup kalkulacji kosztów produktu: miniatura (small_default) zamiast oryginału 1600px
+
 ## [0.5.11] - 2026-03-27
 - Tabela produktów: miniaturka (small_default) zamiast oryginału
 - Hover preview: obrazek medium (home_default ~250px) zamiast oryginału 1600px
