@@ -1,3 +1,9 @@
+## [0.5.13] - 2026-03-27
+- PDF zamówienia: „Dostawca" → „Sprzedawca", „Adres dostawy" → „Nabywca"
+- PDF zamówienia: nagłówki sekcji — biały tekst na ciemnym tle (#2c2c2c), wyrównane do góry
+- PDF zamówienia: usunięto pole „Status" z sekcji Szczegóły
+- PDF zamówienia: obrazki produktów z miniatury (small_default) zamiast oryginału
+
 ## [0.5.12] - 2026-03-27
 - Popup kalkulacji kosztów produktu: miniatura (small_default) zamiast oryginału 1600px
 
