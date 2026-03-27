@@ -1,3 +1,6 @@
+## [0.5.18] - 2026-03-27
+- Tabela produktów: szybka edycja inline dla kolumn Materiał, HS Code, Cło % (klik → input, Enter=zapis, Esc=anuluj)
+
 ## [0.5.17] - 2026-03-27
 - Tabela produktów: ikony akcji (bar_chart, calculate, visibility_off) bez gradientu — styl identyczny jak w tabeli zamówień
 - Filtry: badge liczy tylko aktywne filtry „Pokaż tylko", nie ukryte kolumny
