@@ -1,8 +1,7 @@
 {
-    "version": "0.5.4",
-    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.4-active-install.zip",
-    "sha256": "8abdc4c2110c2942bdcb54ec3bba525de419ffc0f2e7c7c8ee462aad08f603a3",
-    "signature": "47NuKjVctJjvgXISkkWqn+/XSEhOozz46drQNWAHJHl+7WR6Vje0eE1hfW9MgF8nbaflZU9xF5xBw+0lqP9/Q9Z9Zkd6Yma5UwcvDS287mMntyYhxJyMGVgdRBt+oIBLINnYZ+sc6ws6cPWixD4pnUxiipG1cj1uFiB/b4mfyor1wjm2OlY5XFukQLc99LJvMYNqc/UzUfiM0PwTdd4sTEGX6vkBGDaQydc+qph3+o7cJFS/wT4L0AKt2BdLj4K4dXyKtZt0xULkXQA6xCghzR45p1jij4wqJ3jo3XH6KdpTUcOc/upknVxBD7V62Rv3hIShpOjjaPNLbbFpGndB4g==",
-    "published_at": "2026-03-27T08:19:16+00:00",
-    "notes": "Product cost calculation popup on order items"
+    "version": "0.5.6",
+    "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.6-install.zip",
+    "sha256": "b1cf07f74635e9caa1de632b5f162e2685bd0a50371e9dbced49d029e0a91521",
+    "signature": "NcQcUiWoG59QlFJSAeouZWG9KqJ7gPN+WAUSbMtaEm2A/Kb9/0SRZAq5q65tOfO7lkBEuZePCFnAAqOn1FAbFqz1+JOiRUZ5QYlBTP3bbbwQAOQY1AYLLzjB4TtFWzu+IH6KT419OE3y95Ohnw8g8SPWvAeL+fN0/1Jagi1Lcf6SHxG8LO1rY8ij0SZubrC52FZSBno/mCUBP3ME1usU+MEjbgsIxuv60pQpau7eIGex51ZnyVDgenebyCym8RSxnwrCiTo7qI/ckdvv7sJ88hTgYmwybOySAWmjXM6oCxIqykWK6W1ZGBTmvgrK2SHXNmtesoCck6Ztn+yCKgRmEQ==",
+    "published_at": "2026-03-27T08:57:36+00:00"
 }

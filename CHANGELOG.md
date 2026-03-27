@@ -1,3 +1,14 @@
+## [0.5.6] - 2026-03-27
+- Panel Szczegóły zamówienia: pole „Waluta" (kod waluty, edycja inline AJAX)
+- Panel Szczegóły zamówienia: pole „Kurs waluty" (edycja inline AJAX, walidacja > 0)
+- Wartości obu pól odświeżają się dynamicznie po zapisaniu
+
+## [0.5.5] - 2026-03-27
+- Poprawka mechanizmu aktualizacji: wersja modułu aktualizowana w bazie danych (ps_module) po auto-aktualizacji
+- Poprawka: OPcache resetowany po skopiowaniu nowych plików modułu
+- Poprawka: porównanie wersji przy sprawdzaniu aktualizacji oparte na wersji z bazy danych (odporna na stały OPcache)
+- Dodano katalog upgrade/ z wymaganymi skryptami dla aktualizacji przez Menedżer Modułów PrestaShop
+
 ## [0.5.4] - 2026-03-27
 - Kalkulacja kosztu produktu: przycisk „i" w kolumnie akcji tabeli pozycji zamówienia
 - Popup z danymi produktu (model, EAN, HS Code, materiał, opis, waga, szt. w kartonie, objętość)
