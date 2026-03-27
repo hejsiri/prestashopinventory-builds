@@ -1,3 +1,8 @@
+## [0.5.14] - 2026-03-27
+- PDF zamówienia: usunięto „Data dostawy" z sekcji Szczegóły
+- PDF zamówienia: nagłówki sekcji — zwiększony padding (4pt 8pt)
+- PDF zamówienia: etykiety pól (Data zamówienia, Przewoźnik itp.) — czarny kolor zamiast szarego
+
 ## [0.5.13] - 2026-03-27
 - PDF zamówienia: „Dostawca" → „Sprzedawca", „Adres dostawy" → „Nabywca"
 - PDF zamówienia: nagłówki sekcji — biały tekst na ciemnym tle (#2c2c2c), wyrównane do góry
