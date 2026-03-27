@@ -1,3 +1,9 @@
+## [0.5.11] - 2026-03-27
+- Tabela produktów: miniaturka (small_default) zamiast oryginału
+- Hover preview: obrazek medium (home_default ~250px) zamiast oryginału 1600px
+- Karta hover: position:fixed + z-index:99999 — nie chodzi pod żaden element PS BO
+- Pozycja karty hover obliczana przez JS (getBoundingClientRect) — działa poprawnie dla pierwszego i ostatniego wiersza
+
 ## [0.5.10] - 2026-03-27
 - Tabela produktów zamówienia: miniatury (small_default, ~98×98px) zamiast oryginałów 1600×1600
 - Modal dodawania produktu: miniatury zamiast oryginałów
