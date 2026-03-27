@@ -1,3 +1,8 @@
+## [0.5.17] - 2026-03-27
+- Tabela produktów: ikony akcji (bar_chart, calculate, visibility_off) bez gradientu — styl identyczny jak w tabeli zamówień
+- Filtry: badge liczy tylko aktywne filtry „Pokaż tylko", nie ukryte kolumny
+- Nagłówki grup filtrów: kolor PS BO, linia separatora, lepiej czytelne
+
 ## [0.5.16] - 2026-03-27
 - Tabela produktów: nowe kolumny Materiał, HS Code, Cło % (toggleowalne, domyślnie widoczne)
 - Filtry podzielone na 2 kolumny: „Pokaż kolumny" i „Pokaż tylko"
