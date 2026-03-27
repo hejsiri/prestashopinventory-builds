@@ -1,3 +1,9 @@
+## [0.5.7] - 2026-03-27
+- Poprawka ikony „i" w tabeli produktów zamówienia: kolor dopasowany do pozostałych ikon
+- Poprawka ikony PDF: zmiana `<i>` na `<span>` z `color:inherit` — kolor zgodny z przyciskiem
+- Podgląd PDF: szerokość dopasowana do dokumentu (860px, wycentrowany), blur tła widoczny po bokach
+- Podgląd PDF: zajmuje prawie całą wysokość okna przeglądarki (inset 2vh)
+
 ## [0.5.6] - 2026-03-27
 - Panel Szczegóły zamówienia: pole „Waluta" (kod waluty, edycja inline AJAX)
 - Panel Szczegóły zamówienia: pole „Kurs waluty" (edycja inline AJAX, walidacja > 0)
