@@ -1,3 +1,12 @@
+## [0.5.1] - 2026-03-27
+- Panel „Pliki" przemianowany na „Dokumenty"
+- Kolumna „Plik" w tabeli zmieniona na „Nazwa pliku"
+- Lista plików wyświetlana przed uploaderem
+- Ikona podglądu tylko dla PDF i obrazów (ukryta dla xls, zip itp.)
+- Podgląd fullscreen z rozmyciem tła (backdrop-filter blur)
+- Poprawka Safari: iframe PDF odtwarzany od zera przy każdym otwarciu (brak artefaktu zoomowania)
+- Podgląd zamknięty klawiszem Escape lub kliknięciem tła
+
 ## [0.5.0] - 2026-03-26
 - Modal dodawania produktu do zamówienia: domyślna ilość = szt. w kartonie (fallback 1)
 - Modal dodawania produktu: usunięto kolumnę „Cena domyślna"
