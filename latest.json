@@ -1,8 +1,8 @@
 {
     "version": "0.5.3",
     "url": "https://raw.githubusercontent.com/hejsiri/prestashopinventory-builds/main/prestashopinventory-v0.5.3-active-install.zip",
-    "sha256": "9cf113f32259e65930891b423f0a283044c7ffdb7ec5f53d92164828a4d6bf6e",
-    "signature": "UfZtM/EeawXZ+XseS7jStWhT9pmwtNpq8qgKmekSZ1QJ3CIiokq5fe4QJOfmkevKW57rhXDUAFgjOLDLI8bZkxZ1nWmEFoSVSt79tIxDWT/8CxLMhPthJnriuMmHyCOdgLsWCg1Lf5ZOMzbXT3s6LOGVhXLtbNrQppgpzvzPxiYzQhmhY8sgrO0D/ju7y90EAqq3Ev0IrXywDpzKbe823JbyZ1w2fWeIBf+b/x31k2lbt/fWZaSbEqSb03pj2DL1LCXKwu1UVmHFqthMAFnK3cTtdol7Z19z45A8LnX0yesEaPWm8hqBwujk+Kqk616pIKrh3Iq02EpYXKV/MDOA2g==",
-    "published_at": "2026-03-27T07:53:57+00:00",
-    "notes": "Fix ZIP root folder name (was prestashopinventory-source, now prestashopinventory); update button label in Polish"
+    "sha256": "81f428f40e4d4d256ba6faf017f3a708bdef94a5475eb56cf0991f49d5edc69a",
+    "signature": "QuRGGE8jS1NtJPai0tYH21OLwH/GGvo9DxUO17f32WWENI5w1wQfvuParvw86t8AQcTRTb1+kldy3DHFnumGXthu/uFH1lTY9qtA4qkS+iBLhn5UtfZdWFwxw4YuUeXeR+e3lF4oQxXOtG4Yn+K64wSyd7kfakj3AhBk7hHSgJg6ixIXZEJZCLZTrd8bsRphVN69VDVXv5AKoP7XUH92myQfhAsU46ydH1TY/53LSozICpIqWXxbNTw6TWtREU40v6jUo4uW0Xhx7rsXnJAk4fPtP9WdwGsmvdEGsZivAZmLicd9wKWk7wG8JeHouHIuK4Tf+pC/zOzxT1v7uZ9bZg==",
+    "published_at": "2026-03-27T08:00:58+00:00",
+    "notes": "Fix: public ZIP no longer contains license.php — prevents domain mismatch on manual install"
 }
