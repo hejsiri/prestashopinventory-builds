@@ -1,3 +1,7 @@
+## [0.5.100] - 2026-03-28
+- Poprawiono regresję ikony Edytuj w Safari: usunięto błąd setSharedScannerState is not defined.
+- Dodano stabilne aliasy window.prestashopInventorySetScannerState i window.prestashopInventoryGetScannerState dla współdzielonego stanu modala.
+
 ## [0.5.98] - 2026-03-28
 - Modal Edytuj na stronie Produkty: poprawione wczytywanie pełnych danych i sekcji szybkiej edycji.
 - Ujednolicono stan modala przez współdzielony storage window.prestashopInventoryScannerState, aby zapobiec rozjazdom danych między scope skryptów.
