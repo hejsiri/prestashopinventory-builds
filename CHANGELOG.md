@@ -1,3 +1,6 @@
+## [0.5.87] - 2026-03-28
+- Skaner: poprawka odczytu statusu baterii „Dump Energy” (np. 42%) — znak % nie jest już zamieniany na cyfrę 5, więc poziom nie zawyża się do 100%.
+
 ## [0.5.19] - 2026-03-27
 - Tabela produktów: kolumna „Szt. / karton" przemianowana na „Ilość w kartonie"
 
