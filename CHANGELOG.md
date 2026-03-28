@@ -1,3 +1,7 @@
+## [0.5.94] - 2026-03-28
+- Doprecyzowano wygląd strzałek paginacji (< >) na stronie Produkty, aby odpowiadał docelowemu wzorcowi UI.
+- Ujednolicono style przycisków paginacji (stan normalny, hover i disabled) pod tabelą produktów.
+
 ## [0.5.93] - 2026-03-28
 - Dodano ikonę edycji produktu w kolumnie Akcje, otwierającą popup z danymi modułowymi.
 - Lista produktów przekazuje do popupu pełne dane dodatkowe (model modułowy, materiał, HS code, cło, opis, wymiary, waga kartonu).
