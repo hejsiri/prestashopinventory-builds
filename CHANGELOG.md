@@ -1,3 +1,8 @@
+## [0.5.93] - 2026-03-28
+- Dodano ikonę edycji produktu w kolumnie Akcje, otwierającą popup z danymi modułowymi.
+- Lista produktów przekazuje do popupu pełne dane dodatkowe (model modułowy, materiał, HS code, cło, opis, wymiary, waga kartonu).
+- Poprawiono paginację pod tabelą produktów: usunięto podwójne strzałki i wyśrodkowano pasek.
+
 ## [0.5.87] - 2026-03-28
 - Skaner: poprawka odczytu statusu baterii „Dump Energy” (np. 42%) — znak % nie jest już zamieniany na cyfrę 5, więc poziom nie zawyża się do 100%.
 
