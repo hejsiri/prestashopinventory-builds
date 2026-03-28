@@ -1,3 +1,7 @@
+## [0.5.98] - 2026-03-28
+- Modal Edytuj na stronie Produkty: poprawione wczytywanie pełnych danych i sekcji szybkiej edycji.
+- Ujednolicono stan modala przez współdzielony storage window.prestashopInventoryScannerState, aby zapobiec rozjazdom danych między scope skryptów.
+
 ## [0.5.97] - 2026-03-28
 - Poprawiono ikonę Edytuj na stronie Produkty: usunięto błąd renderScannerState is not defined blokujący otwieranie popupu.
 - Funkcje modala skanera (open/render) wystawione przez aliasy na window dla stabilnego działania w Safari.
