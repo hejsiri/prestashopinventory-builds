@@ -1,3 +1,7 @@
+## [0.5.101] - 2026-03-28
+- Modal Edytuj na stronie Produkty: zawartość przebudowana wizualnie w stylu modala Rentowność.
+- Dane produktu, logistyki i pola dodatkowe pokazują się teraz w kartach z liniowym układem wartości, zachowując szybką edycję po kliknięciu.
+
 ## [0.5.100] - 2026-03-28
 - Poprawiono regresję ikony Edytuj w Safari: usunięto błąd setSharedScannerState is not defined.
 - Dodano stabilne aliasy window.prestashopInventorySetScannerState i window.prestashopInventoryGetScannerState dla współdzielonego stanu modala.
