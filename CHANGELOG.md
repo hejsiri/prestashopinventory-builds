@@ -1,3 +1,7 @@
+## [0.5.95] - 2026-03-28
+- Poprawiono ikonę edycji produktu w tabeli Produkty: usunięto błąd JS renderScannerEan is not defined blokujący otwarcie popupu.
+- Dodano fallback renderowania EAN w popupie, gdy renderer kodu kreskowego nie jest dostępny.
+
 ## [0.5.94] - 2026-03-28
 - Doprecyzowano wygląd strzałek paginacji (< >) na stronie Produkty, aby odpowiadał docelowemu wzorcowi UI.
 - Ujednolicono style przycisków paginacji (stan normalny, hover i disabled) pod tabelą produktów.
