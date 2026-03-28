@@ -1,3 +1,7 @@
+## [0.5.97] - 2026-03-28
+- Poprawiono ikonę Edytuj na stronie Produkty: usunięto błąd renderScannerState is not defined blokujący otwieranie popupu.
+- Funkcje modala skanera (open/render) wystawione przez aliasy na window dla stabilnego działania w Safari.
+
 ## [0.5.96] - 2026-03-28
 - Poprawiono ikonę edycji produktu w Safari: usunięto błąd toInt is not defined blokujący otwarcie popupu.
 - Parsery wartości liczbowych dla danych przycisku edycji działają lokalnie w handlerze kliknięcia.
