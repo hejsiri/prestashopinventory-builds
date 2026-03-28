@@ -1,3 +1,7 @@
+## [0.5.96] - 2026-03-28
+- Poprawiono ikonę edycji produktu w Safari: usunięto błąd toInt is not defined blokujący otwarcie popupu.
+- Parsery wartości liczbowych dla danych przycisku edycji działają lokalnie w handlerze kliknięcia.
+
 ## [0.5.95] - 2026-03-28
 - Poprawiono ikonę edycji produktu w tabeli Produkty: usunięto błąd JS renderScannerEan is not defined blokujący otwarcie popupu.
 - Dodano fallback renderowania EAN w popupie, gdy renderer kodu kreskowego nie jest dostępny.
