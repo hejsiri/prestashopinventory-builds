@@ -1,3 +1,7 @@
+## [0.5.118] - 2026-03-29
+- Poprawione linki śledzenia przesyłek dla DHL i UPS oraz dodana obsługa FedEx.
+- Usunięte obramowanie strzałek w paginacji listy produktów.
+
 ## [0.5.117] - 2026-03-29
 - Lista produktów: paginacja na dole dopasowana bliżej domyślnych styli BO PrestaShop.
 
