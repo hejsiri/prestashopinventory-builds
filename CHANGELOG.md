@@ -1,3 +1,6 @@
+## [0.5.127] - 2026-03-29
+- Dodanie ikony usuwania dostawców z potwierdzeniem oraz blokadą usuwania dostawców powiązanych z zamówieniami.
+
 ## [0.5.126] - 2026-03-29
 - Usunięcie ikon udostępniania i podglądu z listy zamówień oraz wyczyszczenie powiązanego kodu.
 - Dodanie potwierdzenia usuwania zamówień także w legacy widoku listy.
