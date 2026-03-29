@@ -1,3 +1,6 @@
+## [0.5.119] - 2026-03-29
+- Usunięte obramowanie nieaktywnej skrajnej strony w paginacji listy produktów.
+
 ## [0.5.118] - 2026-03-29
 - Poprawione linki śledzenia przesyłek dla DHL i UPS oraz dodana obsługa FedEx.
 - Usunięte obramowanie strzałek w paginacji listy produktów.
