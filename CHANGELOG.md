@@ -1,3 +1,6 @@
+## [0.5.115] - 2026-03-29
+- Lista produktów: odchudzone i zmniejszone strzałki paginacji na dole tabeli.
+
 ## [0.5.114] - 2026-03-29
 - Lista zamówień: w kolumnie akcji dodana ikona śledzenia przesyłki dla zamówień z numerem śledzenia.
 
