@@ -1,3 +1,8 @@
+## [0.5.121] - 2026-03-29
+- Dodana kolumna z ilością zamówień na liście dostawców.
+- Dodane skróty do listy zamówień z poziomu dostawców i produktów.
+- Usunięty efekt przyciemnienia tła i ramki w hoverze paginacji produktów i zamówień.
+
 ## [0.5.120] - 2026-03-29
 - Dodana paginacja na liście zamówień w tym samym stylu co na liście produktów.
 
