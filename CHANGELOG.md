@@ -1,3 +1,6 @@
+## [0.5.117] - 2026-03-29
+- Lista produktów: paginacja na dole dopasowana bliżej domyślnych styli BO PrestaShop.
+
 ## [0.5.116] - 2026-03-29
 - Lista produktów: paginacja na dole ma spokojniejsze odstępy i cyfry w rozmiarze dopasowanym do tekstu statusu.
 - Dostawcy: usunięta funkcja Aktywny z widoku, formularza, zapisu i tabeli modułu.
