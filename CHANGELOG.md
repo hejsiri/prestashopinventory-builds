@@ -1,3 +1,9 @@
+## [0.5.107] - 2026-03-29
+- Dodany webowy importer dostawców CRM z ręcznym zatwierdzaniem rekordów i mapowaniem kraju.
+- Dodany webowy importer zamówień CRM z importem pojedynczym i zbiorczym oraz kontrolą istnienia dostawcy.
+- Importer zamówień uzupełnia mapowanie statusów, produktów, zdjęć, przewoźników i pól nagłówka zamówienia.
+- Podgląd zamówienia otrzymał przyciski poprzednie/następne obok przycisku Powrót do listy.
+
 ## [0.5.106] - 2026-03-29
 - Dostawcy w module są teraz niezależni od dostawców PrestaShop i używają własnej tabeli modułu.
 - Zamówienia zakupowe korzystają z listy dostawców modułu zamiast z danych `ps_supplier`.
