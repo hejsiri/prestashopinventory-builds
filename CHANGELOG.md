@@ -1,3 +1,6 @@
+## [0.5.125] - 2026-03-29
+- Naprawione ładowanie listy produktów przez przeniesienie sprawdzania zamówień poza główne zapytanie tabeli.
+
 ## [0.5.124] - 2026-03-29
 - Naprawione ładowanie listy produktów po dodaniu sprawdzania zamówień w kolumnie akcji.
 
