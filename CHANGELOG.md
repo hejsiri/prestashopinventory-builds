@@ -1,3 +1,6 @@
+## [0.5.113] - 2026-03-29
+- Lista zamówień: w kolumnie akcji dodana ikona ostrzeżenia dla zamówień zawierających niepowiązane produkty.
+
 ## [0.5.112] - 2026-03-29
 - Widok zamówienia: usunięte duplikaty produktów w wynikach wyszukiwania przy ponownym łączeniu pozycji z katalogiem PrestaShop.
 
