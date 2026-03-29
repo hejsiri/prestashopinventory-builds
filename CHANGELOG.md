@@ -1,3 +1,8 @@
+## [0.5.110] - 2026-03-29
+- Widok zamówienia: pole wagi w popupie edycji produktu jest połączone ze standardową wagą produktu i kombinacji w PrestaShop.
+- Widok zamówienia: dla niepowiązanych pozycji dodana ikonka ponownego połączenia produktu z katalogiem PrestaShop.
+- Widok zamówienia: dodane potwierdzenia usuwania dla zamówień, plików i produktów w zamówieniu.
+
 ## [0.5.109] - 2026-03-29
 - Lista zamówień: dodana wyszukiwarka po numerze zamówienia, dostawcy, numerze przesyłki i numerze faktury.
 - Lista zamówień: sortowanie według ID malejąco, najnowsze zamówienia na górze.
