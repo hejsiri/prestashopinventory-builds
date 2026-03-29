@@ -1,3 +1,6 @@
+## [0.5.111] - 2026-03-29
+- Widok zamówienia: ponowne połączenie produktu podmienia istniejącą pozycję zamiast dodawać nową i zachowuje jej ilość oraz cenę.
+
 ## [0.5.110] - 2026-03-29
 - Widok zamówienia: pole wagi w popupie edycji produktu jest połączone ze standardową wagą produktu i kombinacji w PrestaShop.
 - Widok zamówienia: dla niepowiązanych pozycji dodana ikonka ponownego połączenia produktu z katalogiem PrestaShop.
