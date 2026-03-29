@@ -1,3 +1,8 @@
+## [0.5.102] - 2026-03-29
+- Powiększone nagłówki sekcji w menu filtrów.
+- Etykiety filtrów kolumn i opcji skrócone oraz ujednolicone z nazwami w interfejsie.
+- Miniatury produktów na liście nie są już ściskane przy wąskim oknie i dużej liczbie kolumn.
+
 ## [0.5.101] - 2026-03-28
 - Modal Edytuj na stronie Produkty: zawartość przebudowana wizualnie w stylu modala Rentowność.
 - Dane produktu, logistyki i pola dodatkowe pokazują się teraz w kartach z liniowym układem wartości, zachowując szybką edycję po kliknięciu.
