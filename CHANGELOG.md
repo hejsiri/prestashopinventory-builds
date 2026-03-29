@@ -1,3 +1,6 @@
+## [0.5.114] - 2026-03-29
+- Lista zamówień: w kolumnie akcji dodana ikona śledzenia przesyłki dla zamówień z numerem śledzenia.
+
 ## [0.5.113] - 2026-03-29
 - Lista zamówień: w kolumnie akcji dodana ikona ostrzeżenia dla zamówień zawierających niepowiązane produkty.
 
