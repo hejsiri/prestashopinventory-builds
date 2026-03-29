@@ -1,3 +1,7 @@
+## [0.5.122] - 2026-03-29
+- Dodane notatki do zamówień jako żółte karteczki w widoku zamówienia.
+- Dopasowany styl ikonki listy zamówień w akcjach produktów do pozostałych ikon.
+
 ## [0.5.121] - 2026-03-29
 - Dodana kolumna z ilością zamówień na liście dostawców.
 - Dodane skróty do listy zamówień z poziomu dostawców i produktów.
