@@ -1,3 +1,7 @@
+## [0.5.116] - 2026-03-29
+- Lista produktów: paginacja na dole ma spokojniejsze odstępy i cyfry w rozmiarze dopasowanym do tekstu statusu.
+- Dostawcy: usunięta funkcja Aktywny z widoku, formularza, zapisu i tabeli modułu.
+
 ## [0.5.115] - 2026-03-29
 - Lista produktów: odchudzone i zmniejszone strzałki paginacji na dole tabeli.
 
