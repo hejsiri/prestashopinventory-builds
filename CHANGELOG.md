@@ -1,3 +1,7 @@
+## [0.5.106] - 2026-03-29
+- Dostawcy w module są teraz niezależni od dostawców PrestaShop i używają własnej tabeli modułu.
+- Zamówienia zakupowe korzystają z listy dostawców modułu zamiast z danych `ps_supplier`.
+
 ## [0.5.105] - 2026-03-29
 - Wyrównane przyciski w formularzu dodawania plików do zamówienia.
 - Zmniejszona domyślna wysokość przycisków w formularzu dodawania plików dla lżejszego wyglądu.
