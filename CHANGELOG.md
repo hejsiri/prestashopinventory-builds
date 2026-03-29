@@ -1,3 +1,6 @@
+## [0.5.120] - 2026-03-29
+- Dodana paginacja na liście zamówień w tym samym stylu co na liście produktów.
+
 ## [0.5.119] - 2026-03-29
 - Usunięte obramowanie nieaktywnej skrajnej strony w paginacji listy produktów.
 
