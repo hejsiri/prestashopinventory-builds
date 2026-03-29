@@ -1,3 +1,8 @@
+## [0.5.108] - 2026-03-29
+- Nowe zamówienia zakupowe są tworzone bez przykładowych produktów.
+- Nawigacja w podglądzie zamówienia pozwala przechodzić do starszego i nowszego zamówienia przyciskami obok powrotu do listy.
+- Importer zamówień CRM poprawnie mapuje status zaksięgowane na status zakończone zgodnie z konfiguracją modułu.
+
 ## [0.5.107] - 2026-03-29
 - Dodany webowy importer dostawców CRM z ręcznym zatwierdzaniem rekordów i mapowaniem kraju.
 - Dodany webowy importer zamówień CRM z importem pojedynczym i zbiorczym oraz kontrolą istnienia dostawcy.
