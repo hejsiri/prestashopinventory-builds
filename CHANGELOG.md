@@ -1,3 +1,9 @@
+## [0.5.109] - 2026-03-29
+- Lista zamówień: dodana wyszukiwarka po numerze zamówienia, dostawcy, numerze przesyłki i numerze faktury.
+- Lista zamówień: sortowanie według ID malejąco, najnowsze zamówienia na górze.
+- Podgląd zamówienia: nawigacja poprzednie/następne działa po najbliższym niższym i wyższym ID, także przy lukach w numeracji.
+- Tabela produktów w zamówieniu: waga pozycji jest pobierana z aktualnej wagi produktu i kombinacji zamiast z pustej lub nieaktualnej wartości rekordu zamówienia.
+
 ## [0.5.108] - 2026-03-29
 - Nowe zamówienia zakupowe są tworzone bez przykładowych produktów.
 - Nawigacja w podglądzie zamówienia pozwala przechodzić do starszego i nowszego zamówienia przyciskami obok powrotu do listy.
