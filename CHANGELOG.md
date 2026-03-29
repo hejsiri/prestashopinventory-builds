@@ -1,3 +1,8 @@
+## [0.5.103] - 2026-03-29
+- Naprawiony podgląd PDF w zamówieniach zakupowych bez błędu 404 w modalu.
+- Poprawiony układ formularza dodawania plików w zamówieniach.
+- Przyciski Dodaj i Anuluj przy wybranym pliku ustawione w jednej linii.
+
 ## [0.5.102] - 2026-03-29
 - Powiększone nagłówki sekcji w menu filtrów.
 - Etykiety filtrów kolumn i opcji skrócone oraz ujednolicone z nazwami w interfejsie.
