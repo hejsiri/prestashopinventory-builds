@@ -1,3 +1,8 @@
+## [0.5.123] - 2026-03-29
+- Ukryta ikonka listy zamówień w produktach, gdy produkt nie występuje w żadnym zamówieniu.
+- Ujednolicony styl ikonek akcji w produktach, zamówieniach, dostawcach i ustawieniach do stylu BO PrestaShop.
+- Notatki w zamówieniach przeniesione do popupu i pokazane jako karteczki bez tła panelu.
+
 ## [0.5.122] - 2026-03-29
 - Dodane notatki do zamówień jako żółte karteczki w widoku zamówienia.
 - Dopasowany styl ikonki listy zamówień w akcjach produktów do pozostałych ikon.
