@@ -1,3 +1,6 @@
+## [0.5.128] - 2026-03-29
+- Poprawa potwierdzenia usuwania zamówień na liście zamówień.
+
 ## [0.5.127] - 2026-03-29
 - Dodanie ikony usuwania dostawców z potwierdzeniem oraz blokadą usuwania dostawców powiązanych z zamówieniami.
 
