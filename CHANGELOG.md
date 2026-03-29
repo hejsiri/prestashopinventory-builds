@@ -1,3 +1,7 @@
+## [0.5.105] - 2026-03-29
+- Wyrównane przyciski w formularzu dodawania plików do zamówienia.
+- Zmniejszona domyślna wysokość przycisków w formularzu dodawania plików dla lżejszego wyglądu.
+
 ## [0.5.104] - 2026-03-29
 - Poprawiony podgląd PDF w zamówieniach przez ładowanie dokumentu do modala z użyciem blob URL.
 - Ujednolicony układ formularza dodawania plików: pola i przyciski w jednej linii oraz spójna wysokość inputa i selecta.
