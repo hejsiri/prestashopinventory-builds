@@ -1,3 +1,8 @@
+## [0.5.126] - 2026-03-29
+- Usunięcie ikon udostępniania i podglądu z listy zamówień oraz wyczyszczenie powiązanego kodu.
+- Dodanie potwierdzenia usuwania zamówień także w legacy widoku listy.
+- Poprawa zapisu jednostki objętości na m³ w tabelach.
+
 ## [0.5.125] - 2026-03-29
 - Naprawione ładowanie listy produktów przez przeniesienie sprawdzania zamówień poza główne zapytanie tabeli.
 
