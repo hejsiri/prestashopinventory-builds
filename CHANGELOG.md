@@ -1,3 +1,6 @@
+## [0.5.112] - 2026-03-29
+- Widok zamówienia: usunięte duplikaty produktów w wynikach wyszukiwania przy ponownym łączeniu pozycji z katalogiem PrestaShop.
+
 ## [0.5.111] - 2026-03-29
 - Widok zamówienia: ponowne połączenie produktu podmienia istniejącą pozycję zamiast dodawać nową i zachowuje jej ilość oraz cenę.
 
