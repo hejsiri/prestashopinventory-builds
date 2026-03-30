@@ -1,3 +1,6 @@
+## [0.5.129] - 2026-03-30
+- Zmiana kolejności ikon w kolumnie akcji zamówień, tak aby Usuń było pierwsze.
+
 ## [0.5.128] - 2026-03-29
 - Poprawa potwierdzenia usuwania zamówień na liście zamówień.
 
