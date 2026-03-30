@@ -1,3 +1,7 @@
+## [0.5.131] - 2026-03-30
+- Przeniesienie wersji modułu w stopce na lewą stronę.
+- Usunięcie efektu obramowania po najechaniu na skrajne numery stron w paginacji.
+
 ## [0.5.130] - 2026-03-30
 - Poprawa wyrównania sekcji Sprzedawca, Nabywca i Szczegóły w PDF zamówienia.
 
