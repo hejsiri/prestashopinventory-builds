@@ -1,3 +1,6 @@
+## [0.5.130] - 2026-03-30
+- Poprawa wyrównania sekcji Sprzedawca, Nabywca i Szczegóły w PDF zamówienia.
+
 ## [0.5.129] - 2026-03-30
 - Zmiana kolejności ikon w kolumnie akcji zamówień, tak aby Usuń było pierwsze.
 
