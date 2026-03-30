@@ -1,3 +1,6 @@
+## [0.5.132] - 2026-03-30
+- Zmiana kolejności ikon w akacjach listy zamówień tak, aby śledzenie było na drugim miejscu.
+
 ## [0.5.131] - 2026-03-30
 - Przeniesienie wersji modułu w stopce na lewą stronę.
 - Usunięcie efektu obramowania po najechaniu na skrajne numery stron w paginacji.
